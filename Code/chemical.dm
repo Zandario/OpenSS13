@@ -31,14 +31,12 @@
 		else
 			return 0
 	return src.update_icon()
-	return
 
 /obj/item/weapon/organ/external/proc/heal_damage(brute, burn)
 
 	src.brute_dam = max(0, src.brute_dam - brute)
 	src.burn_dam = max(0, src.brute_dam - burn)
 	return update_icon()
-	return
 
 // new damage icon system
 // returns just the brute/burn damage code
@@ -72,14 +70,12 @@
 // adjusted to set d_i_state to brute/burn code only (without r_name0 as before)
 
 /obj/item/weapon/organ/external/proc/update_icon()
-
 	var/n_is = "[d_i_text()]"
 	if (n_is != src.d_i_state)
 		src.d_i_state = n_is
 		return 1
 	else
 		return 0
-	return
 
 /obj/substance/proc/leak(turf)
 	return
@@ -92,7 +88,6 @@
 		if (istype(C, /datum/chemical))
 			amount += C.return_property("volume")
 	return amount
-	return
 
 /obj/substance/chemical/proc/split(amount)
 
@@ -105,25 +100,20 @@
 			if (istype(C, /datum/chemical))
 				S.chemicals[item] = C
 				src.chemicals[item] = null
-		return S
-	else
-		if (tot_volume <= 0)
-			return S
-		else
-			for(var/item in src.chemicals)
-				var/datum/chemical/C = src.chemicals[item]
-				if (istype(C, /datum/chemical))
-					var/datum/chemical/N = new C.type( null )
-					C.copy_data(N)
-					var/amt = C.return_property("volume") * amount / tot_volume
-					C.moles -= amt * C.density / C.molarmass
-					if (C.moles == 0)
-						//C = null
-						del(C)
-					N.moles += amt * N.density / N.molarmass
-					S.chemicals[text("[]", N.name)] = N
-			return S
-	return
+	else if(tot_volume > 0)
+		for(var/item in src.chemicals)
+			var/datum/chemical/C = src.chemicals[item]
+			if (istype(C, /datum/chemical))
+				var/datum/chemical/N = new C.type( null )
+				C.copy_data(N)
+				var/amt = C.return_property("volume") * amount / tot_volume
+				C.moles -= amt * C.density / C.molarmass
+				if (C.moles == 0)
+					//C = null
+					del(C)
+				N.moles += amt * N.density / N.molarmass
+				S.chemicals[text("[]", N.name)] = N
+	return S
 
 /obj/substance/chemical/proc/transfer_from(var/obj/substance/chemical/S as obj, amount)
 
@@ -167,9 +157,8 @@
 		if (istype(C, /datum/chemical))
 			C.react(src)
 	return amount
-	return
 
-/obj/substance/chemical/proc/transfer_mob(var/mob/M as mob, amount)
+/obj/substance/chemical/proc/transfer_mob(mob/M as mob, amount)
 
 	if (!( ismob(M) ))
 		return
@@ -225,9 +214,7 @@ heat is conserved between exchanges
 
 
 /obj/substance/gas/proc/tot_gas()
-
 	return src.co2 + src.oxygen + src.plasma + src.sl_gas + src.n2
-	return
 
 /obj/substance/gas/proc/transfer_from(var/obj/substance/gas/target as obj, amount)
 
@@ -275,12 +262,9 @@ heat is conserved between exchanges
 	return
 
 /obj/substance/gas/proc/has_gas()
-
 	return (src.co2 + src.oxygen + src.plasma + src.sl_gas + src.n2) > 0
-	return
 
-/obj/substance/gas/proc/turf_add(var/turf/target as turf, amount)
-
+/obj/substance/gas/proc/turf_add(turf/target, amount)
 	if (((!( istype(target, /turf) ) && !( istype(target, /obj/move) )) || !( amount )))
 		return
 	if (locate(/obj/move, target))

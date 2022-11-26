@@ -51,26 +51,22 @@
 
 	flick("wall-m", src)
 	return ..()
-	return
 
 /obj/move/airtunnel/wall/move_left()
 
 	flick("wall-m", src)
 	return ..()
-	return
 
 /obj/move/airtunnel/wall/process()
 
 	return
 
 /obj/move/airtunnel/proc/move_left()
-
 	src.relocate(get_step(src, WEST))
 	if ((src.next && src.next.deployed))
 		return src.next.move_left()
 	else
 		return src.next
-	return
 
 /obj/move/airtunnel/proc/move_right()
 
@@ -78,7 +74,6 @@
 	if ((src.previous && src.previous.deployed))
 		src.previous.move_right()
 	return src.previous
-	return
 
 /obj/move/airtunnel/proc/create(num, y_coord)
 

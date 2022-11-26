@@ -93,7 +93,6 @@
 	if (total > 0)
 		G.transfer_from(src.gas, amount)
 	return G
-	return
 
 /obj/item/weapon/tank/attack(mob/M as mob, mob/user as mob)
 
@@ -168,15 +167,18 @@
 	return
 
 /obj/item/weapon/tank/jetpack/proc/allow_thrust(num, mob/user as mob)
-
 	if (!( src.on ))
 		return 0
+
 	if ((num < 1 || src.gas.tot_gas() < num))
 		return 0
+
 	var/obj/substance/gas/G = new /obj/substance/gas(  )
 	G.transfer_from(src.gas, num)
+
 	if (G.oxygen >= 100)
 		return 1
+
 	if (G.plasma > 10)
 		if (user)
 			var/d = G.plasma / 2
@@ -189,8 +191,7 @@
 			return 0.5
 		else
 			return 0
-	del(G)
-	return
+	// del(G)
 
 /obj/item/weapon/tank/anesthetic/New()
 
@@ -569,15 +570,12 @@
 /obj/secloset/alter_health()
 
 	return src.loc
-	return
 
-/obj/secloset/CheckPass(O as mob|obj, target as turf)
-
-	if (!( src.opened ))
+/obj/secloset/CheckPass(atom/movable/target_movable, turf/target_turf)
+	if(!(src.opened))
 		return 0
 	else
 		return 1
-	return
 
 /obj/secloset/personal/New()
 
@@ -594,7 +592,7 @@
 	if (src.opened)
 		if (istype(W, /obj/item/weapon/grab))
 			src.MouseDrop_T(W:affecting, user)	//act like they were dragged onto the closet
-		else:
+		else
 			if (user.can_drop())
 				user.drop_item()
 				W.loc = src.loc
@@ -792,7 +790,7 @@
 	if (src.opened)
 		if (istype(W, /obj/item/weapon/grab))
 			src.MouseDrop_T(W:affecting, user)	//act like they were dragged onto the closet
-		else:
+		else
 			if (user.can_drop())
 				user.drop_item()
 				W.loc = src.loc
@@ -849,12 +847,12 @@
 	src.add_fingerprint(user)
 	return
 
-/obj/secloset/attack_paw(mob/user as mob)
 
+/obj/secloset/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
-/obj/secloset/attack_hand(mob/user as mob)
+
+/obj/secloset/attack_hand(mob/user)
 
 	src.add_fingerprint(user)
 	if (!( src.opened ))
@@ -897,17 +895,12 @@
 	return
 
 /obj/morgue/alter_health()
-
 	return src.loc
-	return
 
-/obj/morgue/attack_paw(mob/user as mob)
-
+/obj/morgue/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
-/obj/morgue/attack_hand(mob/user as mob)
-
+/obj/morgue/attack_hand(mob/user)
 	if (src.connected)
 		for(var/atom/movable/A as mob|obj in src.connected.loc)
 			if (!( A.anchored ))
@@ -973,12 +966,10 @@
 		return 1
 	else
 		return ..()
-	return
 
 /obj/m_tray/attack_paw(mob/user as mob)
 
 	return src.attack_hand(user)
-	return
 
 /obj/m_tray/attack_hand(mob/user as mob)
 
@@ -1004,18 +995,17 @@
 				B.client_mob() << text("\red [] stuffs [] into []!", user, O, src)
 	return
 
+
 /obj/closet/alter_health()
-
 	return src.loc
-	return
 
-/obj/closet/CheckPass(O as mob|obj, target as turf)
 
-	if (!( src.opened ))
+/obj/closet/CheckPass(atom/movable/movable_target, turf/target_turf)
+	if(!(src.opened))
 		return 0
 	else
 		return 1
-	return
+
 
 /obj/closet/syndicate/nuclear/New()
 
@@ -1331,13 +1321,12 @@
 	src.add_fingerprint(user)
 	return
 
-/obj/closet/attack_paw(mob/user as mob)
 
+/obj/closet/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
-/obj/closet/attack_hand(mob/user as mob)
 
+/obj/closet/attack_hand(mob/user)
 	src.add_fingerprint(user)
 	if (!( src.opened ))
 		if (!( src.welded ))
@@ -1369,12 +1358,10 @@
 	return
 
 /obj/closet/CheckPass(O as mob|obj, target as turf)
-
 	if (!( src.opened ))
 		return 0
 	else
 		return 1
-	return
 
 /obj/stool/ex_act(severity)
 
@@ -1944,9 +1931,8 @@
 
 	return 1
 
-/atom/proc/CheckPass(atom/O as mob|obj|turf|area)
-
-	return (!( O.density ) || !( src.density ))
+/atom/proc/CheckPass(atom/target_atom)
+	return (!(target_atom.density) || !(src.density))
 
 /atom/proc/CheckExit()
 
@@ -2647,5 +2633,3 @@
 	src.poison = 7.5E7
 	res_vars()
 	return
-
-

@@ -3,14 +3,11 @@
 	if(!maplevel)
 		src.verbs -= /obj/machinery/computer/security/verb/station_map
 
-/obj/machinery/computer/security/attack_ai(var/mob/user as mob)
+/obj/machinery/computer/security/attack_ai(mob/user)
 	return src.attack_hand(user)
-	return
 
-/obj/machinery/computer/security/attack_paw(var/mob/user as mob)
-
+/obj/machinery/computer/security/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
 //Using http://en.wikipedia.org/wiki/Shell_sort
 //It got a little butchered by me not wanting to have half a dozen things going on in one for condition statement or while condition statement.
@@ -91,17 +88,14 @@
 			return
 	return
 
-/obj/machinery/computer/security/check_eye(var/mob/user as mob)
-
+/obj/machinery/computer/security/check_eye(mob/user)
 	if ((get_dist(user, src) > 1 || !( user.canmove ) || user.blinded || !( src.current ) || !( src.current.status )) && (!istype(user, /mob/ai)))
 		return null
 	user.reset_view(src.current)
 	return 1
-	return
 
 
 /obj/datacore/proc/manifest()
-
 	for(var/mob/human/H in world)
 		if ((H.start && !( findtextEx(H.rname, "Syndicate ", 1, null) )))
 			var/datum/data/record/G = new /datum/data/record(  )
@@ -147,12 +141,10 @@
 			src.security += S
 	return
 
-/turf/space/attack_paw(mob/user as mob)
-
+/turf/space/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
-/turf/space/attack_hand(mob/user as mob)
+/turf/space/attack_hand(mob/user)
 
 	if ((user.restrained() || !( user.pulling )))
 		return
@@ -277,8 +269,6 @@
 						if (src == A.loc)
 							spawn( 0 )
 								src.Entered(A)
-								return 1
-						return 1
 					return 1
 
 	if (src.x <= 2 && src.z < world.maxz)

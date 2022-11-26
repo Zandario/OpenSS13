@@ -8,17 +8,14 @@
 		world.log << text("Warning!  Could not find matching colour entry for '[]'.", colour)
 		return "#FFFFFF"
 	return "#" + uppertext(html_colours[text("[]", colour)])
-	return
 
 /proc/HTMLAssociate(colour, html)
-
 	if (html_colours.Find(colour))
 		world.log << text("Changing [] from [] to []!", colour, html_colours[colour], html)
 	html_colours[colour] = html
 	return
 
 /proc/LoadHTMLAssociations()
-
 	var/F = new /savefile( "s_html.sav" )
 	F["html_colours"] >> html_colours
 	if (!( html_colours ))
@@ -174,19 +171,16 @@
 	return
 
 /proc/SaveHTMLAssociations()
-
 	var/F = new /savefile( "s_html.sav" )
 	F["html_colours"] << html_colours
 	return
 
 /world/New()
-
 	..()
 	LoadHTMLAssociations()
 	return
 
 /world/Del()
-
 	SaveHTMLAssociations()
 	..()
 	return

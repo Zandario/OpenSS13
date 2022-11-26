@@ -13,7 +13,6 @@
 		return 1
 	else
 		return 0
-	return
 
 /mob/proc/abiotic()
 
@@ -21,7 +20,6 @@
 		return 1
 	else
 		return 0
-	return
 
 /datum/data/function/proc/reset()
 

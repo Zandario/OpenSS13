@@ -201,7 +201,6 @@
 						next_pick()
 						return
 	return src.picker
-	return
 
 /obj/ctf_assist/proc/show_pick(mob/user as mob)
 

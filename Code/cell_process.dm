@@ -581,25 +581,23 @@
 
 	var/list/L = cardinal.Copy()
 	for(var/obj/machinery/door/window/D in src)
-		if(!( D.density ))
-			goto Label_96 //continue
+		if(!(D.density))
+			break
 		//+++++
 		//L -= D.dir
 
-		if (D.dir & 12)
+		if(D.dir & 12)
 			L -= SOUTH
 		else
 			L -= EAST
 
-		Label_96
 	for(var/obj/window/D in src)
-		if(!( D.density ))
-			goto Label_178 //continue
+		if(!(D.density))
+			break
 		L -= D.dir
 		if (D.dir == SOUTHWEST)
 			L.len = null
 			return L
-		Label_178
 	return L
 
 
@@ -1647,4 +1645,3 @@ turf/proc/tot_old_gas()
 		if(8)
 			return condW
 	return 0
-

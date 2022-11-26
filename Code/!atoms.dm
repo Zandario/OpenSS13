@@ -369,7 +369,7 @@
 	icon_state = "ghost"
 /mob/human
 	name = "human"
-	icon = 'mob.dmi'
+	icon = 'icons/mob.dmi'
 	icon_state = "m-none"
 	gender = MALE
 	var/occupation1 = "No Preference"
