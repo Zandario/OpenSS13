@@ -384,7 +384,7 @@ obj/machinery/atmoalter/siphs
 
 	fullairsiphon
 		name = "Air siphon"
-		icon = 'icons/turfs.dmi'
+		icon = 'icons/turfs/turfs.dmi'
 		icon_state = "siphon:0"
 
 		air_vent
@@ -479,7 +479,7 @@ obj/machinery/atmoalter/siphs
 
 	scrubbers
 		name = "scrubbers"
-		icon = 'icons/turfs2.dmi'
+		icon = 'icons/turfs/turfs2.dmi'
 		icon_state = "siphon:0"
 
 		air_filter

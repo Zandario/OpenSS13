@@ -682,7 +682,7 @@
 /obj/grille
 	desc = "A piece of metal with evenly spaced gridlike holes in it. Blocks large object but lets small items, gas, or energy beams through."
 	name = "grille"
-	icon = 'icons/turfs2.dmi'
+	icon = 'icons/turfs/turfs2.dmi'
 	icon_state = "grille"
 	density = 1
 	var/health = 10.0
@@ -2241,7 +2241,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 /obj/lattice
 	desc = "A lightweight support lattice."
 	name = "lattice"
-	icon = 'icons/turfs2.dmi'
+	icon = 'icons/turfs/turfs2.dmi'
 	icon_state = "lattice"
 	density = 0
 	anchored = 1.0
@@ -2423,7 +2423,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	anchored = 1.0
 /obj/move
 	name = "move"
-	icon = 'icons/shuttle.dmi'
+	icon = 'icons/turfs/shuttle.dmi'
 	var/master = null
 	var/tx = null
 	var/ty = null
@@ -2570,7 +2570,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	name = "shuttle"
 /obj/shuttle/door
 	name = "door"
-	icon = 'icons/shuttle.dmi'
+	icon = 'icons/turfs/shuttle.dmi'
 	icon_state = "door1"
 	opacity = 1
 	density = 1
@@ -2670,7 +2670,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	weight = 5000000.0
 /obj/window
 	name = "window"
-	icon = 'icons/turfs2.dmi'
+	icon = 'icons/turfs/turfs2.dmi'
 	icon_state = "window"
 	desc = "A window."
 	density = 1
@@ -2683,7 +2683,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	flags = 512.0
 
 /turf
-	icon = 'icons/turfs.dmi'
+	icon = 'icons/turfs/turfs.dmi'
 	var/intact = 0.0
 	var/firelevel = null
 	var/oxygen = O2STANDARD
@@ -2736,8 +2736,8 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 
 /turf/space
 	name = "space"
-	icon_state = "space"
-	var/previousArea = null
+	icon = 'icons/turfs/space_dust.dmi'
+	icon_state = "0"
 	updatecell = 1.0
 	oxygen = 0.0
 	n2 = 0.0
@@ -2745,6 +2745,12 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	oldoxy = 0.0
 	oldpoison = 0.0
 	temp = 2.7				// CMB radiation temperature+
+
+	var/previousArea = null
+
+/turf/space/New()
+	spawn(0)
+		icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 
 /turf/station
 	name = "station"
@@ -2760,7 +2766,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	icon_state = "Floor"
 /turf/station/command/wall
 	name = "wall"
-	icon = 'icons/wall.dmi'
+	icon = 'icons/turfs/wall.dmi'
 	icon_state = "CCWall"
 	opacity = 1
 	density = 1
@@ -2787,7 +2793,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 /turf/station/floor/plasma_test
 /turf/station/r_wall
 	name = "r wall"
-	icon = 'icons/wall.dmi'
+	icon = 'icons/turfs/wall.dmi'
 	icon_state = "r_wall"
 	var/previousArea = null
 	opacity = 1
@@ -2797,7 +2803,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	updatecell = 0.0
 /turf/station/shuttle
 	name = "shuttle"
-	icon = 'icons/shuttle.dmi'
+	icon = 'icons/turfs/shuttle.dmi'
 /turf/station/shuttle/floor
 	name = "floor"
 	icon_state = "floor"
@@ -2810,7 +2816,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	updatecell = 0.0
 /turf/station/wall
 	name = "wall"
-	icon = 'icons/wall.dmi'
+	icon = 'icons/turfs/wall.dmi'
 	var/previousArea = null
 	opacity = 1
 	density = 1

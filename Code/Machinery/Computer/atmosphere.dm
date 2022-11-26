@@ -10,7 +10,7 @@
 
 obj/machinery/computer/atmosphere
 	name = "atmosphere"
-	icon = 'icons/turfs.dmi'
+	icon = 'icons/turfs/turfs.dmi'
 
 
 	// Prototype: returns the contents of the area that the computer controls

@@ -9,7 +9,7 @@
 
 obj/machinery/computer/prison_shuttle
 	name = "prison shuttle"
-	icon = 'icons/shuttle.dmi'
+	icon = 'icons/turfs/shuttle.dmi'
 	icon_state = "shuttlecom"
 
 
