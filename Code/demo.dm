@@ -3,7 +3,7 @@
 		spawn(0)
 			var/t 			= src.icon_state
 			src.icon_state 	= ""
-			src.icon 		= 'b_items.dmi'
+			src.icon 		= 'icons/b_items.dmi'
 			flick("[t]", src)
 			spawn(14) del(src)
 		return 0
@@ -1416,7 +1416,7 @@
 /obj/stool/chair/e_chair/New()
 
 	src.overl = new /atom/movable/overlay( src.loc )
-	src.overl.icon = 'Icons.dmi'
+	src.overl.icon = 'icons/Icons.dmi'
 	src.overl.icon_state = "e_chairo0"
 	src.overl.layer = 5
 	src.overl.name = "electrified chair"
@@ -1586,7 +1586,6 @@
 
 	if ((ticker && ticker.mode == "monkey"))
 		return src.attack_hand(user)
-	return
 
 /obj/stool/chair/attack_hand(mob/user as mob)
 
@@ -1655,8 +1654,8 @@
 		healthcheck()
 	return
 
-/obj/grille/CheckPass(var/obj/B)
 
+/obj/grille/CheckPass(obj/B)
 	if ((istype(B, /obj/effects) || istype(B, /obj/item/weapon/dummy) || istype(B, /obj/beam) || istype(B, /obj/meteor/small)))
 		return 1
 	else
@@ -1664,7 +1663,7 @@
 			return prob(30)
 		else
 			return !( src.density )
-	return
+
 
 /obj/grille/attackby(obj/item/weapon/W, mob/user)
 
@@ -1970,10 +1969,9 @@
 		src.verbs -= x
 	return
 
-/turf/CheckPass(atom/O as mob|obj|turf|area)
+/turf/CheckPass(atom/target_atom)
+	return !(src.density)
 
-	return !( src.density )
-	return
 
 /turf/New()
 
@@ -2010,27 +2008,24 @@
 				O.Bump(src, 1)
 			return 0
 	return 1
-	return
 
-/turf/Entered(atom/movable/M as mob|obj)
 
+/turf/Entered(atom/movable/movable_target)
 	..()
-	for(var/atom/A as mob|obj|turf|area in src)
+	for(var/atom/target_atom as anything in src)
 		spawn( 0 )
-			if ((A && M))
-				A.HasEntered(M, 1)
+			if ((target_atom && movable_target))
+				target_atom.HasEntered(movable_target, 1)
 			return
-	for(var/atom/A as mob|obj|turf|area in range(1))
+	for(var/atom/target_atom as anything in range(1))
 		spawn( 0 )
-			if ((A && M))
-				A.HasProximity(M, 1)
+			if ((target_atom && movable_target))
+				target_atom.HasProximity(movable_target, 1)
 			return
 	return
 
 
 /turf/proc/levelupdate()
-
-
 	for(var/obj/O in src)
 		if(O.level == 1)
 			O.hide(src.intact)
@@ -2384,7 +2379,6 @@
 
 	if ((ticker && ticker.mode == "monkey"))
 		return src.attack_hand(user)
-	return
 
 /turf/station/wall/attack_hand(mob/user as mob)
 
@@ -2501,13 +2495,13 @@
 				F.levelupdate()
 	return
 
-/turf/station/floor/CheckPass(atom/movable/O as mob|obj)
 
-	if ((istype(O, /obj/machinery/pod) && !( src.burnt )))
+/turf/station/floor/CheckPass(atom/movable/movable_target)
+	if ((istype(movable_target, /obj/machinery/pod) && !( src.burnt )))
 		if (!( locate(/obj/machinery/mass_driver, src) ))
 			return 0
 	return 1
-	return
+
 
 /turf/station/floor/ex_act(severity)
 	set src in oview(1)

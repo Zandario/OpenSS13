@@ -8,7 +8,7 @@
 obj/machinery/igniter
 
 	name = "igniter"
-	icon = 'stationobjs.dmi'
+	icon = 'icons/stationobjs.dmi'
 	icon_state = "igniter1"
 	anchored = 1.0
 	var
@@ -68,5 +68,3 @@ obj/machinery/igniter
 				T = locate(/obj/move, T)
 			if (T.firelevel < config.min_gas_for_fire)
 				T.firelevel = T.poison
-
-

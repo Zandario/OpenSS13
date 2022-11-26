@@ -8,18 +8,17 @@
 		t = text("[][]", t, rand(1, 9))
 		p++
 	return t
-	return
+
 
 /obj/machinery/computer/dna/attack_ai(mob/user as mob)
 	return src.attack_hand(user)
 
-/obj/machinery/computer/dna/attack_paw(mob/user as mob)
 
+/obj/machinery/computer/dna/attack_paw(mob/user as mob)
 	return src.attack_hand(user)
-	return
+
 
 /obj/machinery/computer/dna/attack_hand(mob/user as mob)
-
 	if(stat & (NOPOWER|BROKEN) )
 		return
 
@@ -35,6 +34,7 @@
 			dat = text("[]<BR><BR><A href='?src=\ref[];clear=1'>[]", stars(src.temp), src, stars("Clear Message</A>"))
 		user.client_mob() << browse(dat, "window=dna_comp")
 	return
+
 
 /obj/machinery/computer/dna/Topic(href, href_list)
 	..()
@@ -221,12 +221,12 @@
 		else
 	return
 
+
 /obj/machinery/dna_scanner/allow_drop()
-
 	return 0
-	return
 
-/obj/machinery/dna_scanner/relaymove(mob/user as mob)
+
+/obj/machinery/dna_scanner/relaymove(mob/user)
 
 	if (user.stat)
 		return
@@ -611,13 +611,14 @@
 	src.updateDialog()
 	return
 
-/obj/machinery/scan_console/attack_paw(user as mob)
 
+/obj/machinery/scan_console/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
 
-/obj/machinery/scan_console/attack_ai(user as mob)
+
+/obj/machinery/scan_console/attack_ai(mob/user)
 	return src.attack_hand(user)
+
 
 /obj/machinery/scan_console/attack_hand(mob/user as mob)
 
@@ -707,10 +708,10 @@
 
 	return
 
-/obj/machinery/restruct/allow_drop()
 
+/obj/machinery/restruct/allow_drop()
 	return 0
-	return
+
 
 /obj/machinery/restruct/verb/eject()
 	set src in oview(1)
@@ -988,4 +989,3 @@
 		for(var/atom/movable/A as mob|obj in src)
 			A.loc = src.loc
 		del(src)
-		

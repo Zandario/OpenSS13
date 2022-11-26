@@ -34,7 +34,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	var/list/L = list(  )
 	for(var/obj/item/weapon/radio/R in world)
 		if (R.freq != freq)
@@ -74,8 +74,8 @@
 		src.id = t
 	return
 
-/obj/machinery/computer/teleporter/proc/find_loc(obj/R as obj)
 
+/obj/machinery/computer/teleporter/proc/find_loc(obj/R as obj)
 	if (!( R ))
 		return null
 
@@ -90,12 +90,10 @@
 		if (istype(T, /area))
 			return null
 
-
 	return T
-	return
+
 
 /obj/machinery/teleport/hub/Bumped(M as mob|obj)
-
 	spawn( 0 )
 		if (src.icon_state == "tele1")
 			teleport(M)
@@ -103,8 +101,8 @@
 		return
 	return
 
-/obj/machinery/teleport/hub/proc/teleport(atom/movable/M as mob|obj)
 
+/obj/machinery/teleport/hub/proc/teleport(atom/movable/M as mob|obj)
 	var/atom/l = src.loc
 	var/obj/machinery/computer/teleporter/com = locate(/obj/machinery/computer/teleporter, locate(l.x - 2, l.y, l.z))
 	if (!( com ))
@@ -134,6 +132,7 @@
 			B.show_message("\blue Test fire completed.", 2)
 	return
 
+
 /obj/machinery/teleport/station/verb/engage()
 	set src in oview(1)
 	if(stat & NOPOWER) return
@@ -141,7 +140,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	var/atom/l = src.loc
 	var/atom/com = locate(/obj/machinery/teleport/hub, locate(l.x + 1, l.y, l.z))
 	if (com)
@@ -159,7 +158,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	var/atom/l = src.loc
 	var/atom/com = locate(/obj/machinery/teleport/hub, locate(l.x + 1, l.y, l.z))
 	if (com)
@@ -177,7 +176,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	var/atom/l = src.loc
 	var/obj/machinery/teleport/hub/com = locate(/obj/machinery/teleport/hub, locate(l.x + 1, l.y, l.z))
 	if (com && !active)
@@ -292,6 +291,4 @@
 	return
 
 /atom/proc/laserhit(L as obj)
-
 	return 1
-	return

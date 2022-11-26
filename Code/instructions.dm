@@ -224,13 +224,14 @@
 	src.n2 = N2STANDARD
 	return
 
+
 /turf/station/command/conduction()
 	return
 
-/turf/station/command/floor/attack_paw(user as mob)
 
+/turf/station/command/floor/attack_paw(mob/user)
 	return src.attack_hand(user)
-	return
+
 
 /turf/station/command/floor/attack_hand(var/mob/user as mob)
 

@@ -1,13 +1,11 @@
-
 /proc/invertHTML(HTMLstring)
-
 	if (!( istext(HTMLstring) ))
 		CRASH("Given non-text argument!")
-		return
+
 	else
 		if (length(HTMLstring) != 7)
 			CRASH("Given non-HTML argument!")
-			return
+
 	var/textr = copytext(HTMLstring, 2, 4)
 	var/textg = copytext(HTMLstring, 4, 6)
 	var/textb = copytext(HTMLstring, 6, 8)
@@ -24,4 +22,3 @@
 	if (length(textb) < 2)
 		textr = text("0[]", textb)
 	return text("#[][][]", textr, textg, textb)
-	return

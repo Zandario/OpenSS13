@@ -37,7 +37,7 @@
 
 /obj/machinery/turret
 	name = "turret"
-	icon = 'weap_sat.dmi'
+	icon = 'icons/weap_sat.dmi'
 	icon_state = "grey_target_prism"
 	var/raised = 0
 	var/enabled = 1
@@ -56,7 +56,7 @@
 
 /obj/machinery/turretcover
 	name = "pop-up turret cover"
-	icon = 'weap_sat.dmi'
+	icon = 'icons/weap_sat.dmi'
 	icon_state = "turretCover"
 	anchored = 1
 	layer = 3.5
@@ -92,9 +92,9 @@
 /obj/machinery/turret/process()
 	if(stat & (NOPOWER|BROKEN))
 		return
-		if(lastfired && world.time - lastfired < shot_delay)
-			return
+	if(lastfired && world.time - lastfired < shot_delay)
 		lastfired = world.time
+		return
 	if (src.cover==null)
 		src.cover = new /obj/machinery/turretcover(src.loc)
 	use_power(50)
@@ -214,7 +214,7 @@
 
 /obj/machinery/turretid
 	name = "Turret deactivation control"
-	icon = 'items.dmi'
+	icon = 'icons/items.dmi'
 	icon_state = "motion3"
 	anchored = 1
 	density = 0

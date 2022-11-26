@@ -6,6 +6,9 @@
 // END_INTERNALS
 // BEGIN_FILE_DIR
 #define FILE_DIR .
+#define FILE_DIR "icons"
+#define FILE_DIR "tools"
+#define FILE_DIR "tools/SS13SmoothingCutter"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -13,13 +16,12 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "ss13h_new.dmp"
+#include "_maps\ss13h_new.dm"
 #include "code\!atoms.dm"
 #include "code\_debug.dm"
 #include "code\aaaDefines.dm"
 #include "code\ai_area_selection.dm"
 #include "code\airtunnel.dm"
-#include "code\areas.dm"
 #include "code\blob.dm"
 #include "code\cell_process.dm"
 #include "code\cellautomata.dm"
@@ -55,6 +57,9 @@
 #include "code\CTF\barrier.dm"
 #include "code\Effects\portal.dm"
 #include "code\Effects\water.dm"
+#include "code\game\area\_areas.dm"
+#include "code\game\area\area_types.dm"
+#include "code\game\area\vehicles.dm"
 #include "code\Item\Weapon\aimodules.dm"
 #include "code\Item\Weapon\multitool.dm"
 #include "code\Item\Weapon\pipe.dm"

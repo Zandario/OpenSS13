@@ -9,7 +9,7 @@
 
 obj/machinery/atmoalter/heater
 	name = "heater"
-	icon = 'stationobjs.dmi'
+	icon = 'icons/stationobjs.dmi'
 	icon_state = "heater1"
 	density = 1
 
@@ -250,5 +250,3 @@ obj/machinery/atmoalter/heater
 				else
 					user.show_message("\blue There is no connector here to attach the heater to.", 1)
 		return
-
-

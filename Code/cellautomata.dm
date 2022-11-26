@@ -1041,11 +1041,12 @@
 				var/m_key = copytext(t, 1, t1)
 				var/a_lev = text("[]", copytext(t, t1 + 3, length(t) + 1))
 				admins[text("[]", m_key)] = text("[]", a_lev)
-	admins["exadv1"] = "Primary Administrator"
+	admins["exadv1"] = "Primary Administrator \[Creator\]"
+	admins["Zandario"] = "Fork Master"
 
 	config = new /datum/config()
 
-	var/config_text = file2text("config.txt")
+	var/config_text = file2text("config/config.txt")
 
 	if(!config_text)
 		world.log << "No config.txt file found, setting defaults"
@@ -1180,15 +1181,15 @@
 		del(src)	//shut it down
 
 	plmaster = new /obj/overlay(  )
-	plmaster.icon = 'plasma.dmi'
+	plmaster.icon = 'icons/plasma.dmi'
 	plmaster.icon_state = "onturf"
 	plmaster.layer = FLY_LAYER
 	slmaster = new /obj/overlay(  )
-	slmaster.icon = 'plasma.dmi'
+	slmaster.icon = 'icons/plasma.dmi'
 	slmaster.icon_state = "sl_gas"
 	slmaster.layer = FLY_LAYER
 	liquidplmaster = new /obj/overlay(  )
-	liquidplmaster.icon = 'plasma.dmi'
+	liquidplmaster.icon = 'icons/plasma.dmi'
 	liquidplmaster.icon_state = "liquid"
 	liquidplmaster.layer = FLY_LAYER
 	cellcontrol = new /datum/control/cellular(  )

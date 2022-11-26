@@ -7,7 +7,7 @@
  */
 /obj/machinery/cryo_cell
 	name = "cryo cell"
-	icon = 'Cryogenic2.dmi'
+	icon = 'icons/Cryogenic2.dmi'
 	icon_state = "celltop"
 	density = TRUE
 	anchored = TRUE
@@ -42,13 +42,13 @@
 	..()
 	src.layer = 5
 	O1 = new /obj/overlay(  )
-	O1.icon = 'Cryogenic2.dmi'
+	O1.icon = 'icons/Cryogenic2.dmi'
 	O1.icon_state = "cellconsole"
 	O1.pixel_y = -32.0
 	O1.layer = 4
 
 	O2 = new /obj/overlay(  )
-	O2.icon = 'Cryogenic2.dmi'
+	O2.icon = 'icons/Cryogenic2.dmi'
 	O2.icon_state = "cellbottom"
 	O2.pixel_y = -32.0
 
@@ -341,19 +341,21 @@
 							flask.plasma += sendplasma
 							src.gas.plasma = 0
 							src.ngas.plasma = 0
-							src.vnode:gas.plasma = 0
-							src.vnode:ngas.plasma = 0
-							src.vnode:vnode2:gas.plasma = 0
-							src.vnode:vnode2:ngas.plasma = 0
+							//TODO: Atmos Machine Rewrite. @Zandario
+							// src.vnode:gas.plasma = 0
+							// src.vnode:ngas.plasma = 0
+							// src.vnode:vnode2:gas.plasma = 0
+							// src.vnode:vnode2:ngas.plasma = 0
 						else
 							if (istype(flask, /obj/item/weapon/flasks/oxygen))
 								flask.oxygen += sendoxygen
 								src.gas.oxygen = 0
 								src.ngas.oxygen = 0
-								src.vnode:gas.oxygen = 0
-								src.vnode:ngas.oxygen = 0
-								src.vnode:vnode2:gas.oxygen = 0
-								src.vnode:vnode2:ngas.oxygen = 0
+								//TODO: Atmos Machine Rewrite. @Zandario
+								// src.vnode:gas.oxygen = 0
+								// src.vnode:ngas.oxygen = 0
+								// src.vnode:vnode2:gas.oxygen = 0
+								// src.vnode:vnode2:ngas.oxygen = 0
 
 				// We ignore co2, sl_gas, and n2
 			else

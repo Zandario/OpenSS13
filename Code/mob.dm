@@ -189,7 +189,7 @@
 			t = text("[]*", t)
 		p++
 	return t
-	return
+
 
 /proc/stutter(n)
 
@@ -214,27 +214,26 @@
 		t = text("[][]", t, n_letter)
 		p++
 	return t
-	return
+
 
 /proc/findname(msg)
-
 	for(var/mob/M in world)
 		if (M.rname == text("[]", msg))
 			return 1
 	return 0
-	return
+
 
 /obj/proc/alter_health()
-
 	return 1
-	return
+
 
 /obj/proc/relaymove()
-
 	return
+
 
 /obj/proc/hide(h)
 	return
+
 
 /obj/item/weapon/grab/proc/toss()
 
@@ -389,16 +388,14 @@
 		else
 			s_click(src.hud1)
 	return 0
-	return
+
 
 /obj/item/weapon/grab/dropped()
-
 	del(src)
 	return
-	return
+
 
 /obj/item/weapon/grab/Del()
-
 	//src.hud1 = null
 	del(src.hud1)
 	..()
@@ -980,7 +977,6 @@
 	spawn( 100 )
 		del(src)
 		return
-		return
 	..()
 	return
 
@@ -1210,7 +1206,7 @@
 	src.target.UpdateClothing()
 	del(src)
 	return
-	return
+
 
 /obj/equip_e/human/process()
 
@@ -1783,7 +1779,7 @@
 	src.target.UpdateClothing()
 	del(src)
 	return
-	return
+
 
 /mob/human/proc/TakeDamage(zone, brute, burn)
 
@@ -1845,22 +1841,22 @@
 		src.bruteloss += O.brute_dam
 		src.fireloss += O.burn_dam
 
-		var/icon/DI = new /icon('dam_human.dmi', O.d_i_state)			// the damage icon for whole human
-		DI.Blend(new /icon('dam_mask.dmi', O.r_name),ICON_MULTIPLY)		// mask with this organ's pixels
+		var/icon/DI = new /icon('icons/dam_human.dmi', O.d_i_state)			// the damage icon for whole human
+		DI.Blend(new /icon('icons/dam_mask.dmi', O.r_name),ICON_MULTIPLY)		// mask with this organ's pixels
 
 //		world << "[O.r_name] [O.d_i_state] \icon[DI]"
 
 		body_standing += DI
 
-		DI = new /icon('dam_human.dmi', "[O.d_i_state]-2")				// repeat for lying icons
-		DI.Blend(new /icon('dam_mask.dmi', "[O.r_name]2"),ICON_MULTIPLY)
+		DI = new /icon('icons/dam_human.dmi', "[O.d_i_state]-2")				// repeat for lying icons
+		DI.Blend(new /icon('icons/dam_mask.dmi', "[O.r_name]2"),ICON_MULTIPLY)
 
 //		world << "[O.r_name]2 [O.d_i_state]-2 \icon[DI]"
 
 		body_lying += DI
 
-		//src.body_standing += new /icon( 'dam_zones.dmi', text("[]", O.d_i_state) )
-		//src.body_lying += new /icon( 'dam_zones.dmi', text("[]2", O.d_i_state) )
+		//src.body_standing += new /icon( 'icons/dam_zones.dmi', text("[]", O.d_i_state) )
+		//src.body_lying += new /icon( 'icons/dam_zones.dmi', text("[]2", O.d_i_state) )
 
 
 
@@ -1923,7 +1919,7 @@
 		del(src.organs[text("[]", t)])
 	var/atom/movable/overlay/animation = new /atom/movable/overlay( src.loc )
 	animation.icon_state = "blank"
-	animation.icon = 'mob.dmi'
+	animation.icon = 'icons/mob.dmi'
 	animation.master = src
 	flick("h2monkey", animation)
 	sleep(48)
@@ -2260,22 +2256,22 @@
 	del(src.stand_icon)
 	//src.lying_icon = null
 	del(src.lying_icon)
-	src.stand_icon = new /icon( 'human.dmi', "blank" )
-	src.lying_icon = new /icon( 'human.dmi', "blank" )
+	src.stand_icon = new /icon( 'icons/human.dmi', "blank" )
+	src.lying_icon = new /icon( 'icons/human.dmi', "blank" )
 	for(var/t in list( "chest", "head", "l_arm", "r_arm", "l_hand", "r_hand", "l_leg", "r_leg", "l_foot", "r_foot" ))
-		src.stand_icon.Blend(new /icon( 'human.dmi', text("[]", t) ), 3)
-		src.lying_icon.Blend(new /icon( 'human.dmi', text("[]2", t) ), 3)
+		src.stand_icon.Blend(new /icon( 'icons/human.dmi', text("[]", t) ), 3)
+		src.lying_icon.Blend(new /icon( 'icons/human.dmi', text("[]2", t) ), 3)
 	if (src.s_tone >= 0)
 		src.stand_icon.Blend(rgb(src.s_tone, src.s_tone, src.s_tone), 0)
 		src.lying_icon.Blend(rgb(src.s_tone, src.s_tone, src.s_tone), 0)
 	else
 		src.stand_icon.Blend(rgb( -src.s_tone,  -src.s_tone,  -src.s_tone), 1)
 		src.lying_icon.Blend(rgb( -src.s_tone,  -src.s_tone,  -src.s_tone), 1)
-	src.stand_icon.Blend(new /icon( 'human.dmi', "diaper" ), 3)
-	src.lying_icon.Blend(new /icon( 'human.dmi', "diaper2" ), 3)
+	src.stand_icon.Blend(new /icon( 'icons/human.dmi', "diaper" ), 3)
+	src.lying_icon.Blend(new /icon( 'icons/human.dmi', "diaper2" ), 3)
 	if (src.gender == "female")
-		src.stand_icon.Blend(new /icon( 'human.dmi', "f_add" ), 3)
-		src.lying_icon.Blend(new /icon( 'human.dmi', "f_add2" ), 3)
+		src.stand_icon.Blend(new /icon( 'icons/human.dmi', "f_add" ), 3)
+		src.lying_icon.Blend(new /icon( 'icons/human.dmi', "f_add2" ), 3)
 
 
 	return
@@ -2286,18 +2282,18 @@
 	del(src.face)
 	//src.face2 = null
 	del(src.face2)
-	var/icon/I = new/icon("icon" = 'mob.dmi', "icon_state" = "eyes")
-	var/icon/I2 = new/icon("icon" = 'mob.dmi', "icon_state" = "eyes2")
-	var/icon/F = new/icon("icon" = 'mob.dmi', "icon_state" = text("[]", src.h_style_r))
-	var/icon/F2 = new/icon("icon" = 'mob.dmi', "icon_state" = text("[]2", src.h_style_r))
+	var/icon/I = new/icon("icon" = 'icons/mob.dmi', "icon_state" = "eyes")
+	var/icon/I2 = new/icon("icon" = 'icons/mob.dmi', "icon_state" = "eyes2")
+	var/icon/F = new/icon("icon" = 'icons/mob.dmi', "icon_state" = text("[]", src.h_style_r))
+	var/icon/F2 = new/icon("icon" = 'icons/mob.dmi', "icon_state" = text("[]2", src.h_style_r))
 	F.Blend(rgb(src.r_hair, src.g_hair, src.b_hair), 0)
 	F2.Blend(rgb(src.r_hair, src.g_hair, src.b_hair), 0)
 	I.Blend(rgb(src.r_eyes, src.g_eyes, src.b_eyes), 0)
 	I2.Blend(rgb(src.r_eyes, src.g_eyes, src.b_eyes), 0)
 	I.Blend(F, 3)
 	I2.Blend(F2, 3)
-	F = new/icon("icon" = 'human.dmi', "icon_state" = "mouth")
-	F2 = new/icon("icon" = 'human.dmi', "icon_state" = "mouth2")
+	F = new/icon("icon" = 'icons/human.dmi', "icon_state" = "mouth")
+	F2 = new/icon("icon" = 'icons/human.dmi', "icon_state" = "mouth2")
 	I.Blend(F, 3)
 	I2.Blend(F2, 3)
 	//F = null
@@ -2321,7 +2317,7 @@
 	if (istype(src.wear_suit, /obj/item/weapon/clothing/suit/straight_jacket))
 		return 1
 	return 0
-	return
+
 
 /mob/human/ex_act(severity)
 
@@ -2898,8 +2894,8 @@
 		src.organs["r_foot"] = r_foot
 		if ((src.gender != "male" && src.gender != "female"))
 			src.gender = "male"
-		src.stand_icon = new /icon( 'human.dmi', text("[]", src.gender) )
-		src.lying_icon = new /icon( 'human.dmi', text("[]-d", src.gender) )
+		src.stand_icon = new /icon( 'icons/human.dmi', text("[]", src.gender) )
+		src.lying_icon = new /icon( 'icons/human.dmi', text("[]-d", src.gender) )
 		src.icon = src.stand_icon
 		src << "\blue Your icons have been generated!"
 		/*
@@ -3037,7 +3033,7 @@
 	src.client.screen += list( src.zone_sel, src.oxygen, src.i_select, src.m_select, src.toxin, src.internals, src.fire, src.hands, src.healths, src.pullin, src.blind, src.flash, src.rest, src.sleep, src.mach )
 	src.client.screen -= src.hud_used.adding
 	src.client.screen += src.hud_used.adding
-	//src << browse('help.htm', "window=help")
+	//src << browse('html/help.htm', "window=help")
 	if (CanAdmin())
 		src << text("\blue The game ip is byond://[]:[] !", world.address, world.port)
 		src.verbs += /mob/proc/mute
@@ -3783,7 +3779,7 @@
 			if ((G.state == 3 && get_dir(src, A) == src.dir))
 				safe = G.affecting
 		if (istype(src.r_hand, /obj/item/weapon/grab))
-			var/obj/item/weapon.grab/G = src.r_hand
+			var/obj/item/weapon/grab/G = src.r_hand
 			if ((G.state == 3 && get_dir(src, A) == src.dir))
 				safe = G.affecting
 		if (safe)
@@ -4047,7 +4043,7 @@
 	if(src.zone_sel)
 		src.zone_sel.overlays = null
 		src.zone_sel.overlays += src.body_standing
-		src.zone_sel.overlays += image("icon" = 'zone_sel.dmi', "icon_state" = text("[]", src.zone_sel.selecting))
+		src.zone_sel.overlays += image("icon" = 'icons/zone_sel.dmi', "icon_state" = text("[]", src.zone_sel.selecting))
 
 	if (src.lying)
 		src.icon = src.lying_icon
@@ -4067,12 +4063,12 @@
 
 			if (!( t1 ))
 				t1 = src.icon_state
-			src.overlays += image("icon" = 'uniforms.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/uniforms.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 
 
 		src.w_uniform.screen_loc = "2,2"
 	if (src.wear_id)
-		src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("id[]", (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+		src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("id[]", (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 	if (src.hasClient())
 		src.screenOrBackupRemove(src.hud_used.other)
 		src.screenOrBackupRemove(src.hud_used.intents)
@@ -4083,63 +4079,63 @@
 			var/t1 = src.gloves.s_istate
 			if (!( t1 ))
 				t1 = src.gloves.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.gloves.screen_loc = "4,2"
 		if (src.glasses)
 			var/t1 = src.glasses.s_istate
 			if (!( t1 ))
 				t1 = src.glasses.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.glasses.screen_loc = "6,2"
 		if (src.ears)
 			var/t1 = src.ears.s_istate
 			if (!( t1 ))
 				t1 = src.ears.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.ears.screen_loc = "9,2"
 		if (src.shoes)
 			var/t1 = src.shoes.s_istate
 			if (!( t1 ))
 				t1 = src.shoes.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.shoes.screen_loc = "5,2"
 	else
 		if (src.gloves)
 			var/t1 = src.gloves.s_istate
 			if (!( t1 ))
 				t1 = src.gloves.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.gloves.screen_loc = null
 		if (src.glasses)
 			var/t1 = src.glasses.s_istate
 			if (!( t1 ))
 				t1 = src.glasses.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.glasses.screen_loc = null
 		if (src.ears)
 			var/t1 = src.ears.s_istate
 			if (!( t1 ))
 				t1 = src.ears.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.ears.screen_loc = null
 		if (src.shoes)
 			var/t1 = src.shoes.s_istate
 			if (!( t1 ))
 				t1 = src.shoes.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.shoes.screen_loc = null
 	if (src.w_radio)
 		if (!( src.lying ))
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = "headset", "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "headset", "layer" = MOB_LAYER)
 		else
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = "headset2", "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "headset2", "layer" = MOB_LAYER)
 		src.w_radio.screen_loc = "3,1"
 	if (src.wear_mask)
 		if (istype(src.wear_mask, /obj/item/weapon/clothing/mask))
 			var/t1 = src.wear_mask.s_istate
 			if (!( t1 ))
 				t1 = src.wear_mask.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 		src.wear_mask.screen_loc = "2,3"
 	if (src.hasClient())
 		if (src.i_select)
@@ -4159,7 +4155,7 @@
 			var/t1 = src.wear_suit.s_istate
 			if (!( t1 ))
 				t1 = src.wear_suit.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 		src.wear_suit.screen_loc = "2,1"
 		if (istype(src.wear_suit, /obj/item/weapon/clothing/suit/straight_jacket))
 			if (src.handcuffed)
@@ -4178,26 +4174,26 @@
 			var/t1 = src.head.s_istate
 			if (!( t1 ))
 				t1 = src.head.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.head.screen_loc = "7,2"
 		if (src.belt)
 			var/t1 = src.belt.s_istate
 			if (!( t1 ))
 				t1 = src.belt.icon_state
-			src.overlays += image("icon" = 'belt.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/belt.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.belt.screen_loc = "8,2"
 	else
 		if (src.head)
 			var/t1 = src.head.s_istate
 			if (!( t1 ))
 				t1 = src.head.icon_state
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.head.screen_loc = null
 		if (src.belt)
 			var/t1 = src.belt.s_istate
 			if (!( t1 ))
 				t1 = src.belt.icon_state
-			src.overlays += image("icon" = 'belt.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/belt.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = MOB_LAYER)
 			src.belt.screen_loc = null
 	if (src.wear_id)
 		if (((src.wear_mask && !( src.wear_mask.see_face )) || (src.head && !( src.head.see_face ))))
@@ -4219,7 +4215,7 @@
 		var/t1 = src.r_hand.s_istate
 		if (!( t1 ))
 			t1 = src.r_hand.icon_state
-		src.overlays += image("icon" = 'r_items.dmi', "icon_state" = t1, "layer" = MOB_LAYER)
+		src.overlays += image("icon" = 'icons/r_items.dmi', "icon_state" = t1, "layer" = MOB_LAYER)
 
 
 
@@ -4228,7 +4224,7 @@
 		var/t1 = src.l_hand.s_istate
 		if (!( t1 ))
 			t1 = src.l_hand.icon_state
-		src.overlays += image("icon" = 'l_items.dmi', "icon_state" = t1, "layer" = MOB_LAYER)
+		src.overlays += image("icon" = 'icons/l_items.dmi', "icon_state" = t1, "layer" = MOB_LAYER)
 
 
 
@@ -4236,21 +4232,21 @@
 	if (src.back)
 		if (istype(src.back, /obj/item/weapon/radio/electropack))
 			if (!( src.lying ))
-				src.overlays += image("icon" = 'mob.dmi', "icon_state" = "backe", "layer" = MOB_LAYER)
+				src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "backe", "layer" = MOB_LAYER)
 			else
-				src.overlays += image("icon" = 'mob.dmi', "icon_state" = "backe2", "layer" = MOB_LAYER)
+				src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "backe2", "layer" = MOB_LAYER)
 		else
 			if (!( src.lying ))
-				src.overlays += image("icon" = 'mob.dmi', "icon_state" = "back", "layer" = MOB_LAYER)
+				src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "back", "layer" = MOB_LAYER)
 			else
-				src.overlays += image("icon" = 'mob.dmi', "icon_state" = "back2", "layer" = MOB_LAYER)
+				src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "back2", "layer" = MOB_LAYER)
 		src.back.screen_loc = "3,3"
 	if (src.handcuffed)
 		src.pulling = null
 		if (!( src.lying ))
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = "handcuff1", "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "handcuff1", "layer" = MOB_LAYER)
 		else
-			src.overlays += image("icon" = 'mob.dmi', "icon_state" = "handcuff2", "layer" = MOB_LAYER)
+			src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "handcuff2", "layer" = MOB_LAYER)
 	if (src.hasClient())
 		src.screenOrBackupRemove(src.contents)
 		src.screenOrBackupAdd(src.contents)
@@ -4268,7 +4264,7 @@
 	else
 		src.invisibility = 0
 	if (shielded)
-		src.overlays += image("icon" = 'mob.dmi', "icon_state" = "shield", "layer" = MOB_LAYER)
+		src.overlays += image("icon" = 'icons/mob.dmi', "icon_state" = "shield", "layer" = MOB_LAYER)
 	for(var/mob/M in viewers(1, src))
 		if ((M.client && M.machine == src))
 			spawn( 0 )
@@ -4600,12 +4596,12 @@
 // returns 0 if savefile did not exist
 
 /mob/human/proc/savefile_load(var/silent = 1)
-	if (fexists(text("players/[].sav", src.ckey)))
-		var/savefile/F = new /savefile( text("players/[].sav", src.ckey) )
+	if (fexists(text("data/players/[].sav", src.ckey)))
+		var/savefile/F = new /savefile( text("data/players/[].sav", src.ckey) )
 		var/test = null
 		F["version"] >> test
 		if (test != savefile_ver && test != "3")	//v3 savefiles can be read by v4
-			fdel(text("players/[].sav", src.ckey))
+			fdel(text("data/players/[].sav", src.ckey))
 			if(!silent)
 				alert("Your savefile was incompatible with this version and was deleted.")
 			return 1
@@ -4642,7 +4638,7 @@
 
 
 /mob/human/proc/savefile_write()
-	var/savefile/F = new /savefile( text("players/[].sav", src.ckey) )
+	var/savefile/F = new /savefile( text("data/players/[].sav", src.ckey) )
 	F["version"] << savefile_ver
 	F["rname"] << src.rname
 	F["gender"] << src.gender
@@ -4763,8 +4759,8 @@
 				src.gender = "female"
 			else
 				src.gender = "male"
-			src.stand_icon = new /icon( 'human.dmi', text("[]", src.gender) )
-			src.lying_icon = new /icon( 'human.dmi', text("[]-d", src.gender) )
+			src.stand_icon = new /icon( 'icons/human.dmi', text("[]", src.gender) )
+			src.lying_icon = new /icon( 'icons/human.dmi', text("[]-d", src.gender) )
 		else if (findtextEx(href, "n_gl", 1, null))
 			src.need_gl = !( src.need_gl )
 		else if (findtextEx(href, "b_ep", 1, null))
@@ -4864,7 +4860,7 @@
 		if (M.rname == text("[]", msg))
 			return 1
 	return 0
-	return
+
 
 /mob/proc/m_delay()
 
@@ -4881,10 +4877,9 @@
 	return
 
 /mob/proc/death()
-
 	src.timeofdeath = world.time
-	return ..()
 	return
+
 
 /mob/proc/restrained()
 
@@ -5020,7 +5015,7 @@
 		return src.l_hand
 	else
 		return src.r_hand
-	return
+
 
 /mob/proc/show_inv(mob/user as mob)
 	if (istype(user, /mob/human) || istype(user, /mob/monkey) || (istype(user, /mob/drone) && user.equipped()==null)) //AI should not be able to do this, and drone can only do it if they're using the gripper
@@ -5170,7 +5165,7 @@
 /mob/proc/show_help(mob/M as mob in world)
 	set category = "Admin"
 
-	M << browse('help.htm', "window=help")
+	M << browse('html/help.htm', "window=help")
 	return
 
 /mob/proc/changemessage(txt as text)
@@ -5441,7 +5436,7 @@
 
 /mob/verb/help()
 
-	src << browse('help.htm', "window=help")
+	src << browse('html/help.htm', "window=help")
 	return
 
 /mob/verb/abandon_mob()
@@ -5562,33 +5557,33 @@
 	if (src.hud_used == main_hud)
 		src.favorite_hud = 1
 		src.hud_used = main_hud2
-		src.oxygen.icon = 'screen.dmi'
-		src.toxin.icon = 'screen.dmi'
-		src.internals.icon = 'screen.dmi'
-		src.mach.icon = 'screen.dmi'
-		src.fire.icon = 'screen.dmi'
-		src.healths.icon = 'screen.dmi'
-		src.pullin.icon = 'screen.dmi'
-		src.blind.icon = 'screen.dmi'
-		src.hands.icon = 'screen.dmi'
-		src.flash.icon = 'screen.dmi'
-		src.sleep.icon = 'screen.dmi'
-		src.rest.icon = 'screen.dmi'
+		src.oxygen.icon = 'icons/screen.dmi'
+		src.toxin.icon = 'icons/screen.dmi'
+		src.internals.icon = 'icons/screen.dmi'
+		src.mach.icon = 'icons/screen.dmi'
+		src.fire.icon = 'icons/screen.dmi'
+		src.healths.icon = 'icons/screen.dmi'
+		src.pullin.icon = 'icons/screen.dmi'
+		src.blind.icon = 'icons/screen.dmi'
+		src.hands.icon = 'icons/screen.dmi'
+		src.flash.icon = 'icons/screen.dmi'
+		src.sleep.icon = 'icons/screen.dmi'
+		src.rest.icon = 'icons/screen.dmi'
 	else
 		src.favorite_hud = 0
 		src.hud_used = main_hud
-		src.oxygen.icon = 'screen1.dmi'
-		src.toxin.icon = 'screen1.dmi'
-		src.internals.icon = 'screen1.dmi'
-		src.mach.icon = 'screen1.dmi'
-		src.fire.icon = 'screen1.dmi'
-		src.healths.icon = 'screen1.dmi'
-		src.pullin.icon = 'screen1.dmi'
-		src.blind.icon = 'screen1.dmi'
-		src.hands.icon = 'screen1.dmi'
-		src.flash.icon = 'screen1.dmi'
-		src.sleep.icon = 'screen1.dmi'
-		src.rest.icon = 'screen1.dmi'
+		src.oxygen.icon = 'icons/screen1.dmi'
+		src.toxin.icon = 'icons/screen1.dmi'
+		src.internals.icon = 'icons/screen1.dmi'
+		src.mach.icon = 'icons/screen1.dmi'
+		src.fire.icon = 'icons/screen1.dmi'
+		src.healths.icon = 'icons/screen1.dmi'
+		src.pullin.icon = 'icons/screen1.dmi'
+		src.blind.icon = 'icons/screen1.dmi'
+		src.hands.icon = 'icons/screen1.dmi'
+		src.flash.icon = 'icons/screen1.dmi'
+		src.sleep.icon = 'icons/screen1.dmi'
+		src.rest.icon = 'icons/screen1.dmi'
 	if ((!ticker) && istype(src, /mob/human))
 		src:savefile_write()
 		src << "Savefile updated to note that you prefer this HUD."
@@ -5743,17 +5738,14 @@
 	return
 
 /mob/ghost/show_inv()
+	return
 
-	return
-	return
 
 /mob/ghost/Bump()
+	return
 
-	return
-	return
 
 /mob/ghost/UpdateClothing()
-
 	for(var/i in src.overlays)
 		src.overlays -= i
 	if (src.wear_mask)
@@ -5761,19 +5753,19 @@
 			var/t1 = src.wear_mask.s_istate
 			if (!( t1 ))
 				t1 = src.icon_state
-			src.overlays += image("icon" = 'ghost.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/ghost.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = src.layer)
 		src.wear_mask.screen_loc = "2,3"
 	if (src.r_hand)
 		var/t1 = src.r_hand.s_istate
 		if (!( t1 ))
 			t1 = src.icon_state
-		src.overlays += image("icon" = 'r_items.dmi', "icon_state" = t1, "layer" = src.layer)
+		src.overlays += image("icon" = 'icons/r_items.dmi', "icon_state" = t1, "layer" = src.layer)
 		src.r_hand.screen_loc = "1,2"
 	if (src.l_hand)
 		var/t1 = src.l_hand.s_istate
 		if (!( t1 ))
 			t1 = src.icon_state
-		src.overlays += image("icon" = 'l_items.dmi', "icon_state" = t1, "layer" = src.layer)
+		src.overlays += image("icon" = 'icons/l_items.dmi', "icon_state" = t1, "layer" = src.layer)
 		src.l_hand.screen_loc = "3,2"
 	if (src.client)
 		src.client.screenOrBackupRemove(src.contents)
@@ -5803,22 +5795,19 @@
 	if (src.health < 0)
 		src.stat = 2
 	return
-	return
+
 
 /mob/ghost/db_click()
+	return
 
-	return
-	return
 
 /mob/ghost/equipped()
-
 	return null
-	return
+
 
 /mob/ghost/m_delay()
-
 	return -100.0
-	return
+
 
 /mob/ghost/reset_view()
 
@@ -5829,49 +5818,43 @@
 	return
 
 /mob/ghost/las_act()
+	return
 
-	return
-	return
 
 /mob/ghost/ex_act()
+	return
 
-	return
-	return
 
 /mob/ghost/attack_hand(mob/M as mob)
-
 	src.infest(M)
 	return
+
 
 /mob/ghost/attack_paw(mob/M as mob)
-
 	src.infest(M)
 	return
 
-/mob/ghost/death()
 
+/mob/ghost/death()
 	src.stunned = 1
 	..()
 	return
 
-/mob/ghost/meteorhit()
 
+/mob/ghost/meteorhit()
 	return
-	return
+
 
 /mob/ghost/restrained()
-
 	return 0
-	return
+
 
 /mob/ghost/attackby(nothing, mob/M as mob)
-
 	src.infest(M)
 	return 0
-	return
+
 
 /mob/ghost/say(msg as text)
-
 	if (!( msg ))
 		return
 	msg = stutter(msg)
@@ -5882,7 +5865,6 @@
 	return
 
 /mob/monkey/New()
-
 	spawn( 50 )
 		if (!( src.primary ))
 			var/t1 = rand(1000, 1500)
@@ -6175,32 +6157,32 @@
 			var/t1 = src.wear_mask.s_istate
 			if (!( t1 ))
 				t1 = src.wear_mask.icon_state
-			src.overlays += image("icon" = 'monkey.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/monkey.dmi', "icon_state" = text("[][]", t1, (!( src.lying ) ? null : "2")), "layer" = src.layer)
 		src.wear_mask.screen_loc = "2,3"
 	if (src.r_hand)
 		var/t1 = src.r_hand.s_istate
 		if (!( t1 ))
 			t1 = src.r_hand.icon_state
-		src.overlays += image("icon" = 'r_items.dmi', "icon_state" = t1, "layer" = src.layer)
+		src.overlays += image("icon" = 'icons/r_items.dmi', "icon_state" = t1, "layer" = src.layer)
 		src.r_hand.screen_loc = "1,2"
 	if (src.l_hand)
 		var/t1 = src.l_hand.s_istate
 		if (!( t1 ))
 			t1 = src.l_hand.icon_state
-		src.overlays += image("icon" = 'l_items.dmi', "icon_state" = t1, "layer" = src.layer)
+		src.overlays += image("icon" = 'icons/l_items.dmi', "icon_state" = t1, "layer" = src.layer)
 		src.l_hand.screen_loc = "3,2"
 	if (src.back)
 		if (!( src.lying ))
-			src.overlays += image("icon" = 'monkey.dmi', "icon_state" = "back", "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/monkey.dmi', "icon_state" = "back", "layer" = src.layer)
 		else
-			src.overlays += image("icon" = 'monkey.dmi', "icon_state" = "back2", "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/monkey.dmi', "icon_state" = "back2", "layer" = src.layer)
 		src.back.screen_loc = "3,3"
 	if (src.handcuffed)
 		src.pulling = null
 		if (!( src.lying ))
-			src.overlays += image("icon" = 'monkey.dmi', "icon_state" = "handcuff1", "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/monkey.dmi', "icon_state" = "handcuff1", "layer" = src.layer)
 		else
-			src.overlays += image("icon" = 'monkey.dmi', "icon_state" = "handcuff2", "layer" = src.layer)
+			src.overlays += image("icon" = 'icons/monkey.dmi', "icon_state" = "handcuff2", "layer" = src.layer)
 	if (src.hasClient())
 		src.screenOrBackupRemove(src.contents)
 		src.screenOrBackupAdd(src.contents)
@@ -6363,7 +6345,7 @@
 					L += T
 
 			src.loc = pick(L)
-	//src << browse('help.htm', "window=help")
+	//src << browse('html/help.htm', "window=help")
 	src << text("\blue <B>[]</B>", world_message)
 	if (src.loc!=null && (!( isturf(src.loc) )))
 		src.client.eye = src.loc
@@ -6444,7 +6426,7 @@
 				world.Reboot()
 				return
 	return ..()
-	return
+
 
 /mob/monkey/Life()
 	set background = 1
@@ -6891,7 +6873,7 @@
 	else
 		total += 0.25
 	return total
-	return
+
 
 /mob/monkey/proc/emote(act)
 

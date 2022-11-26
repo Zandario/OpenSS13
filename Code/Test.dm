@@ -15,7 +15,5 @@
 	return
 
 /obj/test/proc/die(message)
-
 	src.success = 0
 	CRASH(message)
-	return

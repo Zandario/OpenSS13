@@ -224,7 +224,7 @@
 		new_list += item
 		old_list -= item
 	return new_list
-	return
+
 
 /world/New()
 
@@ -605,4 +605,3 @@
 					subject.attack_ai(M)
 				else
 					subject:attack_self(M)
-

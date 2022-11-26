@@ -16,7 +16,7 @@
 	return
 
 /proc/LoadHTMLAssociations()
-	var/F = new /savefile( "s_html.sav" )
+	var/F = new /savefile( "data/s_html.sav" )
 	F["html_colours"] >> html_colours
 	if (!( html_colours ))
 		html_colours = list(  )
@@ -171,7 +171,7 @@
 	return
 
 /proc/SaveHTMLAssociations()
-	var/F = new /savefile( "s_html.sav" )
+	var/F = new /savefile( "data/s_html.sav" )
 	F["html_colours"] << html_colours
 	return
 

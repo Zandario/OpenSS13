@@ -187,7 +187,6 @@
 /obj/item/weapon/prox_sensor/attack_paw(mob/user as mob)
 
 	return src.attack_hand(user)
-	return
 
 /obj/item/weapon/prox_sensor/Move()
 
@@ -326,7 +325,6 @@
 /obj/item/weapon/infra/attack_paw(mob/user as mob)
 
 	return src.attack_hand(user)
-	return
 
 /obj/item/weapon/infra/attack_hand()
 
@@ -406,7 +404,7 @@
 	else
 		//If it's not timing, reset the icon so it doesn't look like it's still about to go off.
 		src.c_state(0)
-	
+
 	spawn( 10 )
 		src.process()
 		return
@@ -610,7 +608,7 @@
 	else
 		user.show_message("\blue The timer is now unsecured! The igniter will not work.", 1)
 	src.part2.status = src.status
-	
+
 	src.add_fingerprint(user)
 	return
 
@@ -737,7 +735,6 @@
 /obj/item/weapon/assembly/rad_prox/attack_paw(mob/user as mob)
 
 	return src.attack_hand(user)
-	return
 
 /obj/item/weapon/assembly/rad_prox/dropped()
 
@@ -818,7 +815,6 @@
 /obj/item/weapon/assembly/rad_infra/attack_paw(mob/user as mob)
 
 	return src.attack_hand(user)
-	return
 
 /obj/item/weapon/assembly/rad_infra/attack_hand(M)
 
@@ -974,7 +970,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	usr.show_message("\blue The proximity sensor has been armed with a delay of 15 seconds.", 1)
 
 	src.icon_state = "m_i_ptank2"
@@ -1267,6 +1263,7 @@
 			src.part3.release()
 	return
 
+
 /obj/bullet/Bump(atom/A as mob|obj|turf|area)
 
 	spawn( 0 )
@@ -1274,8 +1271,8 @@
 			A.las_act("bullet", src)
 		del(src)
 		return
-		return
 	return
+
 
 /obj/bullet/CheckPass(B as obj)
 
@@ -1283,7 +1280,7 @@
 		return prob(95)
 	else
 		return 1
-	return
+
 
 /obj/bullet/proc/process()
 
@@ -1298,15 +1295,15 @@
 		return
 	return
 
-/obj/beam/a_laser/Bump(atom/A as mob|obj|turf|area)
 
+/obj/beam/a_laser/Bump(atom/A as mob|obj|turf|area)
 	spawn( 0 )
 		if (A)
 			A.las_act(null, src)
 		del(src)
 		return
-		return
 	return
+
 
 /obj/beam/a_laser/proc/process()
 
@@ -1325,25 +1322,24 @@
 		return
 	return
 
-/obj/beam/a_laser/s_laser/Bump(atom/A as mob|obj|turf|area)
 
+/obj/beam/a_laser/s_laser/Bump(atom/A as mob|obj|turf|area)
 	spawn( 0 )
 		if(A)
 			A.las_act(1)
 		del(src)
 		return
-		return
 	return
 
-/obj/beam/i_beam/proc/hit()
 
+/obj/beam/i_beam/proc/hit()
 	//world << "beam \ref[src]: hit"
 	if (src.master)
 		//world << "beam hit \ref[src]: calling master \ref[master].hit"
 		src.master.hit()
 	del(src)
 	return
-	return
+
 
 /obj/beam/i_beam/proc/vis_spread(v)
 	//world << "i_beam \ref[src] : vis_spread"

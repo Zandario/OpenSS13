@@ -9,33 +9,33 @@
 	else
 		file = file( file_path )
 	return dd_text2list(file2text(file), separator)
-	return
+
 
 /proc/dd_replacetext(text, search_string, replacement_string)
 
 	var/textList = dd_text2list(text, search_string)
 	return dd_list2text(textList, replacement_string)
-	return
+
 
 /proc/dd_replaceText(text, search_string, replacement_string)
 
 	var/textList = dd_text2List(text, search_string)
 	return dd_list2text(textList, replacement_string)
-	return
+
 
 /proc/dd_hasprefix(text, prefix)
 
 	var/start = 1
 	var/end = length(prefix) + 1
 	return findtextEx(text, prefix, start, end)
-	return
+
 
 /proc/dd_hasPrefix(text, prefix)
 
 	var/start = 1
 	var/end = length(prefix) + 1
 	return findtextEx(text, prefix, start, end)
-	return
+
 
 /proc/dd_hassuffix(text, suffix)
 
@@ -104,7 +104,7 @@
 		newText += text("[]", the_list[count])
 		count++
 	return newText
-	return
+
 
 /proc/dd_centertext(message, length)
 
@@ -128,7 +128,7 @@
 		spaces += " "
 		count++
 	return spaces + new_message + spaces
-	return
+
 
 /proc/dd_limittext(message, length)
 
@@ -137,4 +137,3 @@
 		return message
 	else
 		return copytext(message, 1, length + 1)
-	return

@@ -2,7 +2,7 @@
 
 /mob/ai
 	name = "AI"
-	icon = 'power.dmi'
+	icon = 'icons/power.dmi'
 	icon_state = "teg"
 	gender = MALE
 	var/network = "SS13"
@@ -519,7 +519,7 @@
 		src.blind.layer = 0
 		src.blind.plane = -1
 		src.client.screen += src.blind
-		//src << browse('help.htm', "window=help")
+		//src << browse('html/help.htm', "window=help")
 		src << text("\blue <B>[]</B>", world_message)
 		src.client.screen -= list( src.oxygen, src.i_select, src.m_select, src.toxin, src.internals, src.fire, src.hands, src.healths, src.pullin, src.blind, src.flash, src.rest, src.sleep, src.mach )
 		src.client.screen -= list( src.zone_sel, src.oxygen, src.i_select, src.m_select, src.toxin, src.internals, src.fire, src.hands, src.healths, src.pullin, src.blind, src.flash, src.rest, src.sleep, src.mach )
@@ -826,17 +826,17 @@
 
 	switch_hud()
 		if (src.hud_used == main_hud)
-			src.fire.icon = 'screen.dmi'
-			src.healths.icon = 'screen.dmi'
-			src.toxin.icon = 'screen.dmi'
+			src.fire.icon = 'icons/screen.dmi'
+			src.healths.icon = 'icons/screen.dmi'
+			src.toxin.icon = 'icons/screen.dmi'
 			src.favorite_hud = 1
 			src.hud_used = main_hud
 		else
 			src.favorite_hud = 0
 			src.hud_used = main_hud
-			src.fire.icon = 'screen1.dmi'
-			src.healths.icon = 'screen1.dmi'
-			src.toxin.icon = 'screen1.dmi'
+			src.fire.icon = 'icons/screen1.dmi'
+			src.healths.icon = 'icons/screen1.dmi'
+			src.toxin.icon = 'icons/screen1.dmi'
 		return
 
 	//block the take-off/put-on dialog

@@ -3,7 +3,7 @@
 
 	if (!( istext(hex) ))
 		CRASH("hex2num not given a hexadecimal string argument (user error)")
-		return
+
 	var/num = 0
 	var/power = 0
 	var/i = null
@@ -30,12 +30,11 @@
 				num += 16 ** power * 15
 			else
 				CRASH("hex2num given non-hexadecimal string (user error)")
-				return
+
 		power++
 		Label_290:
 		i--
 	return num
-	return
 
 /proc/num2hex(num, placeholder)
 
@@ -43,7 +42,7 @@
 		placeholder = 2
 	if (!( isnum(num) ))
 		CRASH("num2hex not given a numeric argument (user error)")
-		return
+
 	if (!( num ))
 		return "0"
 	var/hex = ""
@@ -75,4 +74,3 @@
 	while(length(hex) < placeholder)
 		hex = text("0[]", hex)
 	return hex
-	return

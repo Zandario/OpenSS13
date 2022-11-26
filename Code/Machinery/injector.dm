@@ -6,7 +6,7 @@
 
 obj/machinery/injector
 	name = "injector"
-	icon = 'stationobjs.dmi'
+	icon = 'icons/stationobjs.dmi'
 	icon_state = "injector"
 	density = 1
 	anchored = 1
@@ -29,4 +29,3 @@ obj/machinery/injector
 		ptank.gas.turf_add(T, -1.0)
 		src.add_fingerprint(user)
 		return
-

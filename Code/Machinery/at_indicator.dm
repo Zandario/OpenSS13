@@ -5,7 +5,7 @@
 
 obj/machinery/at_indicator
 	name = "Air Tunnel Indicator"
-	icon = 'airtunnel.dmi'
+	icon = 'icons/airtunnel.dmi'
 	icon_state = "reader00"
 	anchored = 1.0
 
@@ -66,4 +66,3 @@ obj/machinery/at_indicator
 		if (prob(50))
 			src.icon_state = "reader_broken"
 			stat |= BROKEN
-

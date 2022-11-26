@@ -8,7 +8,7 @@
 obj/machinery/power/solar_control
 	name = "solar panel control"
 	desc = "A controller for solar panel arrays."
-	icon = 'enginecomputer.dmi'
+	icon = 'icons/enginecomputer.dmi'
 	icon_state = "solar_con"
 	anchored = 1
 	density = 1
@@ -55,7 +55,7 @@ obj/machinery/power/solar_control
 		icon_state = "solar_con"
 		overlays = null
 		if(cdir > 0)
-			overlays += image('enginecomputer.dmi', "solcon-o[cdir]", FLY_LAYER)
+			overlays += image('icons/enginecomputer.dmi', "solcon-o[cdir]", FLY_LAYER)
 
 	// Attack by AI, open interaction window
 
@@ -291,4 +291,3 @@ obj/machinery/power/solar_control
 		if (prob(50))
 			broken()
 			src.density = 0
-
