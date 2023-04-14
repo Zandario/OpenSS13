@@ -96,9 +96,9 @@
 		lastfired = world.time
 		return
 	if (isnull(cover))
-		cover = new /obj/machinery/turretcover(loc)
+		cover = new /obj/machinery/turretcover(src.loc)
 	use_power(50)
-	var/loc = loc
+	var/loc = src.loc
 	if (istype(loc, /turf))
 		loc = loc:loc
 	if (!istype(loc, /area))
