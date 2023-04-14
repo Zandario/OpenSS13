@@ -420,7 +420,7 @@
 /mob/human/proc/Assign_Rank(rank)
 	if (rank == "AI")
 		var/obj/S = locate(text("start*[]", rank))
-		if ((istype(S, /obj/start) && istype(S.loc, /turf) && !( ctf )))
+		if (istype(S, /obj/start) && istype(S.loc, /turf))
 			src << "\blue <B>You have been teleported to your new starting location!</B>"
 			src.loc = S.loc
 			src.AIize()
@@ -592,7 +592,7 @@
 		C.name = text("[]'s ID Card ([]>[]-[]-[])", C.registered, C.access_level, C.lab_access, C.engine_access, C.air_access)
 		src << text("<B>You are the [].</B>", C.assignment)
 		var/obj/S = locate(text("start*[]", C.assignment))
-		if ((istype(S, /obj/start) && istype(S.loc, /turf) && !( ctf )))
+		if (istype(S, /obj/start) && istype(S.loc, /turf))
 			src << "\blue <B>You have been teleported to your new starting location!</B>"
 			src.loc = S.loc
 	return

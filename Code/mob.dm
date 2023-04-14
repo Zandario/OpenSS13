@@ -3053,9 +3053,7 @@
 		src.verbs += /mob/proc/start_now
 		src.verbs += /mob/proc/worldsize
 		src.verbs += /mob/proc/make_gift
-		src.verbs += /mob/proc/make_flag
 		src.verbs += /mob/proc/make_pill
-		src.verbs += /mob/proc/show_ctf
 		src.verbs += /mob/proc/ban
 		src.verbs += /mob/proc/unban
 		src.verbs += /mob/proc/secrets
@@ -5099,17 +5097,6 @@
 	if(config.logadmin) world.log << text("ADMIN: [] toggled shuttle count to [].", src.key,(shuttle_frozen?"Frozen":"Counting"))
 	return
 
-/mob/proc/show_ctf()
-	set category = "Admin"
-
-	if (ticker)
-		usr << "Too late... The game has already started!"
-		return
-	else
-		if (!( ctf ))
-			ctf = new /obj/ctf_assist(  )
-		ctf.show_screen(usr)
-	return
 
 /mob/proc/delay_start()
 	set category = "Admin"
@@ -5232,15 +5219,6 @@
 
 	new /obj/item/weapon/m_pill/superpill( src.loc )
 	if(config.logadmin) world.log << text("ADMIN: [] made a pill.", src.key)
-	return
-
-/mob/proc/make_flag()
-	set category = "Admin"
-
-	var/colour = input("Please select a color", null, null, null) in list( "red", "blue", "green", "yellow", "black", "white", "neutral" )
-	var/obj/item/weapon/paper/flag/F = new /obj/item/weapon/paper/flag( src.loc )
-	F.icon_state = text("flag_[]", colour)
-	if(config.logadmin) world.log << text("ADMIN: [] made a [] flag.", src.key,colour)
 	return
 
 /mob/proc/restart()
@@ -5618,9 +5596,7 @@
 		src.verbs += /mob/proc/start_now
 		src.verbs += /mob/proc/worldsize
 		src.verbs += /mob/proc/make_gift
-		src.verbs += /mob/proc/make_flag
 		src.verbs += /mob/proc/make_pill
-		src.verbs += /mob/proc/show_ctf
 		src.verbs += /mob/proc/ban
 		src.verbs += /mob/proc/unban
 		src.verbs += /mob/proc/secrets

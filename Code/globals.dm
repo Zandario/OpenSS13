@@ -156,7 +156,6 @@ var
 
 	persistent_file = "mode.txt"
 
-	obj/ctf_assist/ctf = null
 	nuke_code = null
 	poll_controller = null
 	datum/engine_eject/engine_eject_control = null
@@ -180,7 +179,6 @@ var
 	list/banned = list(  )
 
 
-        //
 	shuttle_z = 10	//default
 	list/monkeystart = list()
 	list/blobstart = list()
@@ -219,20 +217,3 @@ var
 	list/airlockFeatureNames = list("IdScan", "Main power In", "Main power Out", "Drop door bolts", "Backup power In", "Backup power Out", "Power assist", "AI Control", "Electrify")
 
 	numDronesInExistance = 0
-
-world
-	mob = /mob/human
-	turf = /turf/space
-	area = /area
-	view = "15x15"
-	fps = 20
-
-	hub = "Exadv1.spacestation13"
-	hub_password = "kMZy3U5jJHSiBQjr"
-	name = "Space Station 13"
-
-
-
-	//visibility = 0
-
-	//loop_checks = 0

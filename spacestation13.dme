@@ -56,7 +56,7 @@
 #include "code\wallFloorSpaceChanges-normal.dm"
 #include "code\weap_sat.dm"
 #include "code\weapons.dm"
-#include "code\CTF\barrier.dm"
+#include "code\world.dm"
 #include "code\Effects\portal.dm"
 #include "code\Effects\water.dm"
 #include "code\game\area\_areas.dm"

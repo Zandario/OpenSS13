@@ -2413,9 +2413,6 @@
 		if (src.contents.len < 15)
 			user.drop_item()
 			P.loc = src
-			if (istype(P, /obj/item/weapon/paper/flag))
-				if (ctf)
-					ctf.check_win(src)
 		else
 			user.client_mob() << "\blue Not enough space!!!"
 	else
@@ -2689,48 +2686,6 @@
 	set src in view()
 
 	..()
-	return
-
-/obj/item/weapon/paper/flag/burn()
-	return
-
-/obj/item/weapon/paper/flag/New()
-
-	..()
-	src.pixel_y = 0
-	src.pixel_x = 0
-	src.name = "flag- 'FLAG'"
-	return
-
-/obj/item/weapon/paper/flag/attack_hand()
-
-	if ((ctf && ctf.immobile))
-		return 0
-	else
-		. = ..()
-	return
-
-/obj/item/weapon/paper/flag/attack_self(mob/user)
-
-	var/n_name = input(user, "What would you like to label the paper?", "Paper Labelling", null)  as text
-	n_name = copytext(n_name, 1, 32)
-	if ((src.loc == user && user.stat == 0))
-		src.name = text("flag[]", (n_name ? text("- '[]'", n_name) : null))
-	src.add_fingerprint(user)
-	return
-
-/obj/item/weapon/paper/flag/attackby(P, mob/user)
-
-	if (istype(P, /obj/item/weapon/pen))
-		..()
-	else
-		if (istype(P, /obj/item/weapon/paint))
-			var/obj/item/weapon/paint/C = P
-			src.icon_state = text("flag_[]", C.color)
-			if (ctf)
-				ctf.check_win()
-		else
-			return
 	return
 
 /obj/item/weapon/paper/New()

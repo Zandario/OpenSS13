@@ -1,7 +1,9 @@
+/**
+ * Essentially inserts a ton of 0's in front of input_text until it reaches target_length's length.
+ */
 /proc/add_zero(t, u)
-
 	while(length(t) < u)
-		t = text("0[]", t)
+		t = "0[t]"
 	return t
 
 /proc/add_lspace(t, u)
@@ -189,5 +191,3 @@
 
 /proc/upperfirst(var/t as text)
 	return uppertext(copytext(t,1,2))+copytext(t,2)
-
-

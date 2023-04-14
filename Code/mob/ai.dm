@@ -916,9 +916,7 @@
 		O.verbs += /mob/proc/start_now
 		O.verbs += /mob/proc/worldsize
 		O.verbs += /mob/proc/make_gift
-		O.verbs += /mob/proc/make_flag
 		O.verbs += /mob/proc/make_pill
-		O.verbs += /mob/proc/show_ctf
 		O.verbs += /mob/proc/ban
 		O.verbs += /mob/proc/unban
 		O.verbs += /mob/proc/secrets

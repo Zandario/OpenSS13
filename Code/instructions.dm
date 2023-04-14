@@ -75,16 +75,7 @@
 	if ((!( usr.start ) || !( istype(usr, /mob/human) )))
 		usr << "\blue <B>You aren't ready! Use the ready verb on this pad to set up your character!</B>"
 		return
-	if (ctf)
-		var/obj/rogue = locate("landmark*CTF-rogue")
-		usr.loc = rogue.loc
-		usr << "<B>It's CTF mode. You are a late joiner so you are a Rogue!</B>"
-		usr << "\blue Now teleporting."
-		if (ticker)
-			var/mob/H = usr
-			if (istype(H, /mob/human))
-				reg_dna[text("[]", H.primary.uni_identity)] = H.rname
-		return
+
 	var/mob/human/M = usr
 	var/list/start_loc = list(  )
 

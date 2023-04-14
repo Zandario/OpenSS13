@@ -1,51 +1,65 @@
-/*
- *	Broken Pipe -- a broken pipe object
+/**
+ *# Broken Pipe -- a broken pipe object
  *
- *  This object is substituted for a /obj/machinery/pipes object when it is broken
+ * This object is substituted for a /obj/machinery/pipes object when it is broken
  *
- *	TODO: make removable and/or repairable
+ * TODO: make removable and/or repairable
  *
  */
-
-obj/brokenpipe
+/obj/brokenpipe {
 	name = "a broken pipe"
 	icon = 'icons/reg_pipe.dmi'
 	icon_state = "12-b"
-	anchored = 1
+	anchored = TRUE
 
-	var/p_dir = 0		// the p_dir or h_dir of the original pipe
+	/**
+	 * The p_dir or h_dir of the original pipe.
+	 */
+	var/p_dir = 0
 
-	var/ptype = 0		// pipe type of orginal pipe
-						// 0 = regular, 1 = h/e
+	/**
+	 * The pipe type of orginal pipe.
+	 * 0 = regular, 1 = h/e
+	 */
+	var/ptype = 0
 
 
-	// Create a new broken pipe,
-
-	New()
+	/**
+	 * Create a new broken pipe.
+	 */
+	New() {
 		..()
 		updateicon()
+	}
 
-	// Set the state of the brokenpipe
-	// Copies data from the original pipe object
 
-	proc/update(var/obj/machinery/pipes/P)
+	/**
+	 * Set the state of the brokenpipe.
+	 * Copies data from the original pipe object.
+	 *
+	 * @public
+	 */
+	proc/update(obj/machinery/pipes/P) {
 
-		ptype = 0				// defaults for regular pipe
+		ptype = 0 //? The default for regular pipe.
 		p_dir = P.p_dir
 
-		if(istype(P, /obj/machinery/pipes/heat_exch))		// h/e pipe
+		if(istype(P, /obj/machinery/pipes/heat_exch)) // h/e pipe
 			ptype = 1
 			p_dir = P.h_dir
 
 		level = P.level
 
 		updateicon()
+	}
 
 
-
-	// Update the broken pipe icon depending on the pipe dirs and type
-
-	proc/updateicon()
+	/**
+	 * Update the broken pipe icon depending on the pipe dirs and type.
+	 *
+	 * @public
+	 */
+	proc/updateicon() {
 		var/is
 
 		switch(ptype)
@@ -57,29 +71,38 @@ obj/brokenpipe
 				is = "[p_dir]-b"
 
 
-		var/turf/T = src.loc
+		var/turf/T = loc
 
-		if ((src.level == 1 && isturf(T) && T.intact))
-			src.invisibility = 101
+		if (level == 1 && isturf(T) && T.intact)
+			invisibility = 101
 			is += "-f"
 
 		else
-			src.invisibility = null
+			invisibility = null
 
 		icon_state = is
 		return
+	}
 
-	// Called when a pipe is revealed or hidden when a floor tile is removed, etc.
-	// Just call updateicon(), since all is handled there already
 
-	hide(var/i)
+	/**
+	 * Called when a pipe is revealed or hidden when a floor tile is removed, etc.
+	 * Just call updateicon(), since all is handled there already.
+	 *
+	 * @public
+	 */
+	hide(i) {
 		updateicon()
+	}
 
 
-	// attack with item
-	// if welder, delete the pipe
-
-	attackby(obj/item/weapon/W, mob/user)
+	/**
+	 * Attack with item.
+	 * If welder, delete the pipe.
+	 *
+	 * @public
+	 */
+	attackby(obj/item/weapon/W, mob/user) {
 
 		if (istype(W, /obj/item/weapon/weldingtool))
 			var/obj/item/weapon/weldingtool/WT = W
@@ -100,21 +123,34 @@ obj/brokenpipe
 		else
 			..()
 		return
+	}
+}
 
-// Global proc - look for a matching broken pipe
-// step direction dirn from turf OT
-// must match level and ptype
-// returns true if found, false otherwise
+/**
+ * Look for a matching broken pipe.
+ *
+ * step direction target_dir from turf origin.
+ * must match level and ptype.
+ *
+ * @public
+ * @param {turf} origin The turf to start from.
+ * @param {target_dir} target_dir The direction to step in.
+ * @param {level} level The level of the pipe.
+ * @param {ptype} ptype The type of pipe.
+ * @returns {boolean} Returns `TRUE` if a matching broken pipe is found, `FALSE` otherwise.
+ */
+proc/findbrokenpipe(turf/origin, target_dir, level, ptype) {
 
-proc/findbrokenpipe(var/turf/OT, var/dirn, var/lev, var/pipetype)
-
-	var/turf/T = get_step(OT, dirn)		// look in this turf
-
-	var/flipdir = turn(dirn,180)		// for brokenpipe matching this pdir
+	// Look in this turf.
+	// for brokenpipe matching this pdir.
+	var/turf/T = get_step(origin, target_dir)
+	var/flipdir = turn(target_dir, 180)
 
 	for(var/obj/brokenpipe/BP in T)
 		if(BP.p_dir & flipdir)
-			if(BP.level == lev && BP.ptype == pipetype)
-				return 1		// found a matching brokenpipe
+			if(BP.level == level && BP.ptype == ptype)
 
-	return 0					// found no match
+				return TRUE // Found a matching brokenpipe!
+
+	return FALSE // Found no match. :(
+}
