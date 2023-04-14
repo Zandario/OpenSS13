@@ -353,7 +353,7 @@
 	var/start = null
 	var/disable_one_click = 0
 	var/favorite_hud = 0
-	var/currentDrone = null
+	var/mob/drone/currentDrone = null
 	var/droneTransitioning = 0
 	var/cameraFollow = null
 	var/now_pushing = null
