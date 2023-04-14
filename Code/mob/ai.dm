@@ -8,39 +8,39 @@
 	flags = 258.0
 
 	var/network = "SS13"
-	var/obj/machinery/camera/current = null
-	var/t_plasma = null
-	var/t_oxygen = null
-	var/t_sl_gas = null
-	var/t_n2 = null
+	var/obj/machinery/camera/current
+	var/t_plasma
+	var/t_oxygen
+	var/t_sl_gas
+	var/t_n2
 	var/aiRestorePowerRoutine = 0
 	var/list/laws = list()
 
 
 	proc/ai_camera_follow(mob/target in world) {
 		set category = "AI Commands"
-		if (usr.stat>0)
+		if (usr.stat > 0)
 			usr << "You are not capable of using the follow camera at this time."
 			usr:cameraFollow = null
 			return
-		else if (usr.currentDrone!=null)
+		else if (!isnull(usr.currentDrone))
 			usr << "You can't use the follow camera while controlling a drone."
 			usr:cameraFollow = null
 			return
 
 		usr:cameraFollow = target
 		usr << text("Follow camera mode is now following [].", target.rname)
-		if (usr.machine == null)
+		if (isnull(usr.machine))
 			usr.machine = usr
 
 		spawn(0)
 			while (usr:cameraFollow == target)
-				if (usr.machine==null && usr:current==null)
+				if (isnull(usr.machine) && isnull(usr:current))
 					usr:cameraFollow = null
 					usr << "Follow camera mode ended."
 					return
 				var/obj/machinery/camera/C = usr:current
-				if ((C && istype(C, /obj/machinery/camera)) || C==null)
+				if ((C && istype(C, /obj/machinery/camera)) || isnull(C))
 					var/closestDist = -1
 					if (C!=null)
 						if (C.status)

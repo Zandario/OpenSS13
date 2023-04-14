@@ -95,19 +95,19 @@
 	if(lastfired && world.time - lastfired < shot_delay)
 		lastfired = world.time
 		return
-	if (src.cover==null)
-		src.cover = new /obj/machinery/turretcover(src.loc)
+	if (isnull(cover))
+		cover = new /obj/machinery/turretcover(loc)
 	use_power(50)
-	var/loc = src.loc
+	var/loc = loc
 	if (istype(loc, /turf))
 		loc = loc:loc
 	if (!istype(loc, /area))
-		src.die()
+		die()
 		return
 	var/area/area = loc
-	if (istype(area, /area))
+	if (isarea(area))
 		if (istype(loc, /area/turret_protected))
-			src.wasvalid = 1
+			wasvalid = TRUE
 			var/area/turret_protected/tarea = loc
 
 			if (tarea.turretTargets.len>0)
@@ -116,18 +116,18 @@
 						popUp()
 					else
 						var/mob/target = pick(tarea.turretTargets)
-						src.dir = get_dir(src, target)
-						if (src.enabled)
-							if (target.stat!=2)
-								src.shootAt(target)
+						dir = get_dir(src, target)
+						if (enabled)
+							if (target.stat != 2)
+								shootAt(target)
 							else
 								tarea.subjectDied(target)
 
 		else
-			if (src.wasvalid)
-				src.die()
+			if (wasvalid)
+				die()
 			else
-				src.die()
+				die()
 
 /obj/machinery/turret/proc/isDown()
 	return (invisibility!=0)

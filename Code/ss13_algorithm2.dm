@@ -299,7 +299,7 @@
 
 /mob/human/proc/SetChoices(occ)
 
-	if (occ == null)
+	if (isnull(occ))
 		occ = 1
 	var/HTML = "<body>"
 	HTML += "<tt><center>"
@@ -333,9 +333,9 @@
 
 /mob/human/proc/SetJob(occ, job)
 
-	if (occ == null)
+	if (isnull(occ))
 		occ = 1
-	if (job == null)
+	if (isnull(job))
 		job = "Captain"
 	if ((!( occupations.Find(job) ) && !( assistant_occupations.Find(job) ) && job != "Captain"))
 		return

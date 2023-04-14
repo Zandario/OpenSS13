@@ -742,9 +742,9 @@ heat is conserved between exchanges
 
 	return
 
-/datum/chemical/proc/injected(M as mob, zone)
+/datum/chemical/proc/injected(mob/M, zone)
 
-	if (zone == null)
+	if (isnull(zone))
 		zone = "body"
 	return
 

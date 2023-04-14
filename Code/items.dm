@@ -3962,11 +3962,9 @@
 	return
 
 /obj/item/weapon/radio/signaler/proc/s_signal(signal)
-
-
-	if (signal == null)
+	if (isnull(signal))
 		signal = 1
-	if (!( src.wires & 4 ))
+	if (!wires & 4 )
 		return
 
 	if(delay)

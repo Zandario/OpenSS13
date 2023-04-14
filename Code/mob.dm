@@ -27,7 +27,7 @@
 
 /proc/ran_zone(zone, probability)
 
-	if (probability == null)
+	if (isnull(probability))
 		probability = 75
 	if (probability == 100)
 		return zone
@@ -170,7 +170,7 @@
 
 /proc/stars(n, pr)
 
-	if (pr == null)
+	if (isnull(pr))
 		pr = 25
 	if (pr <= 0)
 		return null
@@ -2562,7 +2562,7 @@
 /mob/human/db_click(text, t1)
 
 	var/obj/item/weapon/W = src.equipped()
-	var/emptyHand = (W == null)
+	var/emptyHand = (isnull(W))
 	if ((!emptyHand) && (!istype(W, /obj/item/weapon)))
 		return
 	if (emptyHand)
@@ -4826,7 +4826,7 @@
 	return
 
 /mob/human/show_inv(mob/user as mob)
-	if (istype(user, /mob/human) || istype(user, /mob/monkey) || (istype(user, /mob/drone) && user.equipped()==null)) //AI should not be able to do this, and drone can only do it if they're using the gripper
+	if (istype(user, /mob/human) || istype(user, /mob/monkey) || (istype(user, /mob/drone) && isnull(user.equipped()))) //AI should not be able to do this, and drone can only do it if they're using the gripper
 		user.machine = src
 		var/dat = text("<PRE>\n<B><FONT size=3>[]</FONT></B>\n\t<B>Head(Mask):</B> <A href='?src=\ref[];item=mask'>[]</A>\n\t\t<B>Headset:</B> <A href='?src=\ref[];item=headset'>[]</A>\n\t<B>Left Hand:</B> <A href='?src=\ref[];item=l_hand'>[]</A>\n\t<B>Right Hand:</B> <A href='?src=\ref[];item=r_hand'>[]</A>\n\t<B>Gloves:</B> <A href='?src=\ref[];item=gloves'>[]</A>\n\t<B>Eyes:</B> <A href='?src=\ref[];item=eyes'>[]</A>\n\t<B>Ears:</B> <A href='?src=\ref[];item=ears'>[]</A>\n\t<B>Head:</B> <A href='?src=\ref[];item=head'>[]</A>\n\t<B>Shoes:</B> <A href='?src=\ref[];item=shoes'>[]</A>\n\t<B>Belt:</B> <A href='?src=\ref[];item=belt'>[]</A>\n\t<B>Uniform:</B> <A href='?src=\ref[];item=uniform'>[]</A>\n\t<B>(Exo)Suit:</B> <A href='?src=\ref[];item=suit'>[]</A>\n\t<B>Back:</B> <A href='?src=\ref[];item=back'>[]</A> []\n\t<B>ID:</B> <A href='?src=\ref[];item=id'>[]</A>\n\t[]\n\t[]\n\t<A href='?src=\ref[];item=pockets'>Empty Pockets</A>\n<A href='?src=\ref[];mach_close=mob[]'>Close</A>\n</PRE>", src.name, src, (src.wear_mask ? text("[]", src.wear_mask) : "Nothing"), src, (src.w_radio ? text("[]", src.w_radio) : "Nothing"), src, (src.l_hand ? text("[]", src.l_hand) : "Nothing"), src, (src.r_hand ? text("[]", src.r_hand) : "Nothing"), src, (src.gloves ? text("[]", src.gloves) : "Nothing"), src, (src.glasses ? text("[]", src.glasses) : "Nothing"), src, (src.ears ? text("[]", src.ears) : "Nothing"), src, (src.head ? text("[]", src.head) : "Nothing"), src, (src.shoes ? text("[]", src.shoes) : "Nothing"), src, (src.belt ? text("[]", src.belt) : "Nothing"), src, (src.w_uniform ? text("[]", src.w_uniform) : "Nothing"), src, (src.wear_suit ? text("[]", src.wear_suit) : "Nothing"), src, (src.back ? text("[]", src.back) : "Nothing"), ((istype(src.wear_mask, /obj/item/weapon/clothing/mask) && istype(src.back, /obj/item/weapon/tank) && !( src.internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : ""), src, (src.wear_id ? text("[]", src.wear_id) : "Nothing"), (src.handcuffed ? text("<A href='?src=\ref[];item=handcuff'>Handcuffed</A>", src) : text("<A href='?src=\ref[];item=handcuff'>Not Handcuffed</A>", src)), (src.internal ? text("<A href='?src=\ref[];item=internal'>Remove Internal</A>", src) : ""), src, user, url_encode(src.name))
 		user << browse(dat, text("window=mob[];size=300x600", url_encode(src.name)))
@@ -4865,8 +4865,8 @@
 	return
 
 /mob/proc/Life()
-	if(ticker && master_mode == "sandbox" && src.sandbox==null)
-		src.CanBuild()
+	if(ticker && master_mode == "sandbox" && isnull(sandbox))
+		CanBuild()
 
 	return
 
@@ -5016,7 +5016,7 @@
 
 
 /mob/proc/show_inv(mob/user as mob)
-	if (istype(user, /mob/human) || istype(user, /mob/monkey) || (istype(user, /mob/drone) && user.equipped()==null)) //AI should not be able to do this, and drone can only do it if they're using the gripper
+	if (istype(user, /mob/human) || istype(user, /mob/monkey) || (istype(user, /mob/drone) && isnull(user.equipped()))) //AI should not be able to do this, and drone can only do it if they're using the gripper
 		user.machine = src
 		var/dat = text("<TT>\n<B><FONT size=3>[]</FONT></B><BR>\n\t<B>Head(Mask):</B> <A href='?src=\ref[];item=mask'>[]</A><BR>\n\t<B>Left Hand:</B> <A href='?src=\ref[];item=l_hand'>[]</A><BR>\n\t<B>Right Hand:</B> <A href='?src=\ref[];item=r_hand'>[]</A><BR>\n\t<B>Back:</B> <A href='?src=\ref[];item=back'>[]</A><BR>\n\t[]<BR>\n\t[]<BR>\n\t[]<BR>\n\t<A href='?src=\ref[];item=pockets'>Empty Pockets</A><BR>\n<A href='?src=\ref[];mach_close=mob[]'>Close</A><BR>\n</TT>", src.name, src, (src.wear_mask ? text("[]", src.wear_mask) : "Nothing"), src, (src.l_hand ? text("[]", src.l_hand) : "Nothing"), src, (src.r_hand ? text("[]", src.r_hand) : "Nothing"), src, (src.back ? text("[]", src.back) : "Nothing"), ((istype(src.wear_mask, /obj/item/weapon/clothing/mask) && istype(src.back, /obj/item/weapon/tank) && !( src.internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : ""), (src.internal ? text("<A href='?src=\ref[];item=internal'>Remove Internal</A>", src) : ""), (src.handcuffed ? text("<A href='?src=\ref[];item=handcuff'>Handcuffed</A>", src) : text("<A href='?src=\ref[];item=handcuff'>Not Handcuffed</A>", src)), src, user, src.name)
 		user << browse(dat, text("window=mob[]", url_encode(src.name)))
@@ -5433,7 +5433,7 @@
 		if(config.loggame) world.log << "GAME: [usr.key] AM failed due to disconnect."
 		return
 	for(var/obj/screen/t in usr.client.screen)
-		if (t.loc == null)
+		if (isnull(t.loc))
 			//t = null
 			del(t)
 	if(!src.client)
@@ -5572,38 +5572,38 @@
 	return
 
 /mob/Login()
-	if(ticker && master_mode == "sandbox" && src.sandbox==null)
-		src.CanBuild()
+	if(ticker && master_mode == "sandbox" && isnull(sandbox))
+		CanBuild()
 
-	src.sight |= SEE_SELF
+	sight |= SEE_SELF
 	if (CanAdmin())
-		if (src.droneTransitioning==0)
+		if (droneTransitioning == 0)
 			src << text("\blue The game ip is byond://[]:[] !", world.address, world.port)
-		src.verbs += /mob/proc/mute
-		src.verbs += /mob/proc/changemessage
-		src.verbs += /mob/proc/boot
-		src.verbs += /mob/proc/changemode
-		src.verbs += /mob/proc/restart
-		src.verbs += /mob/proc/who
-		src.verbs += /mob/proc/change_name
-		src.verbs += /mob/proc/show_help
-		src.verbs += /mob/proc/toggle_ooc
-		src.verbs += /mob/proc/toggle_abandon
-		src.verbs += /mob/proc/toggle_enter
-		src.verbs += /mob/proc/toggle_ai
-		src.verbs += /mob/proc/toggle_shuttle
-		src.verbs += /mob/proc/delay_start
-		src.verbs += /mob/proc/start_now
-		src.verbs += /mob/proc/worldsize
-		src.verbs += /mob/proc/make_gift
-		src.verbs += /mob/proc/make_pill
-		src.verbs += /mob/proc/ban
-		src.verbs += /mob/proc/unban
-		src.verbs += /mob/proc/secrets
-		src.verbs += /mob/proc/carboncopy
-		src.verbs += /mob/proc/toggle_alter
-		src.verbs += /mob/proc/list_dna
-		src.verbs += /proc/Vars
+		verbs += /mob/proc/mute
+		verbs += /mob/proc/changemessage
+		verbs += /mob/proc/boot
+		verbs += /mob/proc/changemode
+		verbs += /mob/proc/restart
+		verbs += /mob/proc/who
+		verbs += /mob/proc/change_name
+		verbs += /mob/proc/show_help
+		verbs += /mob/proc/toggle_ooc
+		verbs += /mob/proc/toggle_abandon
+		verbs += /mob/proc/toggle_enter
+		verbs += /mob/proc/toggle_ai
+		verbs += /mob/proc/toggle_shuttle
+		verbs += /mob/proc/delay_start
+		verbs += /mob/proc/start_now
+		verbs += /mob/proc/worldsize
+		verbs += /mob/proc/make_gift
+		verbs += /mob/proc/make_pill
+		verbs += /mob/proc/ban
+		verbs += /mob/proc/unban
+		verbs += /mob/proc/secrets
+		verbs += /mob/proc/carboncopy
+		verbs += /mob/proc/toggle_alter
+		verbs += /mob/proc/list_dna
+		verbs += /proc/Vars
 
 	..()
 	return

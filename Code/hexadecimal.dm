@@ -38,12 +38,12 @@
 
 /proc/num2hex(num, placeholder)
 
-	if (placeholder == null)
+	if (isnull(placeholder))
 		placeholder = 2
-	if (!( isnum(num) ))
+	if (!isnum(num) )
 		CRASH("num2hex not given a numeric argument (user error)")
 
-	if (!( num ))
+	if (!num)
 		return "0"
 	var/hex = ""
 	var/i = 0

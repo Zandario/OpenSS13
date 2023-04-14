@@ -101,9 +101,9 @@ obj/machinery/pipes
 	// Return the next pipe object in the node chain
 	// Argument "from" is the node we are approaching from; if null, returns the first actual pipe found
 
-	next(var/obj/machinery/from)
+	next(obj/machinery/from)
 
-		if(from == null)		// if from null, then return the next actual pipe
+		if(isnull(from))		// if from null, then return the next actual pipe
 			if(node1 && node1.ispipe() )
 				return node1
 			if(node2 && node2.ispipe() )

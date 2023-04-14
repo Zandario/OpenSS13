@@ -93,7 +93,7 @@
 			if (S.tag == text("spstart[]", M.ckey))
 				start_loc[text("[]", S.desc)] = S
 	var/option = input(M, "Where should you start?", "Start Selector", null) in start_loc
-	if (usr==null)
+	if (isnull(usr))
 		return
 	if ((!( usr.start ) || !( istype(usr, /mob/human) ) || usr.loc != src.loc))
 		return

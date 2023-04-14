@@ -1275,7 +1275,7 @@
 				M.show_message(text("\red [] has been [] by [].", src, (src.welded ? "welded shut" : "unwelded"), user), 3, "\red You hear welding.", 2)
 	return
 
-/obj/closet/relaymove(mob/user as mob)
+/obj/closet/relaymove(mob/user)
 
 	if (user.stat)
 		return
@@ -1298,22 +1298,18 @@
 			M.client_mob() << msg
 	return
 
-/obj/closet/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
+/obj/closet/MouseDrop_T(atom/movable/O, mob/user)
 
 	if ((user.restrained() || user.stat))
 		return
-	if ((!( istype(O, /atom/movable) ) || O.anchored || get_dist(user, src) > 1 || get_dist(user, O) > 1 || user.contents.Find(src)))
+	if ((!ismovable(O) || O.anchored || get_dist(user, src) > 1 || get_dist(user, O) > 1 || user.contents.Find(src)))
 		return
-	/*
-	 * Patch Submitted by shadowlord13, to fix Bug #1936685.
-	 */
-	if (user.loc==null) // just in case someone manages to get a closet into the blue light dimension, as unlikely as that seems
+
+	if (isnull(user.loc)) // just in case someone manages to get a closet into the blue light dimension, as unlikely as that seems
 		return
-	if (!istype(user.loc, /turf)) // are you in a container/closet/pod/etc?
+	if (!isturf(user.loc)) // are you in a container/closet/pod/etc?
 		return
-	/*
-	 * End Patch by shadowlord13
-	 */
+
 	step_towards(O, src.loc)
 	for(var/mob/M in viewers(user, null))
 		if (M.hasClient() && !( M.blinded ))

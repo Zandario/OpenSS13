@@ -2,7 +2,7 @@
 /proc/dd_file2list(file_path, separator)
 
 	var/file
-	if (separator == null)
+	if (isnull(separator))
 		separator = "\n"
 	if (isfile(file_path))
 		file = file_path

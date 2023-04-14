@@ -316,7 +316,7 @@
 		if (user.client)
 			if (user.stat==0)
 				if (src.stat==0)
-					if (src.controlledBy == null)
+					if (isnull(controlledBy))
 						if (user:cameraFollow!=null)
 							user:cancel_camera()
 						src.takeControl(user)
@@ -570,7 +570,7 @@
 
 	UpdateClothing()
 		var/freeSlot = 0
-		if (src.equipped()==null)
+		if (isnull(equipped()))
 			freeSlot = 1
 
 		if (l_hand!=null)
