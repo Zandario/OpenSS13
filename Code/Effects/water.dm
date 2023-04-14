@@ -2,11 +2,11 @@
 	name = "water"
 	icon = 'icons/water.dmi'
 	icon_state = "extinguish"
-	flags = 2.0
+	flags = 2
 	mouse_opacity = 0
 	weight = 1000
 
-	var/life = 15.0
+	var/life = 15
 
 /obj/effects/water/New()
 	..()

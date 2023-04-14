@@ -1,8 +1,13 @@
+#define LIGHTING_POWER 8 /// Power (W) per turf used for lighting
+
 /area
-	var/fire = null
-	level = null
 	name = "area"
+	icon = 'icons/areas.dmi'
+	level = null
+
 	mouse_opacity = 0
+
+	var/fire = null
 	var/lightswitch = 1
 
 	var/eject = null
@@ -23,8 +28,8 @@
 
 /area/New()
 	..()
-	src.icon = 'icons/alert.dmi'
-	src.layer = 10
+	icon = 'icons/alert.dmi'
+	layer = 10
 
 	if(!requires_power)
 		power_light = 1
@@ -32,31 +37,31 @@
 		power_environ = 1
 
 	spawn(5)
-		for(var/turf/T in src)		// count the number of turfs (for lighting calc)
-			numturfs++				// spawned with a delay so turfs can finish loading
+		for(var/turf/T in src) // Count the number of turfs (for lighting calc)
+			numturfs++ // Spawned with a delay so turfs can finish loading.
 			if(no_air)
-				T.oxygen = 0		// remove air if so specified for this area
+				T.oxygen = 0 // Remove air if so specified for this area.
 				T.n2 = 0
 				T.res_vars()
 
 		if(linkarea)
-			linked = locate(text2path("/area/[linkarea]"))		// area linked to this for power calcs
+			linked = locate(text2path("/area/[linkarea]")) // Area linked to this for power calcs.
 
 
 	spawn(15)
-		src.power_change()		// all machines set to current power level, also updates lighting icon
+		power_change() // All machines set to current power level, also updates lighting icon.
 
 
 
 
 /area/proc/firealert()
-	if (!( src.fire ))
-		src.fire = 1
-		src.updateicon()
-		src.mouse_opacity = 0
+	if(!(fire))
+		fire = TRUE
+		updateicon()
+		mouse_opacity = 0
 		for(var/obj/machinery/door/firedoor/D in src)
-			if (!( D.density ))
-				spawn( 0 )
+			if (!(D.density))
+				spawn(0)
 					D.closefire()
 					return
 	return
@@ -85,29 +90,31 @@
 #define ENVIRON 3
 */
 
-/area/proc/powered(var/chan)		// return true if the area has power to given channel
+/// Return TRUE if the area has power to given channel.
+/area/proc/powered(channel)
 	if(!requires_power)
-		return 1
-	switch(chan)
+		return TRUE
+	switch(channel)
 		if(EQUIP)
 			return power_equip
 		if(LIGHT)
 			return power_light
 		if(ENVIRON)
 			return power_environ
+		else
+			return FALSE
 
-	return 0
 
-
-// called when power status changes
-
+/// Called when power status changes.
 /area/proc/power_change()
 
-	for(var/obj/machinery/M in src)		// for each machine in the area
-		M.power_change()				// reverify power status (to update icons etc.)
+	// For each machine in the area.
+	for(var/obj/machinery/M in src)
+		// Reverify power status (to update icons etc.)
+		M.power_change()
 
 	spawn(rand(15,25))
-		src.updateicon()
+		updateicon()
 
 
 	if(linked)
@@ -117,11 +124,9 @@
 		linked.power_change()
 
 
-
-
-/area/proc/usage(var/chan)
+/area/proc/usage(channel)
 	var/used = 0
-	switch(chan)
+	switch(channel)
 		if(LIGHT)
 			used += used_light
 		if(EQUIP)
@@ -132,7 +137,7 @@
 			used += used_light + used_equip + used_environ
 
 	if(linked)
-		return linked.usage(chan) + used
+		return linked.usage(channel) + used
 	else
 		return used
 
@@ -143,17 +148,14 @@
 	used_light = 0
 	used_environ = 0
 
-/area/proc/use_power(var/amount, var/chan)
-
-	switch(chan)
+/area/proc/use_power(amount, channel)
+	switch(channel)
 		if(EQUIP)
 			used_equip += amount
 		if(LIGHT)
 			used_light += amount
 		if(ENVIRON)
 			used_environ += amount
-
-#define LIGHTING_POWER 8		// power (W) per turf used for lighting
 
 /area/proc/calc_lighting()
 	if(lightswitch && power_light)

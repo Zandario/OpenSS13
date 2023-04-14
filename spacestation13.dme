@@ -8,6 +8,7 @@
 #define FILE_DIR .
 #define FILE_DIR "icons"
 #define FILE_DIR "icons/turfs"
+#define FILE_DIR "icons/turfs/raw"
 #define FILE_DIR "tools"
 #define FILE_DIR "tools/SS13SmoothingCutter"
 // END_FILE_DIR
