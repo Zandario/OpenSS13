@@ -1,4 +1,4 @@
-/obj/item/weapon/clothing/burn(fi_amount)
+/obj/item/clothing/burn(fi_amount)
 	if (fi_amount > src.s_fire)
 		spawn(0)
 			var/t 			= src.icon_state
@@ -9,26 +9,26 @@
 		return 0
 	return 1
 
-/obj/item/weapon/clothing/gloves/examine()
+/obj/item/clothing/gloves/examine()
 	set src in usr
 	..()
 	return
 
-/obj/item/weapon/clothing/shoes/orange/attack_self(mob/user as mob)
+/obj/item/clothing/shoes/orange/attack_self(mob/user as mob)
 	if (src.chained)
 		src.chained = null
-		new /obj/item/weapon/handcuffs( user.loc )
+		new /obj/item/handcuffs( user.loc )
 		src.icon_state = "o_shoes"
 	return
 
-/obj/item/weapon/clothing/shoes/orange/attackby(H as obj, loc)
-	if ((istype(H, /obj/item/weapon/handcuffs) && !( src.chained )))
+/obj/item/clothing/shoes/orange/attackby(H as obj, loc)
+	if ((istype(H, /obj/item/handcuffs) && !( src.chained )))
 		del(H)
 		src.chained = 1
 		src.icon_state = "o_shoes1"
 	return
 
-/obj/item/weapon/clothing/mask/muzzle/attack_paw(mob/user as mob)
+/obj/item/clothing/mask/muzzle/attack_paw(mob/user as mob)
 
 	if (src == user.wear_mask)
 		return
@@ -37,7 +37,7 @@
 	return
 
 
-/obj/item/weapon/tank/blob_act()
+/obj/item/tank/blob_act()
 
 	if(prob(25))
 		var/turf/T = src.loc
@@ -47,7 +47,7 @@
 			src.gas.turf_add(T, -1.0)
 		del(src)
 
-/obj/item/weapon/tank/attack_self(mob/user as mob)
+/obj/item/tank/attack_self(mob/user as mob)
 
 	user.machine = src
 	if (!( src.gas ))
@@ -56,7 +56,7 @@
 	user.client_mob() << browse(dat, "window=tank;size=600x300")
 	return
 
-/obj/item/weapon/tank/Topic(href, href_list)
+/obj/item/tank/Topic(href, href_list)
 	..()
 	if (usr.stat|| usr.restrained())
 		return
@@ -84,7 +84,7 @@
 		return
 	return
 
-/obj/item/weapon/tank/proc/process(mob/M as mob, obj/substance/gas/G as obj)
+/obj/item/tank/proc/process(mob/M as mob, obj/substance/gas/G as obj)
 
 	var/amount = src.i_used
 	var/total = src.gas.tot_gas()
@@ -94,7 +94,7 @@
 		G.transfer_from(src.gas, amount)
 	return G
 
-/obj/item/weapon/tank/attack(mob/M as mob, mob/user as mob)
+/obj/item/tank/attack(mob/M as mob, mob/user as mob)
 
 	..()
 	if ((prob(30) && M.stat < 2))
@@ -102,7 +102,7 @@
 			var/mob/human/H = M
 
 // ******* Check
-			if ((istype(H, /mob/human) && istype(H, /obj/item/weapon/clothing/head) && H.flags & 8 && prob(80)))
+			if ((istype(H, /mob/human) && istype(H, /obj/item/clothing/head) && H.flags & 8 && prob(80)))
 				M.client_mob() << "\red The helmet protects you from being hit hard in the head!"
 				return
 			var/time = rand(10, 120)
@@ -119,21 +119,21 @@
 			M.client_mob() << text("\red <B>This was a []% hit. Roleplay it! (personality/memory change if the hit was severe enough)</B>", time * 100 / 120)
 	return
 
-/obj/item/weapon/tank/New()
+/obj/item/tank/New()
 
 	..()
 	src.gas = new /obj/substance/gas( src )
 	src.gas.maximum = src.maximum
 	return
 
-/obj/item/weapon/tank/Del()
+/obj/item/tank/Del()
 
 	//src.gas = null
 	del(src.gas)
 	..()
 	return
 
-/obj/item/weapon/tank/burn(fi_amount)
+/obj/item/tank/burn(fi_amount)
 
 	if(src.gas)
 		if ( (fi_amount * src.gas.tot_gas()) > (src.maximum * 3.75E7) )
@@ -142,31 +142,31 @@
 			return
 	return
 
-/obj/item/weapon/tank/examine()
+/obj/item/tank/examine()
 	set src in view(1)
 
 	if(src)
 		usr.client_mob() << text("\blue The \icon[] contains [] unit\s of gas.", src, src.gas.tot_gas())
 	return
 
-/obj/item/weapon/tank/oxygentank/New()
+/obj/item/tank/oxygentank/New()
 
 	..()
 	src.gas.oxygen = src.maximum
 	return
 
-/obj/item/weapon/tank/jetpack/New()
+/obj/item/tank/jetpack/New()
 
 	..()
 	src.gas.oxygen = src.maximum
 	return
 
-/obj/item/weapon/tank/jetpack/verb/toggle()
+/obj/item/tank/jetpack/verb/toggle()
 	src.on = !( src.on )
 	src.icon_state = text("jetpack[]", src.on)
 	return
 
-/obj/item/weapon/tank/jetpack/proc/allow_thrust(num, mob/user as mob)
+/obj/item/tank/jetpack/proc/allow_thrust(num, mob/user as mob)
 	if (!( src.on ))
 		return 0
 
@@ -193,14 +193,14 @@
 			return 0
 	// del(G)
 
-/obj/item/weapon/tank/anesthetic/New()
+/obj/item/tank/anesthetic/New()
 
 	..()
 	src.gas.sl_gas = 700000
 	src.gas.oxygen = 1000000
 	return
 
-/obj/item/weapon/tank/plasmatank/proc/release()
+/obj/item/tank/plasmatank/proc/release()
 	var/turf/T = get_turf(src.loc)
 	T.poison += src.gas.plasma * src.gas.temperature / 25.0
 	T.oxygen += src.gas.oxygen * src.gas.temperature / 25.0
@@ -222,7 +222,7 @@
 
 
 
-/obj/item/weapon/tank/plasmatank/proc/ignite()
+/obj/item/tank/plasmatank/proc/ignite()
 
 	var/strength = ((src.gas.plasma + src.gas.oxygen/2.0) / 1600000.0) * src.gas.temperature
 	//if ((src.gas.plasma < 1600000.0 || src.gas.temperature < 773))		//500degC
@@ -357,14 +357,14 @@
 
 
 
-/obj/item/weapon/tank/plasmatank/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/tank/plasmatank/attackby(obj/item/W as obj, mob/user as mob)
 	var/mob/CM = user.client_mob()
 	var/client/CL = CM.client
-	if (istype(W, /obj/item/weapon/assembly/rad_ignite))
-		var/obj/item/weapon/assembly/rad_ignite/S = W
+	if (istype(W, /obj/item/assembly/rad_ignite))
+		var/obj/item/assembly/rad_ignite/S = W
 		if (!( S.status ))
 			return
-		var/obj/item/weapon/assembly/r_i_ptank/R = new /obj/item/weapon/assembly/r_i_ptank( user )
+		var/obj/item/assembly/r_i_ptank/R = new /obj/item/assembly/r_i_ptank( user )
 		R.part1 = S.part1
 		S.part1.loc = R
 		S.part1.master = R
@@ -400,11 +400,11 @@
 		S.part2 = null
 		//S = null
 		del(S)
-	if (istype(W, /obj/item/weapon/assembly/prox_ignite))
-		var/obj/item/weapon/assembly/prox_ignite/S = W
+	if (istype(W, /obj/item/assembly/prox_ignite))
+		var/obj/item/assembly/prox_ignite/S = W
 		if (!( S.status ))
 			return
-		var/obj/item/weapon/assembly/m_i_ptank/R = new /obj/item/weapon/assembly/m_i_ptank( user )
+		var/obj/item/assembly/m_i_ptank/R = new /obj/item/assembly/m_i_ptank( user )
 		R.part1 = S.part1
 		S.part1.loc = R
 		S.part1.master = R
@@ -441,11 +441,11 @@
 		//S = null
 		del(S)
 
-	if (istype(W, /obj/item/weapon/assembly/time_ignite))
-		var/obj/item/weapon/assembly/time_ignite/S = W
+	if (istype(W, /obj/item/assembly/time_ignite))
+		var/obj/item/assembly/time_ignite/S = W
 		if (!( S.status ))
 			return
-		var/obj/item/weapon/assembly/t_i_ptank/R = new /obj/item/weapon/assembly/t_i_ptank( user )
+		var/obj/item/assembly/t_i_ptank/R = new /obj/item/assembly/t_i_ptank( user )
 		R.part1 = S.part1
 		S.part1.loc = R
 		S.part1.master = R
@@ -483,7 +483,7 @@
 		del(S)
 	return
 
-/obj/item/weapon/tank/plasmatank/New()
+/obj/item/tank/plasmatank/New()
 
 	..()
 	src.gas.plasma = src.maximum
@@ -551,7 +551,7 @@
 			//******RM
 			if(prob(15) && !istype(A, /obj/grille))
 
-				var/obj/item/weapon/tank/plasmatank/pt = new /obj/item/weapon/tank/plasmatank( src )
+				var/obj/item/tank/plasmatank/pt = new /obj/item/tank/plasmatank( src )
 				pt.gas.temperature = 475+T0C
 				pt.ignite()
 			//*****
@@ -581,24 +581,24 @@
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/storage/backpack( src )
-	new /obj/item/weapon/radio/headset( src )
-	new /obj/item/weapon/radio/signaler( src )
-	new /obj/item/weapon/pen( src )
+	new /obj/item/storage/backpack( src )
+	new /obj/item/radio/headset( src )
+	new /obj/item/radio/signaler( src )
+	new /obj/item/pen( src )
 	return
 
-/obj/secloset/personal/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/secloset/personal/attackby(obj/item/W as obj, mob/user as mob)
 
 	if (src.opened)
-		if (istype(W, /obj/item/weapon/grab))
+		if (istype(W, /obj/item/grab))
 			src.MouseDrop_T(W:affecting, user)	//act like they were dragged onto the closet
 		else
 			if (user.can_drop())
 				user.drop_item()
 				W.loc = src.loc
 	else
-		if (istype(W, /obj/item/weapon/card/id))
-			var/obj/item/weapon/card/id/I = W
+		if (istype(W, /obj/item/card/id))
+			var/obj/item/card/id/I = W
 			if (I.check_access(null,"Systems"))
 				src.allowed = null
 				src.icon_state = "0secloset0"
@@ -624,114 +624,114 @@
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/storage/fcard_kit( src )
-	new /obj/item/weapon/storage/fcard_kit( src )
-	new /obj/item/weapon/storage/fcard_kit( src )
-	new /obj/item/weapon/storage/lglo_kit( src )
-	new /obj/item/weapon/storage/lglo_kit( src )
-	new /obj/item/weapon/fcardholder( src )
-	new /obj/item/weapon/fcardholder( src )
-	new /obj/item/weapon/fcardholder( src )
-	new /obj/item/weapon/fcardholder( src )
-	new /obj/item/weapon/camera( src )
-	new /obj/item/weapon/f_print_scanner( src )
-	new /obj/item/weapon/f_print_scanner( src )
-	new /obj/item/weapon/f_print_scanner( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/storage/fcard_kit( src )
+	new /obj/item/storage/fcard_kit( src )
+	new /obj/item/storage/fcard_kit( src )
+	new /obj/item/storage/lglo_kit( src )
+	new /obj/item/storage/lglo_kit( src )
+	new /obj/item/fcardholder( src )
+	new /obj/item/fcardholder( src )
+	new /obj/item/fcardholder( src )
+	new /obj/item/fcardholder( src )
+	new /obj/item/camera( src )
+	new /obj/item/f_print_scanner( src )
+	new /obj/item/f_print_scanner( src )
+	new /obj/item/f_print_scanner( src )
 	return
 
 /obj/secloset/security1/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/storage/flashbang_kit( src )
-	new /obj/item/weapon/storage/handcuff_kit( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	new /obj/item/weapon/flash( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/suit/armor( src )
-	new /obj/item/weapon/clothing/head/helmet( src )
-	new /obj/item/weapon/clothing/glasses/sunglasses( src )
-	new /obj/item/weapon/baton( src)
+	new /obj/item/storage/flashbang_kit( src )
+	new /obj/item/storage/handcuff_kit( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	new /obj/item/flash( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/suit/armor( src )
+	new /obj/item/clothing/head/helmet( src )
+	new /obj/item/clothing/glasses/sunglasses( src )
+	new /obj/item/baton( src)
 	return
 
 /obj/secloset/highsec/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/gun/energy/laser_gun( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	new /obj/item/weapon/flash( src )
-	new /obj/item/weapon/storage/id_kit( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/glasses/sunglasses( src )
-	new /obj/item/weapon/clothing/suit/armor( src )
-	new /obj/item/weapon/clothing/head/helmet( src )
+	new /obj/item/gun/energy/laser_gun( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	new /obj/item/flash( src )
+	new /obj/item/storage/id_kit( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/glasses/sunglasses( src )
+	new /obj/item/clothing/suit/armor( src )
+	new /obj/item/clothing/head/helmet( src )
 	return
 
 /obj/secloset/captains/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/gun/energy/laser_gun( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	new /obj/item/weapon/storage/id_kit( src )
-	new /obj/item/weapon/clothing/under/darkgreen( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/glasses/sunglasses( src )
-	new /obj/item/weapon/clothing/suit/armor( src )
-	new /obj/item/weapon/clothing/head/swat_hel( src )
+	new /obj/item/gun/energy/laser_gun( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	new /obj/item/storage/id_kit( src )
+	new /obj/item/clothing/under/darkgreen( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/glasses/sunglasses( src )
+	new /obj/item/clothing/suit/armor( src )
+	new /obj/item/clothing/head/swat_hel( src )
 	return
 
 /obj/secloset/animal/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/radio/signaler( src )
-	new /obj/item/weapon/radio/electropack( src )
-	new /obj/item/weapon/radio/electropack( src )
-	new /obj/item/weapon/radio/electropack( src )
-	new /obj/item/weapon/radio/electropack( src )
-	new /obj/item/weapon/radio/electropack( src )
+	new /obj/item/radio/signaler( src )
+	new /obj/item/radio/electropack( src )
+	new /obj/item/radio/electropack( src )
+	new /obj/item/radio/electropack( src )
+	new /obj/item/radio/electropack( src )
+	new /obj/item/radio/electropack( src )
 	return
 
 /obj/secloset/medical1/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/bottle/toxins( src )
-	new /obj/item/weapon/bottle/rejuvenators( src )
-	new /obj/item/weapon/bottle/s_tox( src )
-	new /obj/item/weapon/bottle/s_tox( src )
-	new /obj/item/weapon/bottle/toxins( src )
-	new /obj/item/weapon/bottle/r_epil( src )
-	new /obj/item/weapon/bottle/r_ch_cough( src )
-	new /obj/item/weapon/pill_canister/Tourette( src )
-	new /obj/item/weapon/pill_canister/cough( src )
-	new /obj/item/weapon/pill_canister/epilepsy( src )
-	new /obj/item/weapon/pill_canister/sleep( src )
-	new /obj/item/weapon/pill_canister/antitoxin( src )
-	new /obj/item/weapon/pill_canister/placebo( src )
-	new /obj/item/weapon/storage/firstaid/syringes( src )
-	new /obj/item/weapon/storage/gl_kit( src )
-	new /obj/item/weapon/dropper( src )
+	new /obj/item/bottle/toxins( src )
+	new /obj/item/bottle/rejuvenators( src )
+	new /obj/item/bottle/s_tox( src )
+	new /obj/item/bottle/s_tox( src )
+	new /obj/item/bottle/toxins( src )
+	new /obj/item/bottle/r_epil( src )
+	new /obj/item/bottle/r_ch_cough( src )
+	new /obj/item/pill_canister/Tourette( src )
+	new /obj/item/pill_canister/cough( src )
+	new /obj/item/pill_canister/epilepsy( src )
+	new /obj/item/pill_canister/sleep( src )
+	new /obj/item/pill_canister/antitoxin( src )
+	new /obj/item/pill_canister/placebo( src )
+	new /obj/item/storage/firstaid/syringes( src )
+	new /obj/item/storage/gl_kit( src )
+	new /obj/item/dropper( src )
 	return
 
 /obj/secloset/medical2/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/tank/anesthetic( src )
-	new /obj/item/weapon/tank/anesthetic( src )
-	new /obj/item/weapon/tank/anesthetic( src )
-	new /obj/item/weapon/tank/anesthetic( src )
-	new /obj/item/weapon/tank/anesthetic( src )
-	new /obj/item/weapon/clothing/mask/m_mask( src )
-	new /obj/item/weapon/clothing/mask/m_mask( src )
-	new /obj/item/weapon/clothing/mask/m_mask( src )
-	new /obj/item/weapon/clothing/mask/m_mask( src )
+	new /obj/item/tank/anesthetic( src )
+	new /obj/item/tank/anesthetic( src )
+	new /obj/item/tank/anesthetic( src )
+	new /obj/item/tank/anesthetic( src )
+	new /obj/item/tank/anesthetic( src )
+	new /obj/item/clothing/mask/m_mask( src )
+	new /obj/item/clothing/mask/m_mask( src )
+	new /obj/item/clothing/mask/m_mask( src )
+	new /obj/item/clothing/mask/m_mask( src )
 	return
 
 /obj/secloset/ex_act(severity)
@@ -785,18 +785,18 @@
 		return
 	return
 
-/obj/secloset/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/secloset/attackby(obj/item/W as obj, mob/user as mob)
 
 	if (src.opened)
-		if (istype(W, /obj/item/weapon/grab))
+		if (istype(W, /obj/item/grab))
 			src.MouseDrop_T(W:affecting, user)	//act like they were dragged onto the closet
 		else
 			if (user.can_drop())
 				user.drop_item()
 				W.loc = src.loc
 	else
-		if (istype(W, /obj/item/weapon/card/id))
-			var/obj/item/weapon/card/id/I = W
+		if (istype(W, /obj/item/card/id))
+			var/obj/item/card/id/I = W
 
 			if(I.check_access(access,allowed))
 				src.locked = !( src.locked )
@@ -927,7 +927,7 @@
 
 /obj/morgue/attackby(P as obj, mob/user as mob)
 
-	if (istype(P, /obj/item/weapon/pen))
+	if (istype(P, /obj/item/pen))
 		var/t = input(user, "What would you like the label to be?", text("[]", src.name), null)  as text
 		if (user.equipped() != P)
 			return
@@ -962,7 +962,7 @@
 
 /obj/m_tray/CheckPass(D as obj)
 
-	if (istype(D, /obj/item/weapon/dummy))
+	if (istype(D, /obj/item/dummy))
 		return 1
 	else
 		return ..()
@@ -1011,15 +1011,15 @@
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/ammo/a357( src )
-	new /obj/item/weapon/ammo/a357( src )
-	new /obj/item/weapon/ammo/a357( src )
-	new /obj/item/weapon/storage/handcuff_kit( src )
-	new /obj/item/weapon/storage/flashbang_kit( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	new /obj/item/weapon/gun/energy/taser_gun( src )
-	var/obj/item/weapon/syndicate_uplink/U = new /obj/item/weapon/syndicate_uplink( src )
+	new /obj/item/ammo/a357( src )
+	new /obj/item/ammo/a357( src )
+	new /obj/item/ammo/a357( src )
+	new /obj/item/storage/handcuff_kit( src )
+	new /obj/item/storage/flashbang_kit( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	new /obj/item/gun/energy/taser_gun( src )
+	var/obj/item/syndicate_uplink/U = new /obj/item/syndicate_uplink( src )
 	U.uses = 5
 	return
 
@@ -1027,183 +1027,183 @@
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/tank/jetpack(src)
-	new /obj/item/weapon/clothing/mask/m_mask(src)
-	new /obj/item/weapon/clothing/head/s_helmet(src)
-	new /obj/item/weapon/clothing/suit/sp_suit(src)
-	new /obj/item/weapon/crowbar(src)
-	new /obj/item/weapon/cell(src)
-	new /obj/item/weapon/card/id/syndicate(src)
-	new /obj/item/weapon/multitool(src)
+	new /obj/item/tank/jetpack(src)
+	new /obj/item/clothing/mask/m_mask(src)
+	new /obj/item/clothing/head/s_helmet(src)
+	new /obj/item/clothing/suit/sp_suit(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/cell(src)
+	new /obj/item/card/id/syndicate(src)
+	new /obj/item/multitool(src)
 
 /obj/closet/emcloset/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/tank/oxygentank( src )
-	new /obj/item/weapon/clothing/mask/gasmask( src )
+	new /obj/item/tank/oxygentank( src )
+	new /obj/item/clothing/mask/gasmask( src )
 	return
 
 /obj/closet/l3closet/New()
 
 	..()
 	sleep(2)
-	new /obj/item/weapon/tank/oxygentank( src )
-	new /obj/item/weapon/clothing/mask/gasmask( src )
-	new /obj/item/weapon/clothing/suit/bio_suit( src )
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/clothing/gloves/latex( src )
-	new /obj/item/weapon/clothing/head/bio_hood( src )
-	new /obj/item/weapon/clothing/suit/labcoat(src)
+	new /obj/item/tank/oxygentank( src )
+	new /obj/item/clothing/mask/gasmask( src )
+	new /obj/item/clothing/suit/bio_suit( src )
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/clothing/gloves/latex( src )
+	new /obj/item/clothing/head/bio_hood( src )
+	new /obj/item/clothing/suit/labcoat(src)
 
 	return
 
 /obj/closet/wardrobe/New()
 
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
 	return
 
 /obj/closet/wardrobe/red/New()
 
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/under/red( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/under/red( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
 	return
 
 /obj/closet/wardrobe/pink/New()
 
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
 	return
 
 /obj/closet/wardrobe/black/New()
 
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/under/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/under/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
 	return
 
 /obj/closet/wardrobe/green/New()
 
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/under/green( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
-	new /obj/item/weapon/clothing/shoes/black( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/under/green( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
+	new /obj/item/clothing/shoes/black( src )
 	return
 
 /obj/closet/wardrobe/orange/New()
 
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/under/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/under/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
 	return
 
 /obj/closet/wardrobe/yellow/New()
 
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/under/yellow( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
-	new /obj/item/weapon/clothing/shoes/orange( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/under/yellow( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
+	new /obj/item/clothing/shoes/orange( src )
 	return
 
 /obj/closet/wardrobe/mixed/New()
 
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/blue( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/under/pink( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
-	new /obj/item/weapon/clothing/shoes/brown( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/blue( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/under/pink( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
+	new /obj/item/clothing/shoes/brown( src )
 	return
 
 /obj/closet/wardrobe/white/New()
 
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/under/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/clothing/shoes/white( src )
-	new /obj/item/weapon/storage/lglo_kit( src )
-	new /obj/item/weapon/storage/stma_kit( src )
-	new /obj/item/weapon/clothing/suit/labcoat(src)
-	new /obj/item/weapon/clothing/suit/labcoat(src)
-	new /obj/item/weapon/clothing/suit/labcoat(src)
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/under/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/clothing/shoes/white( src )
+	new /obj/item/storage/lglo_kit( src )
+	new /obj/item/storage/stma_kit( src )
+	new /obj/item/clothing/suit/labcoat(src)
+	new /obj/item/clothing/suit/labcoat(src)
+	new /obj/item/clothing/suit/labcoat(src)
 	return
 
 /obj/closet/ex_act(severity)
@@ -1257,12 +1257,12 @@
 		return
 	return
 
-/obj/closet/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/card/id))
+/obj/closet/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/card/id))
 		src.attack_hand(user)
 		return
-	if ((src.opened || W.damtype != "fire" || !( istype(W, /obj/item/weapon/weldingtool) )))
-		if (istype(W, /obj/item/weapon/grab))
+	if ((src.opened || W.damtype != "fire" || !( istype(W, /obj/item/weldingtool) )))
+		if (istype(W, /obj/item/grab))
 			src.MouseDrop_T(W:affecting, user)	//act like they were dragged onto the closet
 		else
 			if (user.can_drop())
@@ -1379,25 +1379,25 @@
 /obj/stool/blob_act()
 
 	if(prob(50))
-		new /obj/item/weapon/sheet/metal( src.loc )
+		new /obj/item/sheet/metal( src.loc )
 		del(src)
 
-/obj/stool/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/stool/attackby(obj/item/W as obj, mob/user as mob)
 
-	if (istype(W, /obj/item/weapon/wrench))
-		new /obj/item/weapon/sheet/metal( src.loc )
+	if (istype(W, /obj/item/wrench))
+		new /obj/item/sheet/metal( src.loc )
 		del(src)
 
 	return
 
-/obj/stool/bed/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/stool/bed/attackby(obj/item/W as obj, mob/user as mob)
 
 	return
 
-/obj/stool/chair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/stool/chair/attackby(obj/item/W as obj, mob/user as mob)
 
 	..()
-	if (istype(W, /obj/item/weapon/assembly/shock_kit))
+	if (istype(W, /obj/item/assembly/shock_kit))
 		var/obj/stool/chair/e_chair/E = new /obj/stool/chair/e_chair( src.loc )
 		E.dir = src.dir
 		E.part1 = W
@@ -1426,9 +1426,9 @@
 	..()
 	return
 
-/obj/stool/chair/e_chair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/stool/chair/e_chair/attackby(obj/item/W as obj, mob/user as mob)
 
-	if (istype(W, /obj/item/weapon/wrench))
+	if (istype(W, /obj/item/wrench))
 		var/obj/stool/chair/C = new /obj/stool/chair( src.loc )
 		C.dir = src.dir
 		src.part1.loc = src.loc
@@ -1652,7 +1652,7 @@
 
 
 /obj/grille/CheckPass(obj/B)
-	if ((istype(B, /obj/effects) || istype(B, /obj/item/weapon/dummy) || istype(B, /obj/beam) || istype(B, /obj/meteor/small)))
+	if ((istype(B, /obj/effects) || istype(B, /obj/item/dummy) || istype(B, /obj/beam) || istype(B, /obj/meteor/small)))
 		return 1
 	else
 		if (istype(B, /obj/bullet))
@@ -1661,17 +1661,17 @@
 			return !( src.density )
 
 
-/obj/grille/attackby(obj/item/weapon/W, mob/user)
+/obj/grille/attackby(obj/item/W, mob/user)
 
-	if (istype(W, /obj/item/weapon/wirecutters))
+	if (istype(W, /obj/item/wirecutters))
 		if(!shock(user, 100))
 			src.health = 0
-	else if ((istype(W, /obj/item/weapon/screwdriver) && ( (istype(src.loc, /turf/station) || locate(src.loc, /obj/move) || locate(src.loc, /obj/machinery) || src.anchored)) ) )
+	else if ((istype(W, /obj/item/screwdriver) && ( (istype(src.loc, /turf/station) || locate(src.loc, /obj/move) || locate(src.loc, /obj/machinery) || src.anchored)) ) )
 		if(!shock(user, 50))
 			src.anchored = !( src.anchored )
 			user << (src.anchored ? "You have fastened the grille to the floor." : "You have unfastened the grill.")
 			return
-	else if(istype(W, /obj/item/weapon/shard))	// can't get a shock by attacking with glass shard
+	else if(istype(W, /obj/item/shard))	// can't get a shock by attacking with glass shard
 
 		src.health -= W.force * 0.1
 
@@ -1695,11 +1695,11 @@
 			src.icon_state = "brokengrille"
 			src.density = 0
 			src.destroyed = 1
-			new /obj/item/weapon/rods( src.loc )
+			new /obj/item/rods( src.loc )
 
 		else
 			if (src.health <= -10.0)
-				new /obj/item/weapon/rods( src.loc )
+				new /obj/item/rods( src.loc )
 				del(src)
 				return
 	return
@@ -1728,7 +1728,7 @@
 	if (flag == "bullet")
 
 		if(!reinf)
-			new /obj/item/weapon/shard( src.loc )
+			new /obj/item/shard( src.loc )
 			src.density = 0
 			src.loc.buildlinks()
 
@@ -1736,8 +1736,8 @@
 		else
 			health -= 35
 			if(health <=0)
-				new /obj/item/weapon/shard( src.loc )
-				new /obj/item/weapon/rods( src.loc )
+				new /obj/item/shard( src.loc )
+				new /obj/item/rods( src.loc )
 				src.density = 0
 				src.loc.buildlinks()
 				del(src)
@@ -1752,14 +1752,14 @@
 			del(src)
 			return
 		if(2.0)
-			new /obj/item/weapon/shard( src.loc )
-			if(reinf) new /obj/item/weapon/rods( src.loc)
+			new /obj/item/shard( src.loc )
+			if(reinf) new /obj/item/rods( src.loc)
 			del(src)
 			return
 		if(3.0)
 			if (prob(50))
-				new /obj/item/weapon/shard( src.loc )
-				if(reinf) new /obj/item/weapon/rods( src.loc)
+				new /obj/item/shard( src.loc )
+				if(reinf) new /obj/item/rods( src.loc)
 
 				del(src)
 				return
@@ -1768,8 +1768,8 @@
 
 /obj/window/blob_act()
 	if(prob(50))
-		new /obj/item/weapon/shard( src.loc )
-		if(reinf) new /obj/item/weapon/rods( src.loc)
+		new /obj/item/shard( src.loc )
+		if(reinf) new /obj/item/rods( src.loc)
 		density = 0
 		src.loc.buildlinks()
 		del(src)
@@ -1793,15 +1793,15 @@
 
 /obj/window/meteorhit()
 	src.health = 0
-	new /obj/item/weapon/shard( src.loc )
-	if(reinf) new /obj/item/weapon/rods( src.loc)
+	new /obj/item/shard( src.loc )
+	if(reinf) new /obj/item/rods( src.loc)
 	src.density = 0
 	src.loc.buildlinks()
 	del(src)
 	return
 
 
-/obj/window/hitby(obj/item/weapon/W as obj)
+/obj/window/hitby(obj/item/W as obj)
 
 	..()
 	var/tforce = W.throwforce
@@ -1812,8 +1812,8 @@
 		src.anchored = 0
 		step(src, get_dir(W, src))
 	if (src.health <= 0)
-		new /obj/item/weapon/shard( src.loc )
-		if(reinf) new /obj/item/weapon/rods( src.loc)
+		new /obj/item/shard( src.loc )
+		if(reinf) new /obj/item/rods( src.loc)
 		src.density = 0
 		src.loc.buildlinks()
 		del(src)
@@ -1821,9 +1821,9 @@
 	..()
 	return
 
-/obj/window/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/window/attackby(obj/item/W as obj, mob/user as mob)
 
-	if (istype(W, /obj/item/weapon/screwdriver))
+	if (istype(W, /obj/item/screwdriver))
 		if(reinf && state >= 1)
 			state = 3 - state
 			usr.client_mob() <<  state==1? "You have unfastened the window from the frame." : "You have fastened the window to the frame."
@@ -1833,7 +1833,7 @@
 		else if(!reinf)
 			src.anchored = !( src.anchored )
 			user.client_mob() << src.anchored ? "You have fastened the window to the floor." : "You have unfastened the window."
-	else if(istype(W, /obj/item/weapon/crowbar) && reinf)
+	else if(istype(W, /obj/item/crowbar) && reinf)
 		if(state <=1)
 			state = 1-state;
 			user.client_mob() << state ? "You have pried the window into the frame." : "You have pried the window out of the frame."
@@ -1853,12 +1853,12 @@
 				var/index = null
 				index = 0
 				while(index < 2)
-					new /obj/item/weapon/shard( src.loc )
-					if(reinf) new /obj/item/weapon/rods( src.loc)
+					new /obj/item/shard( src.loc )
+					if(reinf) new /obj/item/rods( src.loc)
 					index++
 			else
-				new /obj/item/weapon/shard( src.loc )
-				if(reinf) new /obj/item/weapon/rods( src.loc)
+				new /obj/item/shard( src.loc )
+				if(reinf) new /obj/item/rods( src.loc)
 
 			src.density = 0
 			src.loc.buildlinks()
@@ -2065,8 +2065,8 @@
 	if ((M.icon_state == "flaming" && prob(30)))
 		if (src.state == 2)
 			src.state = 1
-			new /obj/item/weapon/sheet/metal( src )
-			new /obj/item/weapon/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
 			update()
 		else
 			if ((prob(20) && src.state == 1))
@@ -2074,8 +2074,8 @@
 				//var/turf/station/floor/F = new /turf/station/floor( locate(src.x, src.y, src.z) )
 				var/turf/station/floor/F = src.ReplaceWithFloor()
 				F.oxygen = O2STANDARD
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 				F.levelupdate()
 	return
@@ -2097,8 +2097,8 @@
 				src.state = 1
 				src.intact = 0
 				src.levelupdate()
-				new /obj/item/weapon/sheet/metal( src )
-				new /obj/item/weapon/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
 			else
 				src.state = 0
 				//var/turf/station/floor/F = new /turf/station/floor( locate(src.x, src.y, src.z) )
@@ -2106,8 +2106,8 @@
 				F.burnt = 1
 				F.health = 30
 				F.icon_state = "Floor1"
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 				F.levelupdate()
 		if(3.0)
@@ -2118,8 +2118,8 @@
 				src.intact = 0
 				src.levelupdate()
 				src.state = 1
-				new /obj/item/weapon/sheet/metal( src )
-				new /obj/item/weapon/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
 				src.icon_state = "girder"
 				update()
 		else
@@ -2135,7 +2135,7 @@
 			F.burnt = 1
 			F.health = 30
 			F.icon_state = "Floor1"
-			new /obj/item/weapon/sheet/metal( F )
+			new /obj/item/sheet/metal( F )
 			F.buildlinks()
 			F.levelupdate()
 		else
@@ -2146,20 +2146,20 @@
 			src.state = 1
 			src.intact = 0
 			src.levelupdate()
-			new /obj/item/weapon/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
 			src.icon_state = "girder"
 			update()
 
 
 
-/turf/station/r_wall/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/turf/station/r_wall/attackby(obj/item/W as obj, mob/user as mob)
 
 	if ((!( istype(user, /mob/human) ) && (!( ticker ) || (ticker && ticker.mode != "monkey"))))
 		if (!istype(user, /mob/drone))
 			user.client_mob() << "\red You don't have the dexterity to do this!"
 			return
 	if (src.state == 2)
-		if (istype(W, /obj/item/weapon/wrench))
+		if (istype(W, /obj/item/wrench))
 			if (src.d_state == 4)
 				var/turf/T = user.loc
 				user.client_mob() << "\blue Cutting support rods."
@@ -2170,12 +2170,12 @@
 					src.d_state = 5
 					user.client_mob() << "\green Support rods cut."
 		else
-			if (istype(W, /obj/item/weapon/wirecutters))
+			if (istype(W, /obj/item/wirecutters))
 				if (src.d_state == 0)
 					src.d_state = 1
-					new /obj/item/weapon/rods( src )
+					new /obj/item/rods( src )
 			else
-				if (istype(W, /obj/item/weapon/weldingtool))
+				if (istype(W, /obj/item/weldingtool))
 					if (src.d_state == 2)
 						var/turf/T = user.loc
 						user.client_mob() << "\blue Slicing metal cover."
@@ -2195,10 +2195,10 @@
 
 							if ((user.loc == T && user.equipped() == W && !( user.stat )))
 								src.d_state = 6
-								new /obj/item/weapon/rods( src )
+								new /obj/item/rods( src )
 								user.client_mob() << "\green Support rods removed."
 				else
-					if (istype(W, /obj/item/weapon/screwdriver))
+					if (istype(W, /obj/item/screwdriver))
 						if (src.d_state == 1)
 							var/turf/T = user.loc
 							user.client_mob() << "\blue Removing support lines."
@@ -2209,7 +2209,7 @@
 								src.d_state = 2
 								user.client_mob() << "\green Support lines removed."
 					else
-						if (istype(W, /obj/item/weapon/crowbar))
+						if (istype(W, /obj/item/crowbar))
 							if (src.d_state == 3)
 								var/turf/T = user.loc
 								user.client_mob() << "\blue Prying cover off."
@@ -2228,10 +2228,10 @@
 										return
 									if ((user.loc == T && user.equipped() == W && !( user.stat )))
 										src.d_state = 7
-										new /obj/item/weapon/sheet/metal( src )
+										new /obj/item/sheet/metal( src )
 										user.client_mob() << "\green Outer sheath pried off."
 						else
-							if (istype(W, /obj/item/weapon/sheet/metal))
+							if (istype(W, /obj/item/sheet/metal))
 								var/turf/T = user.loc
 								user.client_mob() << "\blue Repairing wall."
 								sleep(100)
@@ -2245,7 +2245,7 @@
 										//W = null
 										del(W)
 	if (src.state == 1)
-		if (istype(W, /obj/item/weapon/wrench))
+		if (istype(W, /obj/item/wrench))
 			user.client_mob() << "\blue Now dismantling girders."
 			var/turf/T = user.loc
 			sleep(100)
@@ -2256,14 +2256,14 @@
 				//var/turf/station/floor/F = new /turf/station/floor( locate(src.x, src.y, src.z) )
 				var/turf/station/floor/F = src.ReplaceWithFloor()
 				F.oxygen = O2STANDARD
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 				F.levelupdate()
 		else
-			if (istype(W, /obj/item/weapon/sheet/r_metal))
+			if (istype(W, /obj/item/sheet/r_metal))
 				src.state = 2
 				src.d_state = 0
 				//W = null
@@ -2308,8 +2308,8 @@
 				src.state = 1
 				src.intact = 0
 				src.levelupdate()
-				new /obj/item/weapon/sheet/metal( src )
-				new /obj/item/weapon/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
 				src.icon_state = "girder"
 			else
 				src.state = 0
@@ -2318,8 +2318,8 @@
 				F.burnt = 1
 				F.health = 30
 				F.icon_state = "Floor1"
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 				F.levelupdate()
 		if(3.0)
@@ -2330,8 +2330,8 @@
 				src.intact = 0
 				levelupdate()
 				src.state = 1
-				new /obj/item/weapon/sheet/metal( src )
-				new /obj/item/weapon/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
+				new /obj/item/sheet/metal( src )
 				src.icon_state = "girder"
 		else
 	return
@@ -2346,7 +2346,7 @@
 			F.burnt = 1
 			F.health = 30
 			F.icon_state = "Floor1"
-			new /obj/item/weapon/sheet/metal( F )
+			new /obj/item/sheet/metal( F )
 			F.buildlinks()
 			F.levelupdate()
 		else
@@ -2357,7 +2357,7 @@
 			src.state = 1
 			src.intact = 0
 			levelupdate()
-			new /obj/item/weapon/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
 			src.icon_state = "girder"
 
 
@@ -2382,13 +2382,13 @@
 	src.add_fingerprint(user)
 	return
 
-/turf/station/wall/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/turf/station/wall/attackby(obj/item/W as obj, mob/user as mob)
 
 	if ((!( istype(user, /mob/human) ) && (!( ticker ) || (ticker && ticker.mode != "monkey"))))
 		if (!istype(user, /mob/drone))
 			user.client_mob() << "\red You don't have the dexterity to do this!"
 			return
-	if ((istype(W, /obj/item/weapon/wrench) && src.state == 1))
+	if ((istype(W, /obj/item/wrench) && src.state == 1))
 		var/turf/T = user.loc
 		if (!( istype(T, /turf) ))
 			return
@@ -2401,12 +2401,12 @@
 			//var/turf/station/floor/F = new /turf/station/floor( locate(src.x, src.y, src.z) )
 			var/turf/station/floor/F = src.ReplaceWithFloor()
 			F.oxygen = O2STANDARD
-			new /obj/item/weapon/sheet/metal( F )
-			new /obj/item/weapon/sheet/metal( F )
+			new /obj/item/sheet/metal( F )
+			new /obj/item/sheet/metal( F )
 			F.buildlinks()
 			F.levelupdate()
 	else
-		if ((istype(W, /obj/item/weapon/screwdriver) && src.state == 1))
+		if ((istype(W, /obj/item/screwdriver) && src.state == 1))
 			var/turf/T = user.loc
 			if (!( istype(T, /turf) ))
 				return
@@ -2421,10 +2421,10 @@
 
 				F.oxygen = O2STANDARD
 				new /obj/d_girders( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 		else
-			if ((istype(W, /obj/item/weapon/sheet/r_metal) && src.state == 1))
+			if ((istype(W, /obj/item/sheet/r_metal) && src.state == 1))
 				var/turf/T = user.loc
 				if (!( istype(T, /turf) ))
 					return
@@ -2443,11 +2443,11 @@
 					F.updatecell = 1
 					F.buildlinks()
 			else
-				if ((istype(W, /obj/item/weapon/weldingtool) && src.state == 2))
+				if ((istype(W, /obj/item/weldingtool) && src.state == 2))
 					var/turf/T = user.loc
 					if (!( istype(T, /turf) ))
 						return
-					var/obj/item/weapon/weldingtool/WT = W
+					var/obj/item/weldingtool/WT = W
 					if(WT.welding)
 						if (WT.weldfuel < 5)
 							user.client_mob() << "\blue You need more welding fuel to complete this task."
@@ -2462,8 +2462,8 @@
 							src.state = 1
 							src.intact = 0
 							levelupdate()
-							new /obj/item/weapon/sheet/metal( src )
-							new /obj/item/weapon/sheet/metal( src )
+							new /obj/item/sheet/metal( src )
+							new /obj/item/sheet/metal( src )
 							src.icon_state = "girder"
 		return
 
@@ -2477,16 +2477,16 @@
 			src.updatecell = 1
 			buildlinks()
 			src.firelevel = 11
-			new /obj/item/weapon/sheet/metal( src )
-			new /obj/item/weapon/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
+			new /obj/item/sheet/metal( src )
 		else
 			if ((prob(20) && src.state == 1))
 				src.state = 0
 				//var/turf/station/floor/F = new /turf/station/floor( locate(src.x, src.y, src.z) )
 				var/turf/station/floor/F = src.ReplaceWithFloor()
 				F.oxygen = O2STANDARD
-				new /obj/item/weapon/sheet/metal( F )
-				new /obj/item/weapon/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
+				new /obj/item/sheet/metal( F )
 				F.buildlinks()
 				F.levelupdate()
 	return
@@ -2559,16 +2559,16 @@
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return
 
-/turf/station/floor/attackby(obj/item/weapon/C as obj, mob/user as mob)
-	if (istype(C, /obj/item/weapon/crowbar))
+/turf/station/floor/attackby(obj/item/C as obj, mob/user as mob)
+	if (istype(C, /obj/item/crowbar))
 		if (src.health > 100)
 			src.health = 100
 			src.burnt = 1
 			src.intact = 0
 			levelupdate()
-			new /obj/item/weapon/tile(src)
+			new /obj/item/tile(src)
 			src.icon_state = text("Floor[]", (src.burnt ? "1" : ""))
-	else if (istype(C, /obj/item/weapon/tile))
+	else if (istype(C, /obj/item/tile))
 		if (src.health <= 100)
 			src.intact = 1
 			levelupdate()
@@ -2579,15 +2579,15 @@
 				src.luminosity = 2
 			else
 				src.icon_state = "Floor"
-			var/obj/item/weapon/tile/T = C
+			var/obj/item/tile/T = C
 			T.amount--
 			if (T.amount < 1)
 				del(T)
-	else if (istype(C, /obj/item/weapon/cable_coil) )
-		var/obj/item/weapon/cable_coil/coil = C
+	else if (istype(C, /obj/item/cable_coil) )
+		var/obj/item/cable_coil/coil = C
 		coil.turf_place(src, user)
-	else if (istype(C, /obj/item/weapon/pipe) )
-		var/obj/item/weapon/pipe/pipe = C
+	else if (istype(C, /obj/item/pipe) )
+		var/obj/item/pipe/pipe = C
 		pipe.turf_place(src, user)
 
 	return

@@ -124,21 +124,21 @@ obj/machinery/door
 				else
 					close()
 			return
-		if ((src.density && istype(I, /obj/item/weapon/card/emag)))
+		if ((src.density && istype(I, /obj/item/card/emag)))
 			src.operating = 1
 			flick("door_spark", src)
 			sleep(6)
 			src.operating = null
 			open()
 			return 1
-		var/obj/item/weapon/card/id/card
+		var/obj/item/card/id/card
 		if (istype(user, /mob/human))
 			var/mob/human/H = user
 			card = H.wear_id
-		if (istype(I, /obj/item/weapon/card/id))
+		if (istype(I, /obj/item/card/id))
 			card = I
 		else
-			if (!( istype(card, /obj/item/weapon/card/id) ))
+			if (!( istype(card, /obj/item/card/id) ))
 				if ((istype(user, /mob/ai)))
 					if (src.density)
 						open()

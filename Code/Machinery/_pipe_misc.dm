@@ -180,7 +180,7 @@
 // Create the relevant pipe fitting item from the pipe object
 // Returns true if succeeded, false otherwise
 
-/obj/machinery/proc/attack_welder(obj/item/weapon/weldingtool/WT, mob/user)
+/obj/machinery/proc/attack_welder(obj/item/weldingtool/WT, mob/user)
 
 	if(WT.welding)
 		if(WT.weldfuel > 3)
@@ -193,7 +193,7 @@
 			if ((user.loc == T && user.equipped() == WT))
 				// make pipe fitting
 
-				var/obj/item/weapon/pipe/P = new(src.loc)
+				var/obj/item/pipe/P = new(src.loc)
 				P.settype(src)
 
 				return 1

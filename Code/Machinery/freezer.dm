@@ -43,9 +43,9 @@ obj/machinery/freezer
 		O1.pixel_y = -16.0
 		src.overlays += O1
 		src.connector = O1
-		new /obj/item/weapon/flasks/oxygen( src )
-		new /obj/item/weapon/flasks/coolant( src )
-		new /obj/item/weapon/flasks/plasma( src )
+		new /obj/item/flasks/oxygen( src )
+		new /obj/item/flasks/coolant( src )
+		new /obj/item/flasks/plasma( src )
 		rebuild_overlay()
 
 		gas = new/obj/substance/gas()
@@ -116,10 +116,10 @@ obj/machinery/freezer
 
 		if ((!( istype(usr, /mob/human) ) && (!( ticker ) || (ticker && ticker.mode != "monkey"))) && (!istype(usr, /mob/ai)))
 			var/d1
-			if (locate(/obj/item/weapon/flasks, src))
+			if (locate(/obj/item/flasks, src))
 				var/counter = 1
 
-				for(var/obj/item/weapon/flasks/F in src)
+				for(var/obj/item/flasks/F in src)
 					d1 += text("<A href = '?src=\ref[];flask=[]'><B>Flask []</B></A>: [] / [] / []<BR>", src, counter, counter, F.oxygen, F.plasma, F.coolant)
 					counter++
 				d1 += "Key:    Oxygen / Plasma / Coolant<BR>"
@@ -145,9 +145,9 @@ obj/machinery/freezer
 			user.client_mob() << browse(dat, "window=freezer;size=400x500")
 		else
 			var/d1 = null
-			if (locate(/obj/item/weapon/flasks, src))
+			if (locate(/obj/item/flasks, src))
 				var/counter = 1
-				for(var/obj/item/weapon/flasks/F in src)
+				for(var/obj/item/flasks/F in src)
 					d1 += text("<A href = '?src=\ref[];flask=[]'><B>[] []</B></A>: []<BR>", src, counter, stars("Flask"), counter, stars(text("[] / [] / []", F.oxygen, F.plasma, F.coolant)))
 					counter++
 				d1 += "Key:    Oxygen / Plasma / Coolant<BR>"
@@ -219,9 +219,9 @@ obj/machinery/freezer
 	// Attack with item
 	// If a flask, add to contents and rebuild overlays
 
-	attackby(obj/item/weapon/flasks/F, mob/user)
+	attackby(obj/item/flasks/F, mob/user)
 
-		if (!( istype(F, /obj/item/weapon/flasks) ))
+		if (!( istype(F, /obj/item/flasks) ))
 			return
 		if (src.contents.len >= 3)
 			user.client_mob() << "\blue All slots are full!"
@@ -252,7 +252,7 @@ obj/machinery/freezer
 		src.overlays += src.connector
 		var/counter = 0
 
-		for(var/obj/item/weapon/flasks/F in src.contents)
+		for(var/obj/item/flasks/F in src.contents)
 			var/obj/overlay/O = new /obj/overlay(  )
 			O.icon = F.icon
 			O.icon_state = F.icon_state
@@ -278,9 +278,9 @@ obj/machinery/freezer
 
 		use_power(50)
 
-		var/obj/item/weapon/flasks/F1
-		var/obj/item/weapon/flasks/F2
-		var/obj/item/weapon/flasks/F3
+		var/obj/item/flasks/F1
+		var/obj/item/flasks/F2
+		var/obj/item/flasks/F3
 		if (src.contents.len >= 3)
 			F3 = src.contents[3]
 		if (src.contents.len >= 2)

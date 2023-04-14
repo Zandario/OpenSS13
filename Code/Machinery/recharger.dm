@@ -12,14 +12,14 @@ obj/machinery/recharger
 	name = "recharger"
 
 	var
-		obj/item/weapon/gun/energy/charging = null	// the weapon being charged, or null if none
+		obj/item/gun/energy/charging = null	// the weapon being charged, or null if none
 
 	// attacking with a gun inserts the gun into the charger
 
-	attackby(obj/item/weapon/G, mob/user)
+	attackby(obj/item/G, mob/user)
 		if (src.charging)
 			return
-		if (istype(G, /obj/item/weapon/gun/energy))
+		if (istype(G, /obj/item/gun/energy))
 			user.drop_item()
 			G.loc = src
 			src.charging = G

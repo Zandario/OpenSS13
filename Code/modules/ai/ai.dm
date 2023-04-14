@@ -616,7 +616,7 @@
 			else
 				if (pre == "\[i\]")
 					message = copytext(message, 4, length(message) + 1)
-					for(var/obj/item/weapon/radio/intercom/I in view(1, null))
+					for(var/obj/item/radio/intercom/I in view(1, null))
 						I.talk_into(usr, message)
 						//Foreach goto(626)
 					L += hearers(1, null)
@@ -628,7 +628,7 @@
 							if (copytext(pre, length(pre), length(pre)+1) == "\]")
 								var/number = text2num(copytext(pre, 2, length(pre)))
 								message = copytext(message, length(pre)+1, length(message) + 1)
-								for(var/obj/item/weapon/radio/intercom/I in view(1, null))
+								for(var/obj/item/radio/intercom/I in view(1, null))
 									if (I.number == number)
 										I.talk_into(usr, message)
 								L += hearers(1, null)
@@ -704,7 +704,7 @@
 			if (M.stat < 2)
 				if (M.a_intent == "hurt")
 					if (istype(M, /mob/human) || istype(M, /mob/monkey))
-						var/obj/item/weapon/organ/external/affecting = null
+						var/obj/item/organ/external/affecting = null
 						var/def_zone
 						var/damage = rand(1, 7)
 						if (M.hand)
@@ -713,7 +713,7 @@
 							def_zone = "r_hand"
 						if (M.organs[text("[]", def_zone)])
 							affecting = M.organs[text("[]", def_zone)]
-						if (affecting!=null && (istype(affecting, /obj/item/weapon/organ/external)))
+						if (affecting!=null && (istype(affecting, /obj/item/organ/external)))
 							for(var/mob/O in viewers(src, null))
 								O.show_message(text("\red <B>[] has punched [], with no effect except harm to \himself!</B>", M, src), 1)
 							affecting.take_damage(damage)
@@ -897,7 +897,7 @@
 
 	if (monkeyizing)
 		return
-	for(var/obj/item/weapon/W in src)
+	for(var/obj/item/W in src)
 		u_equip(W)
 		if (client)
 			client.screen -= W

@@ -114,11 +114,11 @@ obj/machinery/power
 	// leading from the turf the player is standing on.
 	// Only machines with directwired=1 need or use this.
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
-		if(istype(W, /obj/item/weapon/cable_coil))
+		if(istype(W, /obj/item/cable_coil))
 
-			var/obj/item/weapon/cable_coil/coil = W
+			var/obj/item/cable_coil/coil = W
 
 			var/turf/T = user.loc
 

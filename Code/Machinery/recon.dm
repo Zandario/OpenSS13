@@ -122,7 +122,7 @@ obj/machinery/recon
 		if ((( istype(usr, /mob/human) ) && (!( ticker ) || (ticker && ticker.mode != "monkey"))))
 			var/mob/human/H = usr
 			if ((H.pulling && !( H.pulling.anchored )))
-				if (!( istype(H.pulling, /obj/item/weapon) ))
+				if (!( istype(H.pulling, /obj/item) ))
 					usr.client_mob() << "You may only place items in."
 				else
 					if ((locate(/mob, src) && ismob(H.pulling)))

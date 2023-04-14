@@ -29,8 +29,8 @@ obj/machinery/firealarm
 	// Attack with item, if wirecutters connect/disconnect fire detector
 	// Otherwise, trigger the alarm
 
-	attackby(obj/item/weapon/W, mob/user)
-		if (istype(W, /obj/item/weapon/wirecutters))
+	attackby(obj/item/W, mob/user)
+		if (istype(W, /obj/item/wirecutters))
 			src.detecting = !( src.detecting )
 			var/list/observers = viewers(user, null)
 			if (src.detecting)

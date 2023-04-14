@@ -317,18 +317,18 @@ Pipe Valve Status: [ct]<BR>
 	// If a wrench (and a connector is present), attach/unattach canister from pipe connector
 	// Otherwise, damage the canister
 
-	attackby(var/obj/item/weapon/W, var/mob/user)
+	attackby(var/obj/item/W, var/mob/user)
 
-		if ((istype(W, /obj/item/weapon/tank) && !( src.destroyed )))
+		if ((istype(W, /obj/item/tank) && !( src.destroyed )))
 			if (src.holding)
 				return
-			var/obj/item/weapon/tank/T = W
+			var/obj/item/tank/T = W
 			user.drop_item()
 			T.loc = src
 			src.holding = T
 			update_icon()
 
-		else if ((istype(W, /obj/item/weapon/wrench)))
+		else if ((istype(W, /obj/item/wrench)))
 			var/obj/machinery/connector/con = locate(/obj/machinery/connector, src.loc)
 
 			if (src.c_status)		// note: don't check is cansiter is destroyed to allow user to unhook a broken cansiter

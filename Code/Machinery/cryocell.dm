@@ -207,10 +207,10 @@
  * A special case - only works with the pseudo-item representing grabbing another player.
  * Make standard checks, then move grabbed player into the cell, and update their view.
  */
-/obj/machinery/cryo_cell/attackby(obj/item/weapon/grab/G, mob/user)
+/obj/machinery/cryo_cell/attackby(obj/item/grab/G, mob/user)
 
 	if (stat & NOPOWER) return
-	if ((!( istype(G, /obj/item/weapon/grab) ) || !( ismob(G.affecting) )))
+	if ((!( istype(G, /obj/item/grab) ) || !( ismob(G.affecting) )))
 		return
 	var/result = src.canReach(user, null, 1)
 	if (result==0)
@@ -336,8 +336,8 @@
 					//target.leak_to_turf()
 					var/sendplasma = src.gas.plasma + vnode:gas:plasma + vnode:vnode2:gas:plasma
 					var/sendoxygen = src.gas.oxygen + vnode:gas:oxygen + vnode:vnode2:gas:oxygen
-					for (var/obj/item/weapon/flasks/flask in target.contents)
-						if (istype(flask, /obj/item/weapon/flasks/plasma))
+					for (var/obj/item/flasks/flask in target.contents)
+						if (istype(flask, /obj/item/flasks/plasma))
 							flask.plasma += sendplasma
 							src.gas.plasma = 0
 							src.ngas.plasma = 0
@@ -347,7 +347,7 @@
 							// src.vnode:vnode2:gas.plasma = 0
 							// src.vnode:vnode2:ngas.plasma = 0
 						else
-							if (istype(flask, /obj/item/weapon/flasks/oxygen))
+							if (istype(flask, /obj/item/flasks/oxygen))
 								flask.oxygen += sendoxygen
 								src.gas.oxygen = 0
 								src.ngas.oxygen = 0
@@ -430,7 +430,7 @@
 			var/mob/human/H = M
 			var/ok = 0
 			for(var/organ in H.organs)
-				var/obj/item/weapon/organ/external/affecting = H.organs[text("[]", organ)]
+				var/obj/item/organ/external/affecting = H.organs[text("[]", organ)]
 				ok += affecting.heal_damage(5, 5)
 
 			if (ok)

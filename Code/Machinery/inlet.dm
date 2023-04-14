@@ -101,9 +101,9 @@ obj/machinery/inlet
 	// Attack by item
 	// If welder, make a fitting and delete self
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
-		if(istype(W, /obj/item/weapon/weldingtool))
+		if(istype(W, /obj/item/weldingtool))
 			if(attack_welder(W, user))
 				del(src)
 		else
@@ -412,8 +412,8 @@ obj/machinery/inletfiltered
 
 	//Remove Cover
 
-	attackby(obj/item/weapon/W, mob/user)
-		if ( istype(W, /obj/item/weapon/screwdriver))
+	attackby(obj/item/W, mob/user)
+		if ( istype(W, /obj/item/screwdriver))
 			if (src.cover == 1)
 				user.show_message("\blue You carefully unscrew the cover to the inlet")
 				src.cover = 0
@@ -429,22 +429,22 @@ obj/machinery/inletfiltered
 	//Remove Filter
 
 		else
-			if ( istype(W, /obj/item/weapon/wrench))
+			if ( istype(W, /obj/item/wrench))
 				if (src.cover == 1)		//If it's covered, this won't happen.
 					return
 				else
 					if (src.filtertype > 0)
 						user.show_message("\blue You remove the bolts holding the filter and slide it out of place.  The inlet shuts down.")
 						if (src.filtertype == 1)
-							new /obj/item/weapon/filter/filtertype1 (src.loc)
+							new /obj/item/filter/filtertype1 (src.loc)
 						if (src.filtertype == 2)
-							new /obj/item/weapon/filter/filtertype2 (src.loc)
+							new /obj/item/filter/filtertype2 (src.loc)
 						if (src.filtertype == 3)
-							new /obj/item/weapon/filter/filtertype3 (src.loc)
+							new /obj/item/filter/filtertype3 (src.loc)
 						if (src.filtertype == 4)
-							new /obj/item/weapon/filter/filtertype4 (src.loc)
+							new /obj/item/filter/filtertype4 (src.loc)
 						if (src.filtertype == 5)
-							var/obj/item/weapon/filter/filtertype5/I = new(src.loc)		//Spawn Malf. Filter
+							var/obj/item/filter/filtertype5/I = new(src.loc)		//Spawn Malf. Filter
 							I.oftype = src.ofiltertype		//Set filters original filter type, so it can be repaired.
 							I.oname = src.orname			//Set filters original name
 							I.odesc = src.ordescription		//Set filters original desc
@@ -456,7 +456,7 @@ obj/machinery/inletfiltered
 	//Apply filter
 	//TODO:  Maybe just store the physical filter instead of using variables.  Maybe not :p I sort of like variables...
 			else
-				if ( istype(W, /obj/item/weapon/filter))
+				if ( istype(W, /obj/item/filter))
 					if (src.cover == 1)		//If it's covered this won't happen.
 						return
 					else

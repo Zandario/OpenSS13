@@ -61,11 +61,11 @@ obj/machinery/door/false_wall
 	// Attack by item
 	// If a screwdriver, disassembly the false wall into components
 
-	attackby(obj/item/weapon/screwdriver/S, mob/user)
+	attackby(obj/item/screwdriver/S, mob/user)
 
 		src.add_fingerprint(user)
-		if (istype(S, /obj/item/weapon/screwdriver))
-			new /obj/item/weapon/sheet/metal( src.loc )
+		if (istype(S, /obj/item/screwdriver))
+			new /obj/item/sheet/metal( src.loc )
 			new /obj/d_girders( src.loc )
 			del(src)
 			return

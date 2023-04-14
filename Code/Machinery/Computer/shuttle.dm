@@ -77,10 +77,10 @@ obj/machinery/computer/shuttle
 	// Attack with object
 	// Allows shuttle to be launched early if 3 ID card of sufficient level (from different holders) are used
 
-	attackby(obj/item/weapon/card/id/W, mob/user)
+	attackby(obj/item/card/id/W, mob/user)
 
 
-		if ((!( istype(W, /obj/item/weapon/card/id) ) || !( ticker ) || ticker.shuttle_location == shuttle_z || !( user )))
+		if ((!( istype(W, /obj/item/card/id) ) || !( ticker ) || ticker.shuttle_location == shuttle_z || !( user )))
 			return
 		if (!W.check_access(access, allowed))
 			user.client_mob() << text("The access level ([]) of [] card is not high enough. ", W.access_level, W.registered)

@@ -5,7 +5,7 @@
  */
 
 
-obj/item/weapon/pipe
+obj/item/pipe
 	name = "pipe"
 	icon = 'icons/pipe-item.dmi'
 	icon_state = "straight"
@@ -161,7 +161,7 @@ obj/item/weapon/pipe
 
 	// attack with welding tool to lay the pipe
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
 		var/turf/T = src.loc
 		if(!isturf(T))						// only do anything when located on a turf
@@ -172,8 +172,8 @@ obj/item/weapon/pipe
 
 		var/pipedir = src.get_pdir()|src.get_hdir()		// all possible pipe dirs including h/e
 
-		if (istype(W, /obj/item/weapon/weldingtool) )
-			var/obj/item/weapon/weldingtool/WT = W
+		if (istype(W, /obj/item/weldingtool) )
+			var/obj/item/weldingtool/WT = W
 			if (WT.welding && WT.weldfuel>=0)
 
 

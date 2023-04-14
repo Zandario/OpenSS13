@@ -101,7 +101,7 @@
 			var/datum/data/record/G = new /datum/data/record(  )
 			var/datum/data/record/M = new /datum/data/record(  )
 			var/datum/data/record/S = new /datum/data/record(  )
-			var/obj/item/weapon/card/id/C = H.wear_id
+			var/obj/item/card/id/C = H.wear_id
 			if (C)
 				G.fields["rank"] = C.assignment
 			else
@@ -162,10 +162,10 @@
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return
 
-/turf/space/attackby(obj/item/weapon/W, mob/user)
+/turf/space/attackby(obj/item/W, mob/user)
 
-	if (istype(W, /obj/item/weapon/tile))
-		var/obj/item/weapon/tile/T = W
+	if (istype(W, /obj/item/tile))
+		var/obj/item/tile/T = W
 		T.build(src)
 		T.amount--
 		T.add_fingerprint(user)
@@ -173,8 +173,8 @@
 			user.u_equip(T)
 			del(T)
 			return
-	else if (istype(W, /obj/item/weapon/pipe) )
-		var/obj/item/weapon/pipe/pipe = W
+	else if (istype(W, /obj/item/pipe) )
+		var/obj/item/pipe/pipe = W
 		if(locate(/obj/lattice) in src)
 			pipe.turf_place(src, user)
 	return

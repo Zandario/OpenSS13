@@ -37,11 +37,11 @@ obj/machinery/door/firedoor
 	// If a welding tool, weld the door shut (or unweld)
 	// If a crowbar. open the door.
 
-	attackby(obj/item/weapon/C, mob/user)
+	attackby(obj/item/C, mob/user)
 
 		src.add_fingerprint(user)
-		if ((istype(C, /obj/item/weapon/weldingtool) && !( src.operating ) && src.density))
-			var/obj/item/weapon/weldingtool/W = C
+		if ((istype(C, /obj/item/weldingtool) && !( src.operating ) && src.density))
+			var/obj/item/weldingtool/W = C
 			if(W.welding)
 				if (W.weldfuel > 2)
 					W.weldfuel -= 2
@@ -53,7 +53,7 @@ obj/machinery/door/firedoor
 					src.icon_state = "door1"
 				return
 		else
-			if (!( istype(C, /obj/item/weapon/crowbar) ))
+			if (!( istype(C, /obj/item/crowbar) ))
 				return
 		if ((src.density && !( src.blocked ) && !( src.operating )))
 			spawn( 0 )

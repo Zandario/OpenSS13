@@ -345,15 +345,15 @@ obj/machinery/atmoalter/siphs
 
 	attackby(var/obj/W as obj, mob/user as mob)
 
-		if (istype(W, /obj/item/weapon/tank))		// insert tank
+		if (istype(W, /obj/item/tank))		// insert tank
 			if (src.holding)
 				return
-			var/obj/item/weapon/tank/T = W
+			var/obj/item/tank/T = W
 			user.drop_item()
 			T.loc = src
 			src.holding = T
 
-		else if (istype(W, /obj/item/weapon/screwdriver))		// connect/disconnect from connector
+		else if (istype(W, /obj/item/screwdriver))		// connect/disconnect from connector
 			var/obj/machinery/connector/con = locate(/obj/machinery/connector, src.loc)
 			if (src.c_status)
 				src.anchored = 0
@@ -370,7 +370,7 @@ obj/machinery/atmoalter/siphs
 				user.show_message("\blue There is nothing here to connect to the siphon.")
 
 
-		else if (istype(W, /obj/item/weapon/wrench))		// lock/unlock the interface
+		else if (istype(W, /obj/item/wrench))		// lock/unlock the interface
 			src.alterable = !( src.alterable )
 			if (src.alterable)
 				user.client_mob() << "\blue You unlock the interface!"
@@ -432,9 +432,9 @@ obj/machinery/atmoalter/siphs
 	// If screwdriver, attach/unattach from connector (if present)
 	// If wrench, lock/unlock the interface
 
-	fullairsiphon/air_vent/attackby(obj/item/weapon/W, mob/user)
+	fullairsiphon/air_vent/attackby(obj/item/W, mob/user)
 
-		if (istype(W, /obj/item/weapon/screwdriver))
+		if (istype(W, /obj/item/screwdriver))
 			if (src.c_status)
 				src.anchored = 1
 				src.c_status = 0
@@ -443,7 +443,7 @@ obj/machinery/atmoalter/siphs
 					src.anchored = 1
 					src.c_status = 3
 		else
-			if (istype(W, /obj/item/weapon/wrench))
+			if (istype(W, /obj/item/wrench))
 				src.alterable = !( src.alterable )
 		return
 
@@ -593,9 +593,9 @@ obj/machinery/atmoalter/siphs
 	// If screwdriver, attach/unattach from connector (if present)
 	// If wrench, lock/unlock the interface
 
-	scrubbers/air_filter/attackby(obj/item/weapon/W, mob/user)
+	scrubbers/air_filter/attackby(obj/item/W, mob/user)
 
-		if (istype(W, /obj/item/weapon/screwdriver))
+		if (istype(W, /obj/item/screwdriver))
 			if (src.c_status)
 				src.anchored = 1
 				src.c_status = 0
@@ -604,7 +604,7 @@ obj/machinery/atmoalter/siphs
 					src.anchored = 1
 					src.c_status = 3
 		else
-			if (istype(W, /obj/item/weapon/wrench))
+			if (istype(W, /obj/item/wrench))
 				src.alterable = !( src.alterable )
 		return
 

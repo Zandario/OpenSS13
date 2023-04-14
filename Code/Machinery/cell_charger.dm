@@ -12,17 +12,17 @@ obj/machinery/cell_charger
 	icon_state = "ccharger0"
 	anchored = 1
 	var
-		obj/item/weapon/cell/charging = null		// the cell inserted for charging (or null if none)
+		obj/item/cell/charging = null		// the cell inserted for charging (or null if none)
 		chargelevel = -1							// the (cached) charge indicator level (0-4)
 													// set -1 to force the indicator to be updated
 
 	// insert a cell into the charger, unless there is already one inside
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
 		if(stat & BROKEN) return
 
-		if(istype(W, /obj/item/weapon/cell))
+		if(istype(W, /obj/item/cell))
 			if(charging)
 				user.client_mob() << "There is already a cell in the charger."
 				return

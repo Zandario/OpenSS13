@@ -36,7 +36,7 @@
 		return
 
 	var/list/L = list(  )
-	for(var/obj/item/weapon/radio/R in world)
+	for(var/obj/item/radio/R in world)
 		if (R.freq != freq)
 			continue //goto(26)
 		var/turf/T = src.find_loc(R)
@@ -47,7 +47,7 @@
 		L[t1] = R
 	var/t1 = input("Please select a location to lock in.", "Locking Computer", null, null) in L
 	var/R = L[t1]
-	if ((prob(30) || istype(R, /obj/item/weapon/radio/beacon) && prob(50)))
+	if ((prob(30) || istype(R, /obj/item/radio/beacon) && prob(50)))
 		src.locked = src.find_loc(R)
 	else
 		if (L.len)

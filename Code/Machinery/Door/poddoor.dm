@@ -25,9 +25,9 @@ obj/machinery/door/poddoor
 	// Attack by item.
 	// If crowbar (and door unpowered), open the door
 
-	attackby(obj/item/weapon/C as obj, mob/user as mob)
+	attackby(obj/item/C as obj, mob/user as mob)
 		src.add_fingerprint(user)
-		if (!( istype(C, /obj/item/weapon/crowbar) ))
+		if (!( istype(C, /obj/item/crowbar) ))
 			return
 		if ((src.density && (stat & NOPOWER) && !( src.operating )))
 			spawn( 0 )

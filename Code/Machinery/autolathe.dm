@@ -21,23 +21,23 @@ obj/machinery/autolathe
 
 	// Feed in metal or glass stock, or open the autolathe
 
-	attackby(obj/item/weapon/O, mob/user)
+	attackby(obj/item/O, mob/user)
 
-		if (istype(O, /obj/item/weapon/sheet/metal))
+		if (istype(O, /obj/item/sheet/metal))
 			if (src.m_amount < 150000.0)
 				src.m_amount += O:height * O:width * O:length * 1000000.0
 				O:amount--
 				if (O:amount < 1)
 					del(O)
 
-		else if (istype(O, /obj/item/weapon/sheet/glass))
+		else if (istype(O, /obj/item/sheet/glass))
 			if (src.g_amount < 75000.0)
 				src.g_amount += O:height * O:width * O:length * 1000000.0
 				O:amount--
 				if (O:amount < 1)
 					del(O)
 
-		else if (istype(O, /obj/item/weapon/screwdriver))
+		else if (istype(O, /obj/item/screwdriver))
 			if (!( src.operating ))
 				src.opened = !( src.opened )
 				src.icon_state = text("autolathe[]", (src.opened ? "f" : null))
@@ -148,23 +148,23 @@ obj/machinery/autolathe
 					operate()
 					switch(item)
 						if("pipe")
-							new /obj/item/weapon/pipe{ ptype = 0 }(src.loc)
+							new /obj/item/pipe{ ptype = 0 }(src.loc)
 						if("bpipe")
-							new /obj/item/weapon/pipe{ ptype = 1 }(src.loc)
+							new /obj/item/pipe{ ptype = 1 }(src.loc)
 						if("hepipe")
-							new /obj/item/weapon/pipe{ ptype = 2 }(src.loc)
+							new /obj/item/pipe{ ptype = 2 }(src.loc)
 						if("bhepipe")
-							new /obj/item/weapon/pipe{ ptype = 3 }(src.loc)
+							new /obj/item/pipe{ ptype = 3 }(src.loc)
 						if("contr")
-							new /obj/item/weapon/pipe{ ptype = 4 }(src.loc)
+							new /obj/item/pipe{ ptype = 4 }(src.loc)
 						if("manif")
-							new /obj/item/weapon/pipe{ ptype = 5 }(src.loc)
+							new /obj/item/pipe{ ptype = 5 }(src.loc)
 						if("junct")
-							new /obj/item/weapon/pipe{ ptype = 6 }(src.loc)
+							new /obj/item/pipe{ ptype = 6 }(src.loc)
 						if("vent")
-							new /obj/item/weapon/pipe{ ptype = 7 }(src.loc)
+							new /obj/item/pipe{ ptype = 7 }(src.loc)
 						if("inlet")
-							new /obj/item/weapon/pipe{ ptype = 8 }(src.loc)
+							new /obj/item/pipe{ ptype = 8 }(src.loc)
 						if("drone")
 							if (config.enable_drones)
 								var/mob/drone/drone = new /mob/drone(src.loc)

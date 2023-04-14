@@ -26,10 +26,10 @@
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return
 
-/turf/station/engine/attackby(obj/item/weapon/C as obj, mob/user as mob)
+/turf/station/engine/attackby(obj/item/C as obj, mob/user as mob)
 
-	if (istype(C, /obj/item/weapon/pipe) )
-		var/obj/item/weapon/pipe/P = C
+	if (istype(C, /obj/item/pipe) )
+		var/obj/item/pipe/P = C
 		P.turf_place(src, user)
 
 /turf/station/engine/floor/ex_act(severity)
@@ -190,9 +190,3 @@
 			L += A
 
 	return L
-
-
-
-
-
-

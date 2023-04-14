@@ -3,7 +3,7 @@
 /turf/space,
 /area)
 "ab" = (
-/obj/item/weapon/tank/oxygentank,
+/obj/item/tank/oxygentank,
 /turf/space,
 /area)
 "ac" = (
@@ -121,7 +121,7 @@
 /obj/window{
 	dir = 10
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area)
 "ax" = (
@@ -179,13 +179,13 @@
 /area/control_room)
 "aK" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/sp_suit,
-/obj/item/weapon/clothing/head/s_helmet,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/tank/jetpack,
+/obj/item/clothing/suit/sp_suit,
+/obj/item/clothing/head/s_helmet,
+/obj/item/clothing/mask/gasmask,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/under/black,
+/obj/item/clothing/shoes/black,
+/obj/item/tank/jetpack,
 /turf/station/floor,
 /area/control_room)
 "aL" = (
@@ -235,7 +235,7 @@
 /area/engine)
 "aU" = (
 /obj/machinery/atmoalter/canister/poisoncanister,
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/engine)
 "aV" = (
@@ -256,10 +256,10 @@
 	},
 /area/auxengine)
 "aZ" = (
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
 /turf/station/floor,
 /area/control_room)
@@ -368,31 +368,31 @@
 /area/engine)
 "bp" = (
 /obj/table,
-/obj/item/weapon/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /turf/station/floor,
 /area/engine)
 "bq" = (
 /obj/table,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/pill_canister/antitoxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/pill_canister/antitoxin,
 /turf/station/floor,
 /area/engine)
 "br" = (
 /obj/table,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/engine)
 "bs" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/radio/headset,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/under/black,
+/obj/item/clothing/mask/gasmask,
+/obj/item/radio/headset,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/engine)
 "bt" = (
@@ -452,7 +452,7 @@
 /turf/station/floor,
 /area/engine)
 "bD" = (
-/obj/item/weapon/radio,
+/obj/item/radio,
 /turf/station/floor,
 /area/engine)
 "bE" = (
@@ -563,8 +563,8 @@
 /area/control_room)
 "bV" = (
 /obj/table,
-/obj/item/weapon/paper/Map,
-/obj/item/weapon/radio/intercom,
+/obj/item/paper/Map,
+/obj/item/radio/intercom,
 /turf/station/floor,
 /area/control_room)
 "bW" = (
@@ -577,8 +577,8 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/paper/jobs,
-/obj/item/weapon/infra_sensor,
+/obj/item/paper/jobs,
+/obj/item/infra_sensor,
 /obj/machinery/camera{
 	c_tag = "Control Room"
 	},
@@ -590,8 +590,8 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/paper/jobs,
-/obj/item/weapon/infra_sensor,
+/obj/item/paper/jobs,
+/obj/item/infra_sensor,
 /turf/station/floor,
 /area/control_room)
 "bZ" = (
@@ -600,7 +600,7 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/radio,
+/obj/item/radio,
 /turf/station/floor,
 /area/control_room)
 "ca" = (
@@ -608,7 +608,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/control_room)
 "cb" = (
@@ -659,7 +659,7 @@
 /turf/station/floor,
 /area/engine)
 "ch" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/engine)
 "ci" = (
@@ -693,7 +693,7 @@
 /turf/station/floor,
 /area/engine)
 "cn" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -724,8 +724,8 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/pill_canister/antitoxin,
+/obj/item/storage/firstaid/regular,
+/obj/item/pill_canister/antitoxin,
 /turf/station/floor,
 /area/control_room)
 "ct" = (
@@ -736,20 +736,20 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/pen,
-/obj/item/weapon/game_kit,
+/obj/item/pen,
+/obj/item/game_kit,
 /turf/station/floor,
 /area/control_room)
 "cu" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/radio/headset,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/meson,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/under/black,
+/obj/item/clothing/mask/gasmask,
+/obj/item/radio/headset,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/engine)
 "cv" = (
@@ -772,15 +772,15 @@
 /area/engine)
 "cy" = (
 /obj/table,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/auxengine)
 "cz" = (
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/auxengine)
 "cA" = (
@@ -798,7 +798,7 @@
 /obj/window{
 	dir = 10
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/control_room)
 "cD" = (
@@ -815,10 +815,10 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/clipboard,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/control_room)
 "cF" = (
@@ -830,7 +830,7 @@
 /turf/station/floor,
 /area/engine)
 "cG" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_y = 32
 	},
 /turf/station/floor,
@@ -853,7 +853,7 @@
 /obj/machinery/firealarm{
 	pixel_y = -32
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/auxengine)
 "cL" = (
@@ -879,15 +879,15 @@
 /area/control_room)
 "cP" = (
 /obj/table,
-/obj/item/weapon/paper/jobs,
-/obj/item/weapon/storage/id_kit,
+/obj/item/paper/jobs,
+/obj/item/storage/id_kit,
 /turf/station/floor,
 /area/control_room)
 "cQ" = (
 /obj/table,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/control_room)
 "cR" = (
@@ -908,13 +908,13 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/beacon,
-/obj/item/weapon/clipboard,
+/obj/item/radio/signaler,
+/obj/item/radio/beacon,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/control_room)
 "cU" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -980,8 +980,8 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/clothing/glasses/meson,
+/obj/item/storage/toolbox,
+/obj/item/clothing/glasses/meson,
 /turf/station/floor,
 /area/tech_office)
 "df" = (
@@ -989,8 +989,8 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/clothing/glasses/meson,
+/obj/item/storage/toolbox,
+/obj/item/clothing/glasses/meson,
 /turf/station/floor,
 /area/tech_office)
 "dg" = (
@@ -998,10 +998,10 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area/tech_office)
 "dh" = (
@@ -1009,11 +1009,11 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/firstaid/regular,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area/tech_office)
 "di" = (
@@ -1027,9 +1027,9 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/paper/Internal,
-/obj/item/weapon/infra,
+/obj/item/paper/sop,
+/obj/item/paper/Internal,
+/obj/item/infra,
 /turf/station/floor,
 /area/control_room)
 "dk" = (
@@ -1037,8 +1037,8 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/paper/Internal,
-/obj/item/weapon/radio/signaler,
+/obj/item/paper/Internal,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/control_room)
 "dl" = (
@@ -1050,8 +1050,8 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/syringe,
 /turf/station/floor,
 /area/control_room)
 "dn" = (
@@ -1059,7 +1059,7 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/bottle/s_tox,
+/obj/item/bottle/s_tox,
 /obj/window{
 	dir = 4
 	},
@@ -1071,7 +1071,7 @@
 /turf/station/floor,
 /area/engine)
 "dp" = (
-/obj/item/weapon/storage/backpack,
+/obj/item/storage/backpack,
 /turf/station/floor,
 /area/engine)
 "dq" = (
@@ -1115,7 +1115,7 @@
 /area/tech_office)
 "dx" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = 32
 	},
 /turf/station/floor,
@@ -1125,7 +1125,7 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/paper/courtroom,
+/obj/item/paper/courtroom,
 /turf/station/floor,
 /area/control_room)
 "dz" = (
@@ -1133,9 +1133,9 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/paper/Toxin,
-/obj/item/weapon/paper/Map,
-/obj/item/weapon/timer,
+/obj/item/paper/Toxin,
+/obj/item/paper/Map,
+/obj/item/timer,
 /turf/station/floor,
 /area/control_room)
 "dA" = (
@@ -1150,7 +1150,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/paper/jobs,
+/obj/item/paper/jobs,
 /obj/manifest,
 /turf/station/floor,
 /area/control_room)
@@ -1160,7 +1160,7 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/card/id,
+/obj/item/card/id,
 /obj/machinery/firealarm{
 	pixel_y = -32
 	},
@@ -1193,56 +1193,56 @@
 /turf/station/floor,
 /area/control_room)
 "dH" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/storage/toolbox,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/crowbar,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/engine)
 "dI" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/crowbar,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/storage/toolbox,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/engine)
 "dJ" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/clipboard,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/storage/toolbox,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/crowbar,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/engine)
 "dK" = (
 /obj/machinery/alarm{
 	pixel_y = -32
 	},
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	pixel_y = -32
 	},
 /turf/station/floor,
 /area/engine)
 "dL" = (
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/engine)
 "dM" = (
-/obj/item/weapon/radio,
+/obj/item/radio,
 /obj/machinery/firealarm{
 	pixel_y = -32
 	},
@@ -1356,7 +1356,7 @@
 /obj/window{
 	dir = 10
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/engine)
 "ef" = (
@@ -1438,7 +1438,7 @@
 "eu" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
 /obj/stool/bed,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/station/floor,
 /area/control_room)
 "ev" = (
@@ -1476,7 +1476,7 @@
 /turf/station/floor,
 /area/pod)
 "eB" = (
-/obj/item/weapon/hand_tele,
+/obj/item/hand_tele,
 /turf/station/engine/floor,
 /area/engine)
 "eC" = (
@@ -1597,7 +1597,7 @@
 /area/pod)
 "eW" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -1630,17 +1630,17 @@
 /turf/station/floor,
 /area/toolstorage)
 "fc" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/clothing/gloves/black,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/storage/backpack,
+/obj/item/crowbar,
+/obj/item/clothing/gloves/black,
 /turf/station/floor,
 /area/toolstorage)
 "fd" = (
-/obj/item/weapon/infra,
-/obj/item/weapon/timer,
+/obj/item/infra,
+/obj/item/timer,
 /turf/station/floor,
 /area/toolstorage)
 "fe" = (
@@ -1656,10 +1656,10 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/paper_bin{
+/obj/item/paper_bin{
 	amount = 50
 	},
-/obj/item/weapon/wrapping_paper,
+/obj/item/wrapping_paper,
 /turf/station/floor,
 /area/toolstorage)
 "fg" = (
@@ -1667,39 +1667,39 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/storage/gl_kit,
+/obj/item/storage/gl_kit,
 /turf/station/floor,
 /area/toolstorage)
 "fh" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/toolstorage)
 "fi" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
 /turf/station/floor,
 /area/toolstorage)
 "fj" = (
-/obj/item/weapon/storage/trackimp_kit,
-/obj/item/weapon/storage/trackimp_kit,
-/obj/item/weapon/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
 /turf/station/floor,
 /area)
 "fk" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
 /area/control_room)
 "fl" = (
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	name = "Computer Assignment Card";
 	access_level = 5;
 	lab_access = 5;
@@ -1711,7 +1711,7 @@
 /turf/station/floor,
 /area/control_room)
 "fm" = (
-/obj/item/weapon/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
 /turf/station/floor,
 /area/control_room)
 "fn" = (
@@ -1737,7 +1737,7 @@
 /turf/station/floor,
 /area/pod)
 "fq" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/pod)
 "fr" = (
@@ -1761,21 +1761,21 @@
 /turf/station/floor,
 /area/toolstorage)
 "fv" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/clothing/glasses/meson,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area/toolstorage)
 "fw" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/infra_sensor,
+/obj/item/infra_sensor,
 /turf/station/floor,
 /area/toolstorage)
 "fx" = (
-/obj/item/weapon/timer,
-/obj/item/weapon/radio/beacon,
+/obj/item/timer,
+/obj/item/radio/beacon,
 /turf/station/floor,
 /area/toolstorage)
 "fy" = (
@@ -1783,48 +1783,48 @@
 /obj/machinery/camera{
 	c_tag = "Supply Room"
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/toolstorage)
 "fz" = (
-/obj/item/weapon/timer,
-/obj/item/weapon/crowbar,
+/obj/item/timer,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/toolstorage)
 "fA" = (
-/obj/item/weapon/radio/signaler,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fB" = (
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/toolstorage)
 "fC" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/infra,
-/obj/item/weapon/radio/signaler,
+/obj/item/infra,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fD" = (
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
+/obj/item/igniter,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fE" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fF" = (
-/obj/item/weapon/igniter,
-/obj/item/weapon/crowbar,
+/obj/item/igniter,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/toolstorage)
 "fG" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/infra,
-/obj/item/weapon/radio/beacon,
+/obj/item/infra,
+/obj/item/radio/beacon,
 /turf/station/floor,
 /area/toolstorage)
 "fH" = (
@@ -1853,53 +1853,53 @@
 /turf/station/floor,
 /area/toolstorage)
 "fM" = (
-/obj/item/weapon/infra_sensor,
+/obj/item/infra_sensor,
 /turf/station/floor,
 /area/toolstorage)
 "fN" = (
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/igniter,
-/obj/item/weapon/storage/backpack,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/igniter,
+/obj/item/storage/backpack,
 /turf/station/floor,
 /area/toolstorage)
 "fO" = (
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/radio/signaler,
+/obj/item/timer,
 /turf/station/floor,
 /area/toolstorage)
 "fP" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/beacon,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/radio/signaler,
+/obj/item/radio/beacon,
 /turf/station/floor,
 /area/toolstorage)
 "fQ" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fR" = (
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/sheet/metal,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/timer,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
+/obj/item/sheet/metal,
+/obj/item/sheet/metal,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/timer,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
 /turf/station/floor,
 /area/toolstorage)
 "fS" = (
@@ -2003,7 +2003,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/courtroom)
 "gl" = (
@@ -2011,7 +2011,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/paper/courtroom,
+/obj/item/paper/courtroom,
 /turf/station/floor,
 /area/courtroom)
 "gm" = (
@@ -2019,7 +2019,7 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/radio,
+/obj/item/radio,
 /turf/station/floor,
 /area/courtroom)
 "gn" = (
@@ -2029,9 +2029,9 @@
 /turf/station/floor,
 /area/medical)
 "go" = (
-/obj/item/weapon/flasks/coolant,
-/obj/item/weapon/flasks/oxygen,
-/obj/item/weapon/flasks/plasma,
+/obj/item/flasks/coolant,
+/obj/item/flasks/oxygen,
+/obj/item/flasks/plasma,
 /turf/station/floor,
 /area/medical)
 "gp" = (
@@ -2060,14 +2060,14 @@
 	icon_state = "alone";
 	dir = 2
 	},
-/obj/item/weapon/paper/Toxin,
-/obj/item/weapon/pen,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/dropper,
-/obj/item/weapon/pill_canister/cough,
-/obj/item/weapon/pill_canister/epilepsy,
-/obj/item/weapon/ointment,
-/obj/item/weapon/syringe,
+/obj/item/paper/Toxin,
+/obj/item/pen,
+/obj/item/bottle/rejuvenators,
+/obj/item/dropper,
+/obj/item/pill_canister/cough,
+/obj/item/pill_canister/epilepsy,
+/obj/item/ointment,
+/obj/item/syringe,
 /turf/station/floor,
 /area/medical)
 "gt" = (
@@ -2085,9 +2085,9 @@
 /obj/table{
 	icon_state = "alone"
 	},
-/obj/item/weapon/healthanalyzer,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/antitoxins,
+/obj/item/healthanalyzer,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/antitoxins,
 /turf/station/floor,
 /area/medical)
 "gw" = (
@@ -2095,17 +2095,17 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/rejuvenators,
+/obj/item/storage/firstaid/toxin,
+/obj/item/syringe,
+/obj/item/bottle/rejuvenators,
 /turf/station/floor,
 /area/medical)
 "gx" = (
 /obj/table{
 	icon_state = "sides"
 	},
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/ointment,
+/obj/item/storage/firstaid/fire,
+/obj/item/ointment,
 /obj/machinery/firealarm{
 	pixel_y = 32
 	},
@@ -2116,7 +2116,7 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/medical)
 "gz" = (
@@ -2261,11 +2261,11 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/paper/Toxin,
-/obj/item/weapon/clothing/gloves/latex,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/pen,
-/obj/item/weapon/clipboard,
+/obj/item/paper/Toxin,
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/mask/surgical,
+/obj/item/pen,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/medicalresearch)
 "ha" = (
@@ -2273,11 +2273,11 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/bottle/r_epil,
-/obj/item/weapon/bottle/r_ch_cough,
-/obj/item/weapon/dropper,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/s_tox,
+/obj/item/bottle/r_epil,
+/obj/item/bottle/r_ch_cough,
+/obj/item/dropper,
 /turf/station/floor,
 /area/medicalresearch)
 "hb" = (
@@ -2285,11 +2285,11 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/pill_canister/Tourette,
-/obj/item/weapon/pill_canister/epilepsy,
+/obj/item/syringe,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/s_tox,
+/obj/item/pill_canister/Tourette,
+/obj/item/pill_canister/epilepsy,
 /turf/station/floor,
 /area/medicalresearch)
 "hc" = (
@@ -2297,7 +2297,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/station/floor,
 /area/medicalresearch)
 "hd" = (
@@ -2305,7 +2305,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/medicalresearch)
 "he" = (
@@ -2328,7 +2328,7 @@
 	dir = 8;
 	c_tag = "Assembly Room"
 	},
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = 32
 	},
 /turf/station/floor,
@@ -2347,7 +2347,7 @@
 /turf/station/floor,
 /area/medical)
 "hj" = (
-/obj/item/weapon/ointment,
+/obj/item/ointment,
 /turf/station/floor,
 /area/medical)
 "hk" = (
@@ -2488,7 +2488,7 @@
 /area/medicalresearch)
 "hI" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_y = -32
 	},
 /turf/station/floor,
@@ -2522,14 +2522,14 @@
 /area/medicalresearch)
 "hO" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
 /turf/station/floor,
 /area/medicalresearch)
 "hP" = (
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/medicalresearch)
 "hQ" = (
@@ -2636,27 +2636,27 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Scan";
 	function = "dna_scan";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Scan";
 	function = "dna_scan";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Scan";
 	function = "dna_scan";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Scan";
 	function = "dna_scan";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Scan"
 	},
 /obj/window{
@@ -2720,7 +2720,7 @@
 /turf/station/floor,
 /area/medical)
 "iq" = (
-/obj/item/weapon/storage/toolbox,
+/obj/item/storage/toolbox,
 /turf/station/floor,
 /area/medical)
 "ir" = (
@@ -2784,31 +2784,31 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Trunicate";
 	function = "data_trun";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Add";
 	function = "data_add";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Scramble";
 	function = "data_scramble";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Input";
 	function = "data_input";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Data-Controllers"
 	},
 /turf/station/floor,
@@ -2884,13 +2884,13 @@
 /turf/station/floor,
 /area/medicalresearch)
 "iO" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-conv-H";
 	function = "worthless";
 	data = "SBSWAVVWFWVAZSFBS";
 	special = "human"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "H-conv-M";
 	function = "worthless";
 	data = "CDAFNSDHE";
@@ -2902,7 +2902,7 @@
 /turf/station/floor,
 /area/medicalresearch)
 "iP" = (
-/obj/item/weapon/storage/disk_kit/disks,
+/obj/item/storage/disk_kit/disks,
 /turf/station/floor,
 /area/medicalresearch)
 "iQ" = (
@@ -2953,7 +2953,7 @@
 /area/medical)
 "iZ" = (
 /obj/stool/bed,
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_y = -32
 	},
 /turf/station/floor,
@@ -3005,33 +3005,33 @@
 /turf/station/floor,
 /area/medicalresearch)
 "jg" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "DNA-help";
 	function = "dna_seq"
 	},
 /turf/station/floor,
 /area/medicalresearch)
 "jh" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "C-Help";
 	function = "dna_help"
 	},
 /turf/station/floor,
 /area/medicalresearch)
 "ji" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-Mutate";
 	function = "data_mutate";
 	data = "14A";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "S-Mutate";
 	function = "data_mutate";
 	data = "CDE";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "A-Mutate";
 	function = "data_mutate";
 	data = "AEC";
@@ -3055,8 +3055,8 @@
 /area/toxinlab)
 "jm" = (
 /obj/table,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/storage/toolbox,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/toxinlab)
 "jn" = (
@@ -3064,16 +3064,16 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/pen,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/pen,
 /turf/station/floor,
 /area/toxinlab)
 "jo" = (
@@ -3081,17 +3081,17 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/pill_canister/antitoxin,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/storage/firstaid/regular,
+/obj/item/pill_canister/antitoxin,
 /turf/station/floor,
 /area/toxinlab)
 "jp" = (
@@ -3114,27 +3114,27 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Replace";
 	function = "dna_replace";
 	special = "UI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Replace";
 	function = "dna_replace";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Replace";
 	function = "dna_replace";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Replace";
 	function = "dna_replace";
 	special = "SI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Replace"
 	},
 /turf/station/floor,
@@ -3144,31 +3144,31 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Display";
 	function = "disk_dis";
 	data = "";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Erase";
 	function = "disk_erase";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Copy";
 	function = "disk_copy";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Clear";
 	function = "data_clear";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Disk-Controllers"
 	},
 /turf/station/floor,
@@ -3178,19 +3178,19 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Human";
 	data = "493DB249EB6D13236100A37000800AB71"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Human";
 	data = "5BDFE293BA5500F9FFFD500AAFFE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Human";
 	data = "CDE375C9A6C25A7DBDA50EC05AC6CEB63"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Human DNA"
 	},
 /turf/station/floor,
@@ -3200,19 +3200,19 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Monkey";
 	data = "CDEAF5B90AADBC6BA8033DB0A7FD613FA"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Monkey";
 	data = "2B6696D2B127E5A4"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Monkey";
 	data = "C8FFFE7EC09D80AEDEDB9A5A0B4085B61"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Monkey DNA"
 	},
 /turf/station/floor,
@@ -3222,27 +3222,27 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Add";
 	function = "dna_add";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Add";
 	function = "dna_add";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Add";
 	function = "dna_add";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Add";
 	function = "dna_add";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Add"
 	},
 /turf/station/floor,
@@ -3252,31 +3252,31 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Trunicate";
 	function = "dna_trun";
 	data = "16";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Trunicate";
 	function = "dna_trun";
 	data = "12";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Trunicate"
 	},
 /turf/station/floor,
@@ -3301,7 +3301,7 @@
 /turf/station/floor,
 /area/toxinlab)
 "jB" = (
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/toxinlab)
 "jC" = (
@@ -3364,7 +3364,7 @@
 /turf/station/floor,
 /area/toxinlab)
 "jO" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = 32
 	},
 /turf/station/floor,
@@ -3400,8 +3400,8 @@
 /turf/station/floor,
 /area/hallways/loungehall)
 "jW" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /obj/machinery/atmoalter/canister/n2canister,
 /obj/machinery/firealarm{
 	pixel_x = 32
@@ -3422,7 +3422,7 @@
 /turf/station/floor,
 /area/hallways/centralhall1)
 "ka" = (
-/obj/item/weapon/storage/toolbox,
+/obj/item/storage/toolbox,
 /turf/station/floor,
 /area/hallways/centralhall1)
 "kb" = (
@@ -3561,7 +3561,7 @@
 /area/crew_quarters)
 "kB" = (
 /obj/stool/bed,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/station/floor,
 /area/crew_quarters)
 "kC" = (
@@ -3616,7 +3616,7 @@
 /turf/station/floor,
 /area/decontamination)
 "kJ" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/toxinlab)
 "kK" = (
@@ -3642,8 +3642,8 @@
 /area/crew_quarters)
 "kO" = (
 /obj/rack,
-/obj/item/weapon/clothing/under/blue,
-/obj/item/weapon/radio/headset,
+/obj/item/clothing/under/blue,
+/obj/item/radio/headset,
 /turf/station/floor,
 /area/crew_quarters)
 "kP" = (
@@ -3680,8 +3680,8 @@
 /area/security)
 "kU" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/paper/courtroom,
+/obj/item/clipboard,
+/obj/item/paper/courtroom,
 /obj/machinery/firealarm{
 	pixel_y = 32
 	},
@@ -3691,7 +3691,7 @@
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /obj/table,
 /obj/machinery/recharger,
-/obj/item/weapon/clothing/glasses/thermal,
+/obj/item/clothing/glasses/thermal,
 /turf/station/floor,
 /area/security)
 "kW" = (
@@ -3854,7 +3854,7 @@
 /area/security)
 "lu" = (
 /obj/table,
-/obj/item/weapon/game_kit,
+/obj/item/game_kit,
 /turf/station/floor,
 /area/security)
 "lv" = (
@@ -3888,7 +3888,7 @@
 /turf/station/floor,
 /area/testlab1)
 "lA" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -3946,10 +3946,10 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/paper/Internal,
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/wirecutters,
-/obj/item/weapon/wrapping_paper,
+/obj/item/paper/Internal,
+/obj/item/paper/sop,
+/obj/item/wirecutters,
+/obj/item/wrapping_paper,
 /turf/station/floor,
 /area/lounge)
 "lK" = (
@@ -3957,10 +3957,10 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/paper/Toxin,
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/paper/jobs,
-/obj/item/weapon/pen,
+/obj/item/paper/Toxin,
+/obj/item/paper/sop,
+/obj/item/paper/jobs,
+/obj/item/pen,
 /obj/landmark/alterations{
 	name = "recharger"
 	},
@@ -4041,7 +4041,7 @@
 /turf/station/floor,
 /area/security)
 "lV" = (
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/station/floor,
 /area/security)
 "lW" = (
@@ -4094,13 +4094,13 @@
 /turf/station/floor,
 /area/sleep_area)
 "mg" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = 32
 	},
 /turf/station/floor,
 /area/sleep_area)
 "mh" = (
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -4110,13 +4110,13 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/paper/Internal,
-/obj/item/weapon/paper/Map,
-/obj/item/weapon/paper/jobs,
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
+/obj/item/paper_bin,
+/obj/item/paper/Internal,
+/obj/item/paper/Map,
+/obj/item/paper/jobs,
+/obj/item/paper/sop,
+/obj/item/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/lounge)
 "mj" = (
@@ -4124,10 +4124,10 @@
 	icon_state = "sides";
 	dir = 4
 	},
-/obj/item/weapon/paper/Map,
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/paper/Map,
+/obj/item/paper/sop,
+/obj/item/radio/signaler,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/lounge)
 "mk" = (
@@ -4203,8 +4203,8 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/paper/Toxin,
-/obj/item/weapon/paper/sop,
+/obj/item/paper/Toxin,
+/obj/item/paper/sop,
 /obj/manifest,
 /turf/station/floor,
 /area/lounge)
@@ -4213,9 +4213,9 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/paper/Internal,
-/obj/item/weapon/paper/sop,
-/obj/item/weapon/paper/jobs,
+/obj/item/paper/Internal,
+/obj/item/paper/sop,
+/obj/item/paper/jobs,
 /turf/station/floor,
 /area/lounge)
 "my" = (
@@ -4245,30 +4245,30 @@
 /area/security)
 "mD" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
 /turf/station/floor,
 /area/security)
 "mE" = (
-/obj/item/weapon/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
 /turf/station/floor,
 /area/security)
 "mF" = (
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/security)
 "mG" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/storage/toolbox,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area/security)
 "mH" = (
@@ -4312,7 +4312,7 @@
 /turf/station/floor,
 /area/lounge)
 "mO" = (
-/obj/item/weapon/storage/backpack,
+/obj/item/storage/backpack,
 /turf/station/floor,
 /area/lounge)
 "mP" = (
@@ -4349,18 +4349,18 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/clipboard,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/radio/signaler,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/prox_sensor,
+/obj/item/prox_sensor,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/security)
 "mV" = (
@@ -4369,19 +4369,19 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/dropper,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/radio/signaler,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/prox_sensor,
+/obj/item/prox_sensor,
+/obj/item/bottle/rejuvenators,
+/obj/item/dropper,
 /turf/station/floor,
 /area/security)
 "mW" = (
@@ -4389,18 +4389,18 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/prox_sensor,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/radio/signaler,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/prox_sensor,
+/obj/item/prox_sensor,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/security)
 "mX" = (
@@ -4448,9 +4448,9 @@
 /area/security)
 "ne" = (
 /obj/grille,
-/obj/item/weapon/wirecutters,
-/obj/item/weapon/wrench,
-/obj/item/weapon/weldingtool,
+/obj/item/wirecutters,
+/obj/item/wrench,
+/obj/item/weldingtool,
 /turf/station/floor,
 /area)
 "nf" = (
@@ -4604,7 +4604,7 @@
 /area/shuttle_airlock)
 "nD" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/closet/emcloset,
 /turf/station/floor,
 /area/disaster)
@@ -4712,7 +4712,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/storage/toolbox,
+/obj/item/storage/toolbox,
 /turf/station/floor,
 /area/disaster)
 "nZ" = (
@@ -4721,7 +4721,7 @@
 	c_tag = "Atmospheric Control Room"
 	},
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/radio/intercom{
+/obj/item/radio/intercom{
 	pixel_x = -32
 	},
 /turf/station/floor,
@@ -4753,7 +4753,7 @@
 /obj/window{
 	dir = 1
 	},
-/obj/item/weapon/clothing/mask/gasmask,
+/obj/item/clothing/mask/gasmask,
 /turf/station/floor,
 /area/aircontrol)
 "oe" = (
@@ -4789,7 +4789,7 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/storage/toolbox,
+/obj/item/storage/toolbox,
 /turf/station/floor,
 /area/disaster)
 "ok" = (
@@ -4836,8 +4836,8 @@
 /turf/station/floor,
 /area/aircontrol)
 "oq" = (
-/obj/item/weapon/clothing/under/yellow,
-/obj/item/weapon/clothing/shoes/orange,
+/obj/item/clothing/under/yellow,
+/obj/item/clothing/shoes/orange,
 /turf/station/floor,
 /area/aircontrol)
 "or" = (
@@ -4850,16 +4850,16 @@
 /area/aircontrol)
 "ot" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/aircontrol)
 "ou" = (
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/aircontrol)
 "ov" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/aircontrol)
 "ow" = (
@@ -4867,7 +4867,7 @@
 /turf/station/floor,
 /area/aircontrol)
 "ox" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/disaster)
 "oy" = (
@@ -4879,7 +4879,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/station/floor,
 /area/disaster)
 "oA" = (
@@ -4919,11 +4919,11 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/wrench,
-/obj/item/weapon/analyzer,
-/obj/item/weapon/radio,
-/obj/item/weapon/screwdriver,
-/obj/item/weapon/crowbar,
+/obj/item/wrench,
+/obj/item/analyzer,
+/obj/item/radio,
+/obj/item/screwdriver,
+/obj/item/crowbar,
 /obj/landmark/alterations{
 	name = "recharger"
 	},
@@ -4934,12 +4934,12 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/wrench,
-/obj/item/weapon/analyzer,
-/obj/item/weapon/screwdriver,
-/obj/item/weapon/extinguisher,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/wrench,
+/obj/item/analyzer,
+/obj/item/screwdriver,
+/obj/item/extinguisher,
+/obj/item/crowbar,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/aircontrol)
 "oH" = (
@@ -4951,10 +4951,10 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/wrench,
-/obj/item/weapon/analyzer,
-/obj/item/weapon/radio,
-/obj/item/weapon/screwdriver,
+/obj/item/wrench,
+/obj/item/analyzer,
+/obj/item/radio,
+/obj/item/screwdriver,
 /turf/station/floor,
 /area/aircontrol)
 "oJ" = (
@@ -4962,14 +4962,14 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/wrench,
-/obj/item/weapon/analyzer,
-/obj/item/weapon/screwdriver,
-/obj/item/weapon/extinguisher,
+/obj/item/wrench,
+/obj/item/analyzer,
+/obj/item/screwdriver,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area/aircontrol)
 "oK" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/machinery/firealarm{
 	pixel_x = -32
 	},
@@ -4981,7 +4981,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/disaster)
 "oM" = (
@@ -5004,25 +5004,25 @@
 /area/aircontrol)
 "oQ" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/radio/headset,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/meson,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/under/black,
+/obj/item/clothing/mask/gasmask,
+/obj/item/radio/headset,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/disaster)
 "oR" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/radio/headset,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/under/black,
+/obj/item/clothing/mask/gasmask,
+/obj/item/radio/headset,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
 /turf/station/floor,
 /area/disaster)
 "oS" = (
@@ -5037,7 +5037,7 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/storage/toolbox,
+/obj/item/storage/toolbox,
 /turf/station/floor,
 /area/disaster)
 "oU" = (
@@ -5045,7 +5045,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /turf/station/floor,
 /area/disaster)
 "oV" = (
@@ -5056,12 +5056,12 @@
 /area/aircontrol)
 "oW" = (
 /obj/grille,
-/obj/item/weapon/hand_tele,
+/obj/item/hand_tele,
 /turf/station/floor,
 /area)
 "oX" = (
 /obj/grille,
-/obj/item/weapon/tank/oxygentank,
+/obj/item/tank/oxygentank,
 /turf/station/floor,
 /area)
 "oY" = (
@@ -5112,33 +5112,33 @@
 	icon_state = "sides";
 	dir = 4
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Scan";
 	function = "dna_scan";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Scan";
 	function = "dna_scan";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Scan";
 	function = "dna_scan";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Scan";
 	function = "dna_scan";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Scan"
 	},
 /turf/station/floor,
 /area/MS)
 "pj" = (
-/obj/item/weapon/storage/disk_kit/disks,
+/obj/item/storage/disk_kit/disks,
 /turf/station/floor,
 /area/MS)
 "pk" = (
@@ -5163,31 +5163,31 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Trunicate";
 	function = "data_trun";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Add";
 	function = "data_add";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Scramble";
 	function = "data_scramble";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Input";
 	function = "data_input";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Data-Controllers"
 	},
 /turf/station/floor,
@@ -5228,15 +5228,15 @@
 /turf/station/floor,
 /area/MS)
 "pt" = (
-/obj/item/weapon/flasks/oxygen,
-/obj/item/weapon/flasks/oxygen,
-/obj/item/weapon/flasks/oxygen,
+/obj/item/flasks/oxygen,
+/obj/item/flasks/oxygen,
+/obj/item/flasks/oxygen,
 /turf/station/floor,
 /area/MS)
 "pu" = (
-/obj/item/weapon/flasks/coolant,
-/obj/item/weapon/flasks/coolant,
-/obj/item/weapon/flasks/coolant,
+/obj/item/flasks/coolant,
+/obj/item/flasks/coolant,
+/obj/item/flasks/coolant,
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /turf/station/floor,
 /area/MS)
@@ -5267,19 +5267,19 @@
 /turf/station/floor,
 /area/MS)
 "py" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-Mutate";
 	function = "data_mutate";
 	data = "14A";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "S-Mutate";
 	function = "data_mutate";
 	data = "CDE";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "A-Mutate";
 	function = "data_mutate";
 	data = "AEC";
@@ -5292,13 +5292,13 @@
 /turf/station/floor,
 /area/MS)
 "pA" = (
-/obj/item/weapon/flasks/plasma,
-/obj/item/weapon/flasks/plasma,
-/obj/item/weapon/flasks/plasma,
+/obj/item/flasks/plasma,
+/obj/item/flasks/plasma,
+/obj/item/flasks/plasma,
 /turf/station/floor,
 /area/MS)
 "pB" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "DNA-help";
 	function = "dna_seq"
 	},
@@ -5317,11 +5317,11 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/card/id{
+/obj/item/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/s_tox,
+/obj/item/bottle/antitoxins,
+/obj/item/card/id{
 	name = "Zach Licton's ID Card (1>1-0-0)";
 	access_level = 1;
 	lab_access = 1;
@@ -5330,7 +5330,7 @@
 	registered = "Zach Licton";
 	assignment = "DNA Researcher"
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/MS)
 "pF" = (
@@ -5338,10 +5338,10 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/bottle/antitoxins,
+/obj/item/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/s_tox,
+/obj/item/bottle/antitoxins,
 /turf/station/floor,
 /area/MS)
 "pG" = (
@@ -5350,7 +5350,7 @@
 /area/MS)
 "pH" = (
 /obj/machinery/pipes/flexipipe,
-/obj/item/weapon/tank/anesthetic,
+/obj/item/tank/anesthetic,
 /turf/station/floor,
 /area/MS)
 "pI" = (
@@ -5360,10 +5360,10 @@
 "pJ" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /obj/rack,
-/obj/item/weapon/clothing/under/white,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/gloves/latex,
-/obj/item/weapon/clothing/shoes/white,
+/obj/item/clothing/under/white,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/shoes/white,
 /turf/station/floor,
 /area/MS)
 "pK" = (
@@ -5381,13 +5381,13 @@
 /turf/station/floor,
 /area/MS)
 "pL" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-conv-H";
 	function = "worthless";
 	data = "SBSWAVVWFWVAZSFBS";
 	special = "human"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "H-conv-M";
 	function = "worthless";
 	data = "CDAFNSDHE";
@@ -5396,12 +5396,12 @@
 /turf/station/floor,
 /area/MS)
 "pM" = (
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/MS)
 "pN" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "C-Help";
 	function = "dna_help"
 	},
@@ -5412,10 +5412,10 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/bottle/antitoxins,
+/obj/item/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/s_tox,
+/obj/item/bottle/antitoxins,
 /turf/station/floor,
 /area/MS)
 "pP" = (
@@ -5423,9 +5423,9 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/healthanalyzer,
-/obj/item/weapon/bottle/r_ch_cough,
-/obj/item/weapon/bottle/r_epil,
+/obj/item/healthanalyzer,
+/obj/item/bottle/r_ch_cough,
+/obj/item/bottle/r_epil,
 /turf/station/floor,
 /area/MS)
 "pQ" = (
@@ -5438,9 +5438,9 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/clothing/glasses/regular,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/mask/m_mask,
+/obj/item/clothing/glasses/regular,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/mask/m_mask,
 /turf/station/floor,
 /area/MS)
 "pS" = (
@@ -5448,27 +5448,27 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Replace";
 	function = "dna_replace";
 	special = "UI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Replace";
 	function = "dna_replace";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Replace";
 	function = "dna_replace";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Replace";
 	function = "dna_replace";
 	special = "SI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Replace"
 	},
 /turf/station/floor,
@@ -5478,31 +5478,31 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Display";
 	function = "disk_dis";
 	data = "";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Erase";
 	function = "disk_erase";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Copy";
 	function = "disk_copy";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Clear";
 	function = "data_clear";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Disk-Controllers"
 	},
 /turf/station/floor,
@@ -5512,19 +5512,19 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Human";
 	data = "493DB249EB6D13236100A37000800AB71"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Human";
 	data = "5BDFE293BA5500F9FFFD500AAFFE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Human";
 	data = "CDE375C9A6C25A7DBDA50EC05AC6CEB63"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Human DNA"
 	},
 /turf/station/floor,
@@ -5534,19 +5534,19 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Monkey";
 	data = "CDEAF5B90AADBC6BA8033DB0A7FD613FA"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Monkey";
 	data = "2B6696D2B127E5A4"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Monkey";
 	data = "C8FFFE7EC09D80AEDEDB9A5A0B4085B61"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Monkey DNA"
 	},
 /turf/station/floor,
@@ -5556,27 +5556,27 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Add";
 	function = "dna_add";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Add";
 	function = "dna_add";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Add";
 	function = "dna_add";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Add";
 	function = "dna_add";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Add"
 	},
 /turf/station/floor,
@@ -5586,31 +5586,31 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Trunicate";
 	function = "dna_trun";
 	data = "16";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Trunicate";
 	function = "dna_trun";
 	data = "12";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Trunicate"
 	},
 /turf/station/floor,
@@ -5631,7 +5631,7 @@
 /turf/station/floor,
 /area/MS)
 "qa" = (
-/obj/item/weapon/radio/beacon,
+/obj/item/radio/beacon,
 /obj/sp_start{
 	name = "androiddata";
 	desc = "Researcher on Med. Sat."
@@ -5670,8 +5670,8 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/MS)
 "qg" = (
@@ -5679,7 +5679,7 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/MS)
 "qh" = (
@@ -5687,7 +5687,7 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/station/floor,
 /area/MS)
 "qi" = (
@@ -5695,7 +5695,7 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /turf/station/floor,
 /area/MS)
 "qj" = (
@@ -5703,9 +5703,9 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/s_tox,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/s_tox,
 /turf/station/floor,
 /area/MS)
 "qk" = (
@@ -5720,13 +5720,13 @@
 /turf/station/floor,
 /area)
 "qm" = (
-/obj/item/weapon/radio/beacon{
+/obj/item/radio/beacon{
 	freq = 144.3
 	},
 /turf/station/floor,
 /area)
 "qn" = (
-/obj/item/weapon/c_tube{
+/obj/item/c_tube{
 	desc = "It's a magical cardboard tube!"
 	},
 /turf/station/floor,
@@ -5735,38 +5735,38 @@
 /turf/station/wall,
 /area/supply_station)
 "qp" = (
-/obj/item/weapon/storage/handcuff_kit,
-/obj/item/weapon/storage/handcuff_kit,
-/obj/item/weapon/storage/handcuff_kit,
-/obj/item/weapon/storage/handcuff_kit,
-/obj/item/weapon/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
 /turf/station/floor,
 /area/supply_station)
 "qq" = (
-/obj/item/weapon/storage/flashbang_kit,
-/obj/item/weapon/storage/flashbang_kit,
-/obj/item/weapon/storage/flashbang_kit,
-/obj/item/weapon/storage/flashbang_kit,
-/obj/item/weapon/storage/flashbang_kit,
+/obj/item/storage/flashbang_kit,
+/obj/item/storage/flashbang_kit,
+/obj/item/storage/flashbang_kit,
+/obj/item/storage/flashbang_kit,
+/obj/item/storage/flashbang_kit,
 /turf/station/floor,
 /area/supply_station)
 "qr" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/swat_suit,
-/obj/item/weapon/clothing/head/swat_hel,
-/obj/item/weapon/clothing/shoes/swat,
-/obj/item/weapon/clothing/gloves/swat,
-/obj/item/weapon/gun/energy/taser_gun,
-/obj/item/weapon/clothing/mask/robot/swat,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/glasses/thermal,
+/obj/item/clothing/suit/swat_suit,
+/obj/item/clothing/head/swat_hel,
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/gloves/swat,
+/obj/item/gun/energy/taser_gun,
+/obj/item/clothing/mask/robot/swat,
+/obj/item/clothing/under/black,
+/obj/item/clothing/glasses/thermal,
 /turf/station/floor,
 /area/supply_station)
 "qs" = (
 /turf/station/floor,
 /area/supply_station)
 "qt" = (
-/obj/item/weapon/storage/backpack,
+/obj/item/storage/backpack,
 /turf/station/floor,
 /area/supply_station)
 "qu" = (
@@ -5792,11 +5792,11 @@
 /turf/station/floor,
 /area/supply_station)
 "qz" = (
-/obj/item/weapon/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
 /turf/station/floor,
 /area/supply_station)
 "qA" = (
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/supply_station)
 "qB" = (
@@ -5838,16 +5838,16 @@
 /turf/station/floor,
 /area/supply_station)
 "qH" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/clothing/ears/earmuffs,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/storage/backpack,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "qI" = (
-/obj/item/weapon/tile,
-/obj/item/weapon/rods,
+/obj/item/tile,
+/obj/item/rods,
 /turf/station/floor,
 /area/supply_station)
 "qJ" = (
@@ -5855,15 +5855,15 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/radio/electropack,
-/obj/item/weapon/radio/electropack,
-/obj/item/weapon/crowbar,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/radio/electropack,
+/obj/item/radio/electropack,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "qK" = (
@@ -5877,9 +5877,9 @@
 /turf/station/floor,
 /area/supply_station)
 "qM" = (
-/obj/item/weapon/flasks/coolant,
-/obj/item/weapon/flasks/oxygen,
-/obj/item/weapon/flasks/plasma,
+/obj/item/flasks/coolant,
+/obj/item/flasks/oxygen,
+/obj/item/flasks/plasma,
 /turf/station/floor,
 /area/supply_station)
 "qN" = (
@@ -5887,18 +5887,18 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra_sensor,
-/obj/item/weapon/locator,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/timer,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/infra_sensor,
+/obj/item/locator,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/timer,
 /turf/station/floor,
 /area/supply_station)
 "qO" = (
@@ -5906,18 +5906,18 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra_sensor,
-/obj/item/weapon/locator,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/timer,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/infra_sensor,
+/obj/item/locator,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/timer,
 /turf/station/floor,
 /area/supply_station)
 "qP" = (
@@ -5925,18 +5925,18 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/igniter,
-/obj/item/weapon/igniter,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra,
-/obj/item/weapon/infra_sensor,
-/obj/item/weapon/locator,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/radio/signaler,
-/obj/item/weapon/timer,
-/obj/item/weapon/timer,
+/obj/item/igniter,
+/obj/item/igniter,
+/obj/item/infra,
+/obj/item/infra,
+/obj/item/infra_sensor,
+/obj/item/locator,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/radio/signaler,
+/obj/item/timer,
+/obj/item/timer,
 /turf/station/floor,
 /area/supply_station)
 "qQ" = (
@@ -5944,15 +5944,15 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/surgical,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/clothing/mask/m_mask,
-/obj/item/weapon/radio/electropack,
-/obj/item/weapon/radio/electropack,
-/obj/item/weapon/crowbar,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
+/obj/item/radio/electropack,
+/obj/item/radio/electropack,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "qR" = (
@@ -5964,8 +5964,8 @@
 /turf/station/floor,
 /area/supply_station)
 "qT" = (
-/obj/item/weapon/table_parts,
-/obj/item/weapon/rack_parts,
+/obj/item/table_parts,
+/obj/item/rack_parts,
 /turf/station/floor,
 /area/supply_station)
 "qU" = (
@@ -5973,12 +5973,12 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/pen,
-/obj/item/weapon/pen,
-/obj/item/weapon/pen,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/supply_station)
 "qV" = (
@@ -5986,8 +5986,8 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/disk_kit,
-/obj/item/weapon/storage/id_kit,
+/obj/item/storage/disk_kit,
+/obj/item/storage/id_kit,
 /turf/station/floor,
 /area/supply_station)
 "qW" = (
@@ -5995,9 +5995,9 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/storage/gl_kit,
-/obj/item/weapon/storage/lglo_kit,
-/obj/item/weapon/storage/stma_kit,
+/obj/item/storage/gl_kit,
+/obj/item/storage/lglo_kit,
+/obj/item/storage/stma_kit,
 /turf/station/floor,
 /area/supply_station)
 "qX" = (
@@ -6005,17 +6005,17 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/head/helmet,
-/obj/item/weapon/clothing/suit/armor,
-/obj/item/weapon/flash,
-/obj/item/weapon/crowbar,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor,
+/obj/item/flash,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "qY" = (
@@ -6027,25 +6027,25 @@
 /turf/station/floor,
 /area/supply_station)
 "ra" = (
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/toxin,
 /turf/station/floor,
 /area/supply_station)
 "rb" = (
 /obj/table,
-/obj/item/weapon/storage/firstaid/syringes,
-/obj/item/weapon/bottle/toxins,
-/obj/item/weapon/bottle/s_tox,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/r_epil,
-/obj/item/weapon/bottle/r_ch_cough,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/dropper,
+/obj/item/storage/firstaid/syringes,
+/obj/item/bottle/toxins,
+/obj/item/bottle/s_tox,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/r_epil,
+/obj/item/bottle/r_ch_cough,
+/obj/item/bottle/antitoxins,
+/obj/item/dropper,
 /turf/station/floor,
 /area/supply_station)
 "rc" = (
-/obj/item/weapon/camera,
+/obj/item/camera,
 /turf/station/floor,
 /area/supply_station)
 "rd" = (
@@ -6053,21 +6053,21 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/head/helmet,
-/obj/item/weapon/clothing/suit/armor,
-/obj/item/weapon/flash,
-/obj/item/weapon/crowbar,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor,
+/obj/item/flash,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "re" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
 /turf/station/floor,
@@ -6146,8 +6146,8 @@
 /turf/space,
 /area/vehicles/shuttle1)
 "rq" = (
-/obj/item/weapon/sheet/glass,
-/obj/item/weapon/sheet/glass,
+/obj/item/sheet/glass,
+/obj/item/sheet/glass,
 /turf/station/floor,
 /area/supply_station)
 "rr" = (
@@ -6184,7 +6184,7 @@
 /turf/station/floor,
 /area/supply_station)
 "rx" = (
-/obj/item/weapon/hand_tele,
+/obj/item/hand_tele,
 /turf/station/floor,
 /area/supply_station)
 "ry" = (
@@ -6246,7 +6246,7 @@
 /turf/space,
 /area/vehicles/shuttle1)
 "rE" = (
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/supply_station)
 "rF" = (
@@ -6346,7 +6346,7 @@
 	},
 /area)
 "rS" = (
-/obj/item/weapon/wrapping_paper,
+/obj/item/wrapping_paper,
 /turf/station/command/floor/other{
 	icon_state = "Floor2"
 	},
@@ -6414,17 +6414,17 @@
 "sd" = (
 /obj/move/floor,
 /obj/rack,
-/obj/item/weapon/tank/oxygentank,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/mask/gasmask,
+/obj/item/tank/oxygentank,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/mask/gasmask,
 /turf/space,
 /area/shuttle)
 "se" = (
 /obj/move/floor,
 /obj/rack,
-/obj/item/weapon/tank/oxygentank,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/mask/gasmask,
+/obj/item/tank/oxygentank,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/mask/gasmask,
 /obj/window{
 	dir = 4
 	},
@@ -6445,7 +6445,7 @@
 "sh" = (
 /obj/move/floor,
 /obj/table,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/space,
 /area/shuttle)
 "si" = (
@@ -6471,9 +6471,9 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/antitoxins,
+/obj/item/syringe,
 /turf/space,
 /area/shuttle)
 "sm" = (
@@ -6515,7 +6515,7 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/radio,
+/obj/item/radio,
 /turf/space,
 /area/shuttle)
 "sr" = (
@@ -6576,9 +6576,9 @@
 /area)
 "sB" = (
 /obj/rack,
-/obj/item/weapon/tank/oxygentank,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/mask/gasmask,
+/obj/item/tank/oxygentank,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/mask/gasmask,
 /turf/station/shuttle/floor,
 /area)
 "sC" = (
@@ -6593,7 +6593,7 @@
 /area)
 "sE" = (
 /obj/table,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/shuttle/floor,
 /area)
 "sF" = (
@@ -6612,9 +6612,9 @@
 /area)
 "sI" = (
 /obj/table,
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/rejuvenators,
+/obj/item/syringe,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/rejuvenators,
 /obj/window{
 	dir = 4
 	},
@@ -6650,7 +6650,7 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/a_gift,
+/obj/item/a_gift,
 /turf/station/shuttle/floor,
 /area)
 "sN" = (
@@ -6661,7 +6661,7 @@
 /area)
 "sO" = (
 /obj/table,
-/obj/item/weapon/radio,
+/obj/item/radio,
 /obj/window{
 	dir = 4
 	},
@@ -6702,7 +6702,7 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/PS13)
 "sW" = (
@@ -6710,7 +6710,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/PS13)
 "sX" = (
@@ -6718,7 +6718,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/station/floor,
 /area/PS13)
 "sY" = (
@@ -6726,8 +6726,8 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/healthanalyzer,
-/obj/item/weapon/dropper,
+/obj/item/healthanalyzer,
+/obj/item/dropper,
 /turf/station/floor,
 /area/PS13)
 "sZ" = (
@@ -6735,15 +6735,15 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/syringe,
-/obj/item/weapon/pill_canister/Tourette,
-/obj/item/weapon/pill_canister/cough,
-/obj/item/weapon/pill_canister/epilepsy,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/antitoxins,
+/obj/item/bottle/antitoxins,
+/obj/item/syringe,
+/obj/item/pill_canister/Tourette,
+/obj/item/pill_canister/cough,
+/obj/item/pill_canister/epilepsy,
 /turf/station/floor,
 /area/PS13)
 "ta" = (
@@ -6751,7 +6751,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/storage/firstaid/syringes,
+/obj/item/storage/firstaid/syringes,
 /turf/station/floor,
 /area/PS13)
 "tb" = (
@@ -6813,8 +6813,8 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/clipboard,
-/obj/item/weapon/pen,
+/obj/item/clipboard,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "tm" = (
@@ -6838,7 +6838,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/PS13)
 "tp" = (
@@ -6886,7 +6886,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/stma_kit,
+/obj/item/storage/stma_kit,
 /turf/station/floor,
 /area/PS13)
 "tw" = (
@@ -6905,7 +6905,7 @@
 /area/PS13)
 "ty" = (
 /obj/stool/bed,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/station/floor,
 /area/PS13)
 "tz" = (
@@ -6913,7 +6913,7 @@
 /turf/station/floor,
 /area/PS13)
 "tA" = (
-/obj/item/weapon/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
 /turf/station/floor,
 /area/PS13)
 "tB" = (
@@ -6921,11 +6921,11 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/lglo_kit,
+/obj/item/storage/lglo_kit,
 /turf/station/floor,
 /area/PS13)
 "tC" = (
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/PS13)
 "tD" = (
@@ -7013,7 +7013,7 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/PS13)
 "tN" = (
@@ -7063,34 +7063,34 @@
 /turf/station/floor,
 /area/PS13)
 "tT" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/PS13)
 "tU" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
 /turf/station/floor,
@@ -7100,7 +7100,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/PS13)
 "tW" = (
@@ -7108,7 +7108,7 @@
 	icon_state = "sides";
 	dir = 4
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "tX" = (
@@ -7129,25 +7129,25 @@
 /turf/station/floor,
 /area/PS13)
 "tZ" = (
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
 /turf/station/floor,
@@ -7157,9 +7157,9 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/dropper,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/s_tox,
+/obj/item/dropper,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/s_tox,
 /turf/station/floor,
 /area/PS13)
 "ub" = (
@@ -7167,7 +7167,7 @@
 	icon_state = "sides";
 	dir = 4
 	},
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/PS13)
 "uc" = (
@@ -7194,10 +7194,10 @@
 /turf/station/floor,
 /area/PS13)
 "ue" = (
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
 /obj/machinery/firealarm{
 	pixel_x = 32
 	},
@@ -7208,21 +7208,21 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/handcuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area/PS13)
 "ug" = (
@@ -7230,8 +7230,8 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/wrapping_paper,
-/obj/item/weapon/wirecutters,
+/obj/item/wrapping_paper,
+/obj/item/wirecutters,
 /turf/station/floor,
 /area/PS13)
 "uh" = (
@@ -7241,18 +7241,18 @@
 /turf/station/floor,
 /area/PS13)
 "ui" = (
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
 /turf/station/floor,
 /area/PS13)
 "uj" = (
 /obj/table{
 	icon_state = "alone"
 	},
-/obj/item/weapon/wrapping_paper,
-/obj/item/weapon/wirecutters,
+/obj/item/wrapping_paper,
+/obj/item/wirecutters,
 /turf/station/floor,
 /area/PS13)
 "uk" = (
@@ -7260,7 +7260,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area/PS13)
 "ul" = (
@@ -7275,7 +7275,7 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "un" = (
@@ -7304,18 +7304,18 @@
 /turf/station/floor,
 /area/PS13)
 "up" = (
-/obj/item/weapon/clipboard,
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/PS13)
 "uq" = (
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
-/obj/item/weapon/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
 /turf/station/floor,
 /area/PS13)
 "ur" = (
@@ -7327,8 +7327,8 @@
 /turf/station/floor,
 /area/PS13)
 "ut" = (
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "uu" = (
@@ -7340,7 +7340,7 @@
 /turf/station/floor,
 /area/PS13)
 "uw" = (
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/station/floor,
 /area/PS13)
 "ux" = (
@@ -7352,7 +7352,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/PS13)
 "uz" = (
@@ -7360,7 +7360,7 @@
 	icon_state = "corners";
 	dir = 5
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "uA" = (
@@ -7422,11 +7422,11 @@
 /turf/station/floor,
 /area/PS13)
 "uI" = (
-/obj/item/weapon/screwdriver,
-/obj/item/weapon/wirecutters,
+/obj/item/screwdriver,
+/obj/item/wirecutters,
 /obj/stool/bed,
-/obj/item/weapon/bedsheet,
-/obj/item/weapon/wrench{
+/obj/item/bedsheet,
+/obj/item/wrench{
 	layer = 1
 	},
 /turf/station/floor,
@@ -7499,7 +7499,7 @@
 /turf/station/floor,
 /area/WS)
 "uW" = (
-/obj/item/weapon/radio/beacon,
+/obj/item/radio/beacon,
 /turf/station/floor,
 /area/WS)
 "uX" = (
@@ -7576,7 +7576,7 @@
 /turf/station/floor,
 /area/PS13)
 "vf" = (
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/PS13)
 "vg" = (
@@ -7599,7 +7599,7 @@
 	icon_state = "corners";
 	dir = 6
 	},
-/obj/item/weapon/radio{
+/obj/item/radio{
 	suffix = "\[2]";
 	freq = 144.9
 	},
@@ -7633,9 +7633,9 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
 /turf/station/floor,
 /area/PS13)
 "vo" = (
@@ -7649,9 +7649,9 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
-/obj/item/weapon/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
 /turf/station/floor,
 /area/PS13)
 "vq" = (
@@ -7665,8 +7665,8 @@
 /turf/station/floor,
 /area/PS13)
 "vr" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /turf/station/floor,
 /area/PS13)
 "vs" = (
@@ -7674,7 +7674,7 @@
 	icon_state = "corners";
 	dir = 9
 	},
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area/PS13)
 "vt" = (
@@ -7682,7 +7682,7 @@
 	icon_state = "sides";
 	dir = 1
 	},
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area/PS13)
 "vu" = (
@@ -7690,7 +7690,7 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/paper,
+/obj/item/paper,
 /turf/station/floor,
 /area/PS13)
 "vv" = (
@@ -7712,7 +7712,7 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/clipboard,
+/obj/item/clipboard,
 /turf/station/floor,
 /area/PS13)
 "vy" = (
@@ -7720,7 +7720,7 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/paper/sop,
+/obj/item/paper/sop,
 /turf/station/floor,
 /area/PS13)
 "vz" = (
@@ -7744,10 +7744,10 @@
 /area/PS13)
 "vC" = (
 /obj/rack,
-/obj/item/weapon/clothing/under/green,
-/obj/item/weapon/clothing/suit/armor,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/head/helmet,
+/obj/item/clothing/under/green,
+/obj/item/clothing/suit/armor,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/head/helmet,
 /turf/station/floor,
 /area/PS13)
 "vD" = (
@@ -7841,7 +7841,7 @@
 	},
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /obj/table,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/space,
 /area/shuttle_prison)
 "vQ" = (
@@ -7892,10 +7892,10 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/bottle/antitoxins,
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/s_tox,
+/obj/item/bottle/rejuvenators,
+/obj/item/bottle/antitoxins,
+/obj/item/syringe,
+/obj/item/bottle/s_tox,
 /turf/space,
 /area/shuttle_prison)
 "vW" = (
@@ -7947,8 +7947,8 @@
 /obj/window{
 	dir = 4
 	},
-/obj/item/weapon/radio,
-/obj/item/weapon/gun/energy/taser_gun,
+/obj/item/radio,
+/obj/item/gun/energy/taser_gun,
 /turf/space,
 /area/shuttle_prison)
 "wb" = (
@@ -8017,7 +8017,7 @@
 /turf/station/floor,
 /area)
 "wi" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area)
 "wj" = (
@@ -8030,7 +8030,7 @@
 /area)
 "wl" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/stool/bed,
 /turf/station/floor,
 /area)
@@ -8074,27 +8074,27 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Replace";
 	function = "dna_replace";
 	special = "UI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Replace";
 	function = "dna_replace";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Replace";
 	function = "dna_replace";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Replace";
 	function = "dna_replace";
 	special = "SI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Replace"
 	},
 /turf/station/floor,
@@ -8104,31 +8104,31 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Display";
 	function = "disk_dis";
 	data = "";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Erase";
 	function = "disk_erase";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Disk-Copy";
 	function = "disk_copy";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Clear";
 	function = "data_clear";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Disk-Controllers"
 	},
 /turf/station/floor,
@@ -8138,19 +8138,19 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Human";
 	data = "493DB249EB6D13236100A37000800AB71"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Human";
 	data = "5BDFE293BA5500F9FFFD500AAFFE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Human";
 	data = "CDE375C9A6C25A7DBDA50EC05AC6CEB63"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Human DNA"
 	},
 /turf/station/floor,
@@ -8160,19 +8160,19 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Monkey";
 	data = "CDEAF5B90AADBC6BA8033DB0A7FD613FA"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Monkey";
 	data = "2B6696D2B127E5A4"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Monkey";
 	data = "C8FFFE7EC09D80AEDEDB9A5A0B4085B61"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Monkey DNA"
 	},
 /turf/station/floor,
@@ -8182,27 +8182,27 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Add";
 	function = "dna_add";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Add";
 	function = "dna_add";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Add";
 	function = "dna_add";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Add";
 	function = "dna_add";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Add"
 	},
 /turf/station/floor,
@@ -8212,38 +8212,38 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Trunicate";
 	function = "dna_trun";
 	data = "16";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Trunicate";
 	function = "dna_trun";
 	data = "32";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Trunicate";
 	function = "dna_trun";
 	data = "12";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Trunicate"
 	},
 /turf/station/floor,
 /area)
 "wy" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/locator,
+/obj/item/locator,
 /turf/station/floor,
 /area)
 "wz" = (
@@ -8251,7 +8251,7 @@
 /turf/station/floor,
 /area)
 "wA" = (
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area)
 "wB" = (
@@ -8262,12 +8262,12 @@
 /turf/station/floor,
 /area)
 "wC" = (
-/obj/item/weapon/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
 /turf/station/floor,
 /area)
 "wD" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/storage/handcuff_kit,
+/obj/item/storage/handcuff_kit,
 /turf/station/floor,
 /area)
 "wE" = (
@@ -8283,23 +8283,23 @@
 /turf/station/floor,
 /area)
 "wG" = (
-/obj/item/weapon/storage/disk_kit/disks,
+/obj/item/storage/disk_kit/disks,
 /turf/station/floor,
 /area)
 "wH" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-Mutate";
 	function = "data_mutate";
 	data = "14A";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "S-Mutate";
 	function = "data_mutate";
 	data = "CDE";
 	special = ""
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "A-Mutate";
 	function = "data_mutate";
 	data = "AEC";
@@ -8308,7 +8308,7 @@
 /turf/station/floor,
 /area)
 "wI" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "DNA-help";
 	function = "dna_seq"
 	},
@@ -8335,7 +8335,7 @@
 "wM" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
 /obj/table,
-/obj/item/weapon/pen,
+/obj/item/pen,
 /obj/window,
 /turf/station/floor,
 /area)
@@ -8347,22 +8347,22 @@
 /area)
 "wO" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
 /turf/station/floor,
 /area)
 "wP" = (
-/obj/item/weapon/clothing/mask/m_mask,
+/obj/item/clothing/mask/m_mask,
 /turf/station/floor,
 /area)
 "wQ" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/storage/flashbang_kit,
+/obj/item/storage/backpack,
+/obj/item/storage/flashbang_kit,
 /turf/station/floor,
 /area)
 "wR" = (
-/obj/item/weapon/storage/backpack,
-/obj/item/weapon/storage/flashbang_kit,
+/obj/item/storage/backpack,
+/obj/item/storage/flashbang_kit,
 /turf/station/floor,
 /area)
 "wS" = (
@@ -8370,77 +8370,77 @@
 	icon_state = "sides";
 	dir = 8
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SE-Scan";
 	function = "dna_scan";
 	special = "SE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "SI-Scan";
 	function = "dna_scan";
 	special = "SI"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UE-Scan";
 	function = "dna_scan";
 	special = "UE"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "UI-Scan";
 	function = "dna_scan";
 	special = "UI"
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "DNA-Scan"
 	},
 /turf/station/floor,
 /area)
 "wT" = (
-/obj/item/weapon/infra_sensor,
+/obj/item/infra_sensor,
 /turf/station/floor,
 /area)
 "wU" = (
-/obj/item/weapon/wrapping_paper,
+/obj/item/wrapping_paper,
 /turf/station/floor,
 /area)
 "wV" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/sp_suit,
-/obj/item/weapon/clothing/head/s_helmet,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/tank/jetpack,
-/obj/item/weapon/radio/headset,
+/obj/item/clothing/suit/sp_suit,
+/obj/item/clothing/head/s_helmet,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/mask/gasmask,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/under/black,
+/obj/item/tank/jetpack,
+/obj/item/radio/headset,
 /turf/station/floor,
 /area)
 "wW" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /obj/rack,
-/obj/item/weapon/clothing/suit/sp_suit,
-/obj/item/weapon/clothing/head/s_helmet,
-/obj/item/weapon/clothing/gloves/black,
-/obj/item/weapon/clothing/glasses/sunglasses,
-/obj/item/weapon/clothing/mask/gasmask,
-/obj/item/weapon/clothing/shoes/black,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/tank/jetpack,
-/obj/item/weapon/radio/headset,
+/obj/item/clothing/suit/sp_suit,
+/obj/item/clothing/head/s_helmet,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/mask/gasmask,
+/obj/item/clothing/shoes/black,
+/obj/item/clothing/under/black,
+/obj/item/tank/jetpack,
+/obj/item/radio/headset,
 /turf/station/floor,
 /area)
 "wX" = (
 /obj/rack,
-/obj/item/weapon/clothing/suit/swat_suit,
-/obj/item/weapon/clothing/head/swat_hel,
-/obj/item/weapon/clothing/shoes/swat,
-/obj/item/weapon/clothing/gloves/swat,
-/obj/item/weapon/gun/energy/taser_gun,
-/obj/item/weapon/clothing/mask/robot/swat,
-/obj/item/weapon/clothing/under/black,
-/obj/item/weapon/clothing/glasses/thermal,
-/obj/item/weapon/radio/headset,
+/obj/item/clothing/suit/swat_suit,
+/obj/item/clothing/head/swat_hel,
+/obj/item/clothing/shoes/swat,
+/obj/item/clothing/gloves/swat,
+/obj/item/gun/energy/taser_gun,
+/obj/item/clothing/mask/robot/swat,
+/obj/item/clothing/under/black,
+/obj/item/clothing/glasses/thermal,
+/obj/item/radio/headset,
 /turf/station/floor,
 /area)
 "wY" = (
@@ -8452,13 +8452,13 @@
 /turf/station/floor,
 /area)
 "xa" = (
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "M-conv-H";
 	function = "worthless";
 	data = "SBSWAVVWFWVAZSFBS";
 	special = "human"
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "H-conv-M";
 	function = "worthless";
 	data = "CDAFNSDHE";
@@ -8475,31 +8475,31 @@
 	icon_state = "corners";
 	dir = 10
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Trunicate";
 	function = "data_trun";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Add";
 	function = "data_add";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Scramble";
 	function = "data_scramble";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/card/data{
+/obj/item/card/data{
 	name = "Data-Input";
 	function = "data_input";
 	data = "12";
 	special = null
 	},
-/obj/item/weapon/storage/disk_kit/disks2{
+/obj/item/storage/disk_kit/disks2{
 	name = "Data-Controllers"
 	},
 /turf/station/floor,
@@ -8509,10 +8509,10 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/dropper,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/pill_canister/epilepsy,
-/obj/item/weapon/pill_canister/cough,
+/obj/item/dropper,
+/obj/item/bottle/rejuvenators,
+/obj/item/pill_canister/epilepsy,
+/obj/item/pill_canister/cough,
 /turf/station/floor,
 /area)
 "xe" = (
@@ -8520,9 +8520,9 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/clipboard,
-/obj/item/weapon/pen,
-/obj/item/weapon/m_pill/superpill,
+/obj/item/clipboard,
+/obj/item/pen,
+/obj/item/m_pill/superpill,
 /turf/station/floor,
 /area)
 "xf" = (
@@ -8530,14 +8530,14 @@
 	icon_state = "sides";
 	dir = 2
 	},
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/rejuvenators,
-/obj/item/weapon/pill_canister/Tourette,
+/obj/item/syringe,
+/obj/item/bottle/rejuvenators,
+/obj/item/pill_canister/Tourette,
 /turf/station/floor,
 /area)
 "xg" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/syndicate_uplink,
+/obj/item/syndicate_uplink,
 /turf/station/floor,
 /area)
 "xh" = (
@@ -8563,7 +8563,7 @@
 /area)
 "xm" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/paper_bin,
+/obj/item/paper_bin,
 /turf/station/floor,
 /area)
 "xn" = (
@@ -8571,88 +8571,88 @@
 /turf/station/floor,
 /area)
 "xo" = (
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
-/obj/item/weapon/sheet/glass{
+/obj/item/sheet/glass{
 	amount = 5
 	},
 /turf/station/floor,
 /area)
 "xp" = (
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
-/obj/item/weapon/sheet/metal{
+/obj/item/sheet/metal{
 	amount = 5
 	},
 /turf/station/floor,
 /area)
 "xq" = (
-/obj/item/weapon/sheet/r_metal,
-/obj/item/weapon/sheet/r_metal,
+/obj/item/sheet/r_metal,
+/obj/item/sheet/r_metal,
 /turf/station/floor,
 /area)
 "xr" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/clothing/suit/firesuit,
-/obj/item/weapon/clothing/suit/firesuit,
+/obj/item/clothing/suit/firesuit,
+/obj/item/clothing/suit/firesuit,
 /turf/station/floor,
 /area)
 "xs" = (
-/obj/item/weapon/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
 /turf/station/floor,
 /area)
 "xt" = (
-/obj/item/weapon/clothing/glasses/meson,
-/obj/item/weapon/clothing/glasses/thermal,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/ears/earmuffs,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area)
 "xu" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/clothing/glasses/meson,
-/obj/item/weapon/clothing/glasses/thermal,
-/obj/item/weapon/clothing/glasses/blindfold,
-/obj/item/weapon/clothing/mask/muzzle,
-/obj/item/weapon/clothing/ears/earmuffs,
-/obj/item/weapon/clothing/ears/earmuffs,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
 /turf/station/floor,
 /area)
 "xv" = (
@@ -8661,17 +8661,17 @@
 /turf/station/floor,
 /area)
 "xw" = (
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/machinery/atmoalter/canister/n2canister,
 /turf/station/floor,
 /area)
 "xx" = (
-/obj/item/weapon/brutepack,
+/obj/item/brutepack,
 /turf/station/floor,
 /area)
 "xy" = (
-/obj/item/weapon/clothing/under/yellow,
-/obj/item/weapon/clothing/under/orange,
+/obj/item/clothing/under/yellow,
+/obj/item/clothing/under/orange,
 /turf/station/floor,
 /area)
 "xz" = (
@@ -8693,7 +8693,7 @@
 /turf/station/floor,
 /area)
 "xD" = (
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	name = "Secret Base Locker Access";
 	access_level = 5;
 	lab_access = 5;
@@ -8715,13 +8715,13 @@
 /turf/station/floor,
 /area)
 "xG" = (
-/obj/item/weapon/flasks/coolant,
-/obj/item/weapon/flasks/oxygen,
-/obj/item/weapon/flasks/plasma,
+/obj/item/flasks/coolant,
+/obj/item/flasks/oxygen,
+/obj/item/flasks/plasma,
 /turf/station/floor,
 /area)
 "xH" = (
-/obj/item/weapon/ointment,
+/obj/item/ointment,
 /turf/station/floor,
 /area)
 "xI" = (
@@ -8764,7 +8764,7 @@
 /area)
 "xO" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/brutepack,
+/obj/item/brutepack,
 /turf/station/floor,
 /area)
 "xP" = (
@@ -8782,7 +8782,7 @@
 /turf/station/floor,
 /area)
 "xS" = (
-/obj/item/weapon/disk/nuclear,
+/obj/item/disk/nuclear,
 /turf/station/floor,
 /area)
 "xT" = (
@@ -8806,7 +8806,7 @@
 /turf/station/floor,
 /area)
 "xW" = (
-/obj/item/weapon/radio/beacon,
+/obj/item/radio/beacon,
 /turf/station/floor,
 /area)
 "xX" = (
@@ -8823,7 +8823,7 @@
 /turf/station/floor,
 /area)
 "xZ" = (
-/obj/item/weapon/storage/firstaid/syringes,
+/obj/item/storage/firstaid/syringes,
 /turf/station/floor,
 /area)
 "ya" = (
@@ -8879,27 +8879,27 @@
 "yj" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
 /obj/table,
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/station/floor,
 /area)
 "yk" = (
-/obj/item/weapon/radio,
+/obj/item/radio,
 /turf/station/floor,
 /area)
 "yl" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/ointment,
+/obj/item/ointment,
 /turf/station/floor,
 /area)
 "ym" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/hand_tele,
+/obj/item/hand_tele,
 /turf/station/floor,
 /area)
 "yn" = (
 /obj/table,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/bottle/rejuvenators,
+/obj/item/storage/firstaid/fire,
+/obj/item/bottle/rejuvenators,
 /turf/station/floor,
 /area)
 "yo" = (
@@ -8914,19 +8914,19 @@
 /turf/station/floor,
 /area)
 "yp" = (
-/obj/item/weapon/storage/toolbox,
-/obj/item/weapon/crowbar,
+/obj/item/storage/toolbox,
+/obj/item/crowbar,
 /turf/station/floor,
 /area)
 "yq" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
-/obj/item/weapon/storage/trackimp_kit,
+/obj/item/storage/trackimp_kit,
 /turf/station/floor,
 /area)
 "yr" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/bottle/r_epil,
-/obj/item/weapon/bottle/r_ch_cough,
+/obj/item/bottle/r_epil,
+/obj/item/bottle/r_ch_cough,
 /turf/station/floor,
 /area)
 "ys" = (
@@ -8955,19 +8955,19 @@
 /area)
 "yx" = (
 /obj/table,
-/obj/item/weapon/healthanalyzer,
-/obj/item/weapon/syringe,
-/obj/item/weapon/bottle/antitoxins,
+/obj/item/healthanalyzer,
+/obj/item/syringe,
+/obj/item/bottle/antitoxins,
 /turf/station/floor,
 /area)
 "yy" = (
 /obj/window,
-/obj/item/weapon/infra_sensor,
+/obj/item/infra_sensor,
 /turf/station/floor,
 /area)
 "yz" = (
 /obj/window,
-/obj/item/weapon/wrapping_paper,
+/obj/item/wrapping_paper,
 /turf/station/floor,
 /area)
 "yA" = (
@@ -9000,7 +9000,7 @@
 "yE" = (
 /obj/machinery/atmoalter/siphs/fullairsiphon/air_vent,
 /obj/table,
-/obj/item/weapon/pen,
+/obj/item/pen,
 /turf/station/floor,
 /area)
 "yF" = (
@@ -9113,7 +9113,7 @@
 /area)
 "yU" = (
 /obj/machinery/atmoalter/siphs/scrubbers/air_filter,
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /turf/station/floor,
 /area)
 "yV" = (

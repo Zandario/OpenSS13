@@ -15,14 +15,14 @@ obj/machinery/injector
 
 	// When attacked by a tank item, transfer the tank's gas contents to the turf behind the injector
 
-	attackby(var/obj/item/weapon/W, var/mob/user)
+	attackby(var/obj/item/W, var/mob/user)
 
 		if(stat & NOPOWER)
 			return
 		use_power(25)
 
-		var/obj/item/weapon/tank/ptank = W
-		if (!( istype(ptank, /obj/item/weapon/tank) ))
+		var/obj/item/tank/ptank = W
+		if (!( istype(ptank, /obj/item/tank) ))
 			return
 
 		var/turf/T = get_step(src.loc, get_dir(user, src))

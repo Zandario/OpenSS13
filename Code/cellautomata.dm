@@ -241,7 +241,7 @@
 		usr << browse(dat, "window=p_send")
 
 	if (href_list["m_item"])
-		var/X = typesof(/obj/item/weapon)
+		var/X = typesof(/obj/item)
 		var/Q = input("What item?", null, null, null)  as null|anything in X
 		if (!( Q ))
 			return
@@ -382,15 +382,15 @@
 			var/ok = 0
 			switch(href_list["secrets2"])
 				if("sec_clothes")
-					for(var/obj/item/weapon/clothing/under/O in world)
+					for(var/obj/item/clothing/under/O in world)
 						del(O)
 					ok = 1
 				if("sec_all_clothes")
-					for(var/obj/item/weapon/clothing/O in world)
+					for(var/obj/item/clothing/O in world)
 						del(O)
 					ok = 1
 				if("sec_classic1")
-					for(var/obj/item/weapon/clothing/suit/firesuit/O in world)
+					for(var/obj/item/clothing/suit/firesuit/O in world)
 						del(O)
 					for(var/obj/grille/O in world)
 						del(O)
@@ -403,11 +403,11 @@
 						del(O)
 					ok = 1
 				if("clear_bombs")
-					for(var/obj/item/weapon/assembly/r_i_ptank/O in world)
+					for(var/obj/item/assembly/r_i_ptank/O in world)
 						del(O)
-					for(var/obj/item/weapon/assembly/m_i_ptank/O in world)
+					for(var/obj/item/assembly/m_i_ptank/O in world)
 						del(O)
-					for(var/obj/item/weapon/assembly/t_i_ptank/O in world)
+					for(var/obj/item/assembly/t_i_ptank/O in world)
 						del(O)
 					ok = 1
 				if("list_bombers")
@@ -1081,52 +1081,52 @@
 					var/list/L = list(  )
 					if (src.killer)
 						L += src.killer.contents
-						for(var/obj/item/weapon/storage/S in src.killer.contents)
+						for(var/obj/item/storage/S in src.killer.contents)
 							L += S.return_inv()
-						for(var/obj/item/weapon/gift/G in src.killer.contents)
+						for(var/obj/item/gift/G in src.killer.contents)
 							L += G.gift
 					traitorwin = 0
 					switch(src.theft_obj)
 						if("lasergun")
-							for(var/obj/item/weapon/gun/energy/laser_gun/O in L)
+							for(var/obj/item/gun/energy/laser_gun/O in L)
 								if (O.charges == O.maximum_charges)
 									traitorwin = 1
 							item = "a fully loaded laser gun"
 						if("plasmabomb")
-							for(var/obj/item/weapon/assembly/r_i_ptank/O in L)
-								var/obj/item/weapon/tank/plasmatank/P = O.part3
+							for(var/obj/item/assembly/r_i_ptank/O in L)
+								var/obj/item/tank/plasmatank/P = O.part3
 								if ((P.gas.plasma >= 1600000.0 && P.gas:temperature >= 773))		// 500degC
 									traitorwin = 1
-							for(var/obj/item/weapon/assembly/m_i_ptank/O in L)
-								var/obj/item/weapon/tank/plasmatank/P = O.part3
+							for(var/obj/item/assembly/m_i_ptank/O in L)
+								var/obj/item/tank/plasmatank/P = O.part3
 								if ((P.gas.plasma >= 1600000.0 && P.gas:temperature >= 773))		// 500degC
 									traitorwin = 1
-							for(var/obj/item/weapon/assembly/t_i_ptank/O in L)
-								var/obj/item/weapon/tank/plasmatank/P = O.part3
+							for(var/obj/item/assembly/t_i_ptank/O in L)
+								var/obj/item/tank/plasmatank/P = O.part3
 								if ((P.gas.plasma >= 1600000.0 && P.gas:temperature >= 773))		// 500degC
 									traitorwin = 1
 
 							item = "a fully armed and heated plasma bomb"
 						if("flashbang")
-							for(var/obj/item/weapon/flashbang/O in L)
+							for(var/obj/item/flashbang/O in L)
 								traitorwin = 1
 
 							item = "a flashbang"
 						if("captaincard")
-							for(var/obj/item/weapon/card/id/O in L)
+							for(var/obj/item/card/id/O in L)
 								if ((O.access_level == 5 && O.air_access == 5 && O.engine_access == 5 && O.lab_access == 5 && O.assignment == "Captain"))
 									traitorwin = 1
 								else
 							item = "a captain's card with universal level 5 access"
 						if("sleepingpills")
-							for(var/obj/item/weapon/pill_canister/O in L)
-								for(var/obj/item/weapon/m_pill/sleep/P in O)
+							for(var/obj/item/pill_canister/O in L)
+								for(var/obj/item/m_pill/sleep/P in O)
 									if (P.amount == 30)
 										traitorwin = 1
 									else
 							item = "a bottle of 30 sleeping pills"
 						if("pl_flask")
-							for(var/obj/item/weapon/flasks/O in L)
+							for(var/obj/item/flasks/O in L)
 								if (O.plasma == 500)
 									traitorwin = 1
 								else
@@ -1195,7 +1195,7 @@
 		if("nuclear")
 			if (src.objective != "Success")
 				var/disk_on_shuttle = 0
-				for(var/obj/item/weapon/disk/nuclear/N in world)
+				for(var/obj/item/disk/nuclear/N in world)
 					if (N.loc)
 						var/turf/T = get_turf(N)
 						if ((T in A))
@@ -1510,30 +1510,30 @@
 						src.killer = H
 					H.already_placed = 1
 					del(H.w_uniform)
-					H.w_uniform = new /obj/item/weapon/clothing/under/black( H )
+					H.w_uniform = new /obj/item/clothing/under/black( H )
 					H.w_uniform.layer = 20
 					del(H.shoes)
-					H.shoes = new /obj/item/weapon/clothing/shoes/black( H )
+					H.shoes = new /obj/item/clothing/shoes/black( H )
 					H.shoes.layer = 20
-					H.gloves = new /obj/item/weapon/clothing/gloves/swat( H )
+					H.gloves = new /obj/item/clothing/gloves/swat( H )
 					H.gloves.layer = 20
-					H.wear_suit = new /obj/item/weapon/clothing/suit/armor( H )
+					H.wear_suit = new /obj/item/clothing/suit/armor( H )
 					H.wear_suit.layer = 20
-					H.head = new /obj/item/weapon/clothing/head/swat_hel( H )
+					H.head = new /obj/item/clothing/head/swat_hel( H )
 					H.head.layer = 20
-					H.glasses = new /obj/item/weapon/clothing/glasses/sunglasses( H )
+					H.glasses = new /obj/item/clothing/glasses/sunglasses( H )
 					H.glasses.layer = 20
-					H.back = new /obj/item/weapon/storage/backpack( H )
+					H.back = new /obj/item/storage/backpack( H )
 					H.back.layer = 20
-					var/obj/item/weapon/ammo/a357/W = new /obj/item/weapon/ammo/a357( H.back )
+					var/obj/item/ammo/a357/W = new /obj/item/ammo/a357( H.back )
 					W.layer = 20
-					W = new /obj/item/weapon/m_pill/cyanide( H.back )
+					W = new /obj/item/m_pill/cyanide( H.back )
 					W.layer = 20
-					var/obj/item/weapon/gun/revolver/G = new /obj/item/weapon/gun/revolver( H )
+					var/obj/item/gun/revolver/G = new /obj/item/gun/revolver( H )
 					G.bullets = 7
 					G.layer = 20
 					H.belt = G
-					var/obj/item/weapon/radio/R = new /obj/item/weapon/radio/headset( H )
+					var/obj/item/radio/R = new /obj/item/radio/headset( H )
 					R.freq = 146.5
 					R.layer = 20
 					H.w_radio = R
@@ -1674,13 +1674,13 @@
 			if (!istype(src.killer, /mob/ai))
 				spawn (100)
 					if (src.killer.w_uniform)
-						if (istype(src.killer.back, /obj/item/weapon/storage/backpack))
-							var/obj/item/weapon/storage/backpack/B = src.killer.back
-							var/obj/item/weapon/syndicate_uplink/U = new /obj/item/weapon/syndicate_uplink(B)
+						if (istype(src.killer.back, /obj/item/storage/backpack))
+							var/obj/item/storage/backpack/B = src.killer.back
+							var/obj/item/syndicate_uplink/U = new /obj/item/syndicate_uplink(B)
 							U.loc = B
 							B.orient2hud(src.killer)
 						else if (!(src.killer.l_store))
-							var/obj/item/weapon/traitor_item = new /obj/item/weapon/syndicate_uplink(src.killer)
+							var/obj/item/traitor_item = new /obj/item/syndicate_uplink(src.killer)
 							traitor_item.loc = src.killer
 							src.killer.l_store = traitor_item
 							traitor_item.layer = 20
@@ -1715,7 +1715,7 @@
 					dat += text("\red <B>Transmission names enemy operative: [] ([]% certainty)</B><BR>", M.rname, rand(10, 95))
 				for(var/obj/machinery/computer/communications/C in world)
 					if(! (C.stat | (BROKEN&NOPOWER) ) )
-						var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( C.loc )
+						var/obj/item/paper/P = new /obj/item/paper( C.loc )
 						P.name = "paper- 'Cent. Com. Comm. Intercept Summary'"
 						P.info = dat
 				world << "<FONT size = 3><B>Cent. Com. Update</B> Enemy communication intercept. Security Level Elevated</FONT>"
@@ -1769,7 +1769,7 @@
 			spawn (50)
 				var/obj/L = locate("landmark*Nuclear-Disk")
 				if (L)
-					new /obj/item/weapon/disk/nuclear(L.loc)
+					new /obj/item/disk/nuclear(L.loc)
 
 				L = locate("landmark*Nuclear-Closet")
 				if (L)
@@ -1783,7 +1783,7 @@
 						src.killer.memory += text("<B>Syndicate Nuclear Bomb Code</B>: []<BR>", NB.r_code)
 						src.killer << text("The nuclear authorization code is: <B>[]</B>\]", NB.r_code)
 						src.killer << text("Nuclear Explosives 101:\n\tHello and thank you for choosing the Syndicate for your nuclear information needs.\nToday's crash course will deal with the operation of a Fusion Class Nanotrasen made Nuclear Device.\nFirst and foremost, DO NOT TOUCH ANYTHING UNTIL THE BOMB IS IN PLACE.\nPressing any button on the compacted bomb will cause it to extend and bolt itself into place.\nIf this is done to unbolt it one must compeltely log in which at this time may not be possible.\nTo make the device functional:\n1. Place bomb in designated detonation zone\n2. Extend and anchor bomb (attack with hand).\n3. Insert Nuclear Auth. Disk into slot.\n4. Type numeric code into keypad ([]).\n\tNote: If you make a mistake press R to reset the device.\n5. Press the E button to log onto the device\nYou now have activated the device. To deactivate the buttons at anytime for example when\nyou've already prepped the bomb for detonation remove the auth disk OR press the R ont he keypad.\nNow the bomb CAN ONLY be detonated using the timer. A manual det. is not an option.\n\tNote: Nanotrasen is a pain in the neck.\nToggle off the SAFETY.\n\tNote: You wouldn't believe how many Syndicate Operatives with doctorates have forgotten this step\nSo use the - - and + + to set a det time between 5 seconds and 10 minutes.\nThen press the timer toggle button to start the countdown.\nNow remove the auth. disk so that the buttons deactivate.\n\tNote: THE BOMB IS STILL SET AND WILL DETONATE\nNow before you remvoe the disk if you need to mvoe the bomb you can:\nToggle off the anchor, move it, and re-anchor.\n\nGood luck. Remember the order:\nDisk, Code, Safety, Timer, Disk, RUN\nGood luck.\nIntelligence Analysts believe that they are hiding the disk in the control room emergency room", NB.r_code)
-						var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(src.killer.loc)
+						var/obj/item/paper/P = new /obj/item/paper(src.killer.loc)
 						P.info = text("The nuclear authorization code is: <b>[]</b>", NB.r_code)
 						P.name = "nuclear bomb code"
 
@@ -1794,10 +1794,10 @@
 						continue
 
 					if (A.name == "Syndicate-Bomb")
-						var/obj/item/weapon/assembly/t_i_ptank/R = new /obj/item/weapon/assembly/t_i_ptank(A.loc )
-						var/obj/item/weapon/timer/p1 = new /obj/item/weapon/timer(R)
-						var/obj/item/weapon/igniter/p2 = new /obj/item/weapon/igniter(R)
-						var/obj/item/weapon/tank/plasmatank/p3 = new /obj/item/weapon/tank/plasmatank(R)
+						var/obj/item/assembly/t_i_ptank/R = new /obj/item/assembly/t_i_ptank(A.loc )
+						var/obj/item/timer/p1 = new /obj/item/timer(R)
+						var/obj/item/igniter/p2 = new /obj/item/igniter(R)
+						var/obj/item/tank/plasmatank/p3 = new /obj/item/tank/plasmatank(R)
 						R.part1 = p1
 						R.part2 = p2
 						R.part3 = p3

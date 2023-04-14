@@ -19,9 +19,9 @@ obj/machinery/camera
 
 	// attacking with wirecutters allows the camera to be disabled/enabled
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
-		if (istype(W, /obj/item/weapon/wirecutters))
+		if (istype(W, /obj/item/wirecutters))
 			src.status = !( src.status )
 			if (!( src.status ))
 				for(var/mob/O in viewers(user, null))

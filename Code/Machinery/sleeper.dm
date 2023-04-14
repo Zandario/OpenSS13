@@ -71,9 +71,9 @@ obj/machinery/sleeper
 	// Attack by item
 	// Only used for the grab pseudo-item, places the grabbed mob in the sleeper
 
-	attackby(obj/item/weapon/grab/G, mob/user)
+	attackby(obj/item/grab/G, mob/user)
 
-		if ((!( istype(G, /obj/item/weapon/grab) ) || !( ismob(G.affecting) )))
+		if ((!( istype(G, /obj/item/grab) ) || !( ismob(G.affecting) )))
 			return
 		if (src.occupant)
 			user.client_mob() << "\blue <B>The sleeper is already occupied!</B>"

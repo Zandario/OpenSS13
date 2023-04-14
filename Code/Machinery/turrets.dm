@@ -224,12 +224,12 @@
 	var/access = "5555"
 	var/allowed = null
 
-/obj/machinery/turretid/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/turretid/attackby(obj/item/W, mob/user)
 	if(stat & BROKEN) return
 	if (istype(user, /mob/ai))
 		return src.attack_hand(user)
-	else if (istype(W, /obj/item/weapon/card/id) )			// trying to unlock the interface with an ID card
-		var/obj/item/weapon/card/id/I = W
+	else if (istype(W, /obj/item/card/id) )			// trying to unlock the interface with an ID card
+		var/obj/item/card/id/I = W
 		if (I.check_access(access, allowed))
 			locked = !locked
 			user.client_mob() << "You [ locked ? "lock" : "unlock"] the panel."

@@ -50,19 +50,19 @@
 	var/obj/screen/dropButton
 	var/obj/screen/throwButton
 
-	var/obj/item/weapon/grippers
-	var/obj/item/weapon/wirecutters
-	var/obj/item/weapon/crowbar
-	var/obj/item/weapon/screwdriver
-	var/obj/item/weapon/welder
+	var/obj/item/grippers
+	var/obj/item/wirecutters
+	var/obj/item/crowbar
+	var/obj/item/screwdriver
+	var/obj/item/welder
 	var/image/welderUnlit = null
 	var/image/welderLit = null
-	var/obj/item/weapon/wrench
-	var/obj/item/weapon/aiInterface
+	var/obj/item/wrench
+	var/obj/item/aiInterface
 	var/image/grippedItemImage = null
 	var/list/tools
 
-	var/obj/item/weapon/selectedTool = null
+	var/obj/item/selectedTool = null
 
 	New()
 		spawn(10)
@@ -118,13 +118,13 @@
 		src.dropButton.screen_loc = "8,1"
 		src.throwButton.screen_loc = "9,1"
 
-		src.grippers = new /obj/item/weapon/drone/grippers(src)
-		src.wirecutters = new /obj/item/weapon/wirecutters(src)
-		src.crowbar = new /obj/item/weapon/crowbar(src)
-		src.screwdriver = new /obj/item/weapon/screwdriver(src)
-		src.welder = new /obj/item/weapon/weldingtool(src)
-		src.wrench = new /obj/item/weapon/wrench(src)
-		src.aiInterface = new /obj/item/weapon/drone/aiInterface(src)
+		src.grippers = new /obj/item/drone/grippers(src)
+		src.wirecutters = new /obj/item/wirecutters(src)
+		src.crowbar = new /obj/item/crowbar(src)
+		src.screwdriver = new /obj/item/screwdriver(src)
+		src.welder = new /obj/item/weldingtool(src)
+		src.wrench = new /obj/item/wrench(src)
+		src.aiInterface = new /obj/item/drone/aiInterface(src)
 
 		src.grippers.layer = FLOAT_LAYER
 		src.wirecutters.layer = FLOAT_LAYER
@@ -181,7 +181,7 @@
 		if (counter>1)
 			name = name + " [num]"
 
-	proc/updateToolIcon(var/obj/item/weapon/W)
+	proc/updateToolIcon(var/obj/item/W)
 		for (var/obj/screen/SI in src.screenIcons)
 			if (SI.screen_loc == W.screen_loc)
 				if (SI != src.dropButton && SI != src.selector)
@@ -271,7 +271,7 @@
 
 
 
-	proc/selectTool(var/obj/item/weapon/W)
+	proc/selectTool(var/obj/item/W)
 		if (W in src.tools)
 			src.selectedTool = W
 			if (W==src.grippers)
@@ -369,7 +369,7 @@
 				else if (user.a_intent == "hurt")
 					if (istype(user, /mob/human) || istype(user, /mob/monkey))
 						var/damage = rand(1, 9)
-						var/obj/item/weapon/organ/external/affecting = null
+						var/obj/item/organ/external/affecting = null
 						var/def_zone
 						if (user.hand)
 							def_zone = "l_hand"
@@ -377,7 +377,7 @@
 							def_zone = "r_hand"
 						if (user.organs[text("[]", def_zone)])
 							affecting = user.organs[text("[]", def_zone)]
-						if (affecting!=null && (istype(affecting, /obj/item/weapon/organ/external) && prob(90)))
+						if (affecting!=null && (istype(affecting, /obj/item/organ/external) && prob(90)))
 							for(var/mob/O in viewers(src, null))
 								O.show_message(text("\red <B>[] has punched [], and it looked painful!</B>", user, src), 1)
 							affecting.take_damage(damage)
@@ -583,7 +583,7 @@
 			freeSlot = 0
 			r_hand = null
 
-	proc/updateClothingProcessHandItem(obj/item/weapon/item, freeSlot)
+	proc/updateClothingProcessHandItem(obj/item/item, freeSlot)
 		if (!freeSlot)
 			item.loc = src.loc
 			item.dropped(src)
@@ -643,10 +643,10 @@
 					if (ismob(src.pulling))
 						var/mob/M = src.pulling
 						var/ok = 1
-						if (locate(/obj/item/weapon/grab, M.grabbed_by.len))
+						if (locate(/obj/item/grab, M.grabbed_by.len))
 							if (prob(75))
-								var/obj/item/weapon/grab/G = pick(M.grabbed_by)
-								if (istype(G, /obj/item/weapon/grab))
+								var/obj/item/grab/G = pick(M.grabbed_by)
+								if (istype(G, /obj/item/grab))
 									for(var/mob/O in viewers(M, null))
 										O.show_message(text("\red [] has been pulled from []'s grip by []", G.affecting, G.assailant, src), 1)
 										//Foreach goto(354)
@@ -654,7 +654,7 @@
 									del(G)
 							else
 								ok = 0
-							if (locate(/obj/item/weapon/grab, M.grabbed_by.len))
+							if (locate(/obj/item/grab, M.grabbed_by.len))
 								ok = 0
 						if (ok)
 							var/t = M.pulling
@@ -749,7 +749,7 @@
 		src.fireloss += f_loss
 		src.health = 100 - src.oxyloss - src.toxloss - src.fireloss - src.bruteloss
 
-/obj/item/weapon/drone/aiInterface
+/obj/item/drone/aiInterface
 	name = "AI Interface"
 	icon = 'icons/drone.dmi'
 	icon_state = "tool-aiInterface"
@@ -757,7 +757,7 @@
 
 
 
-/obj/item/weapon/drone/grippers
+/obj/item/drone/grippers
 	name = "Grippers"
 	icon = 'icons/drone.dmi'
 	icon_state = "tool-grippers"

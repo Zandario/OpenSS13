@@ -4,7 +4,7 @@
  *	Uses fuel when used, can be refueled at a weldfueltank.
  */
 
-/obj/item/weapon/weldingtool
+/obj/item/weldingtool
 	name = "weldingtool"
 	icon_state = "welder"
 	flags = 322.0

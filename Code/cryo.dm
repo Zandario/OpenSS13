@@ -1,6 +1,6 @@
 
 
-/obj/item/weapon/flasks/examine()
+/obj/item/flasks/examine()
 	set src in oview(1)
 
 	usr.client_mob() << text("The flask is []% full", (src.oxygen + src.plasma + src.coolant) * 100 / 500)

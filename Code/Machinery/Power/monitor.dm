@@ -37,12 +37,12 @@ obj/machinery/power/monitor
 	// Attack with item
 	// If ID card, check access and enable/disable remote APC control
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 		if(stat & (BROKEN|NOPOWER))
 			return
-		if (istype(W, /obj/item/weapon/card/id) )			// trying to toggle remote control with an ID card
+		if (istype(W, /obj/item/card/id) )			// trying to toggle remote control with an ID card
 
-			var/obj/item/weapon/card/id/I = W
+			var/obj/item/card/id/I = W
 			if (I.check_access(access, allowed))
 				control = !control
 				user.client_mob() << "You [ control ? "enable" : "disable"] remote APC control."

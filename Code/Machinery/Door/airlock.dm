@@ -533,7 +533,7 @@ About the new airlock wires panel:
 				usr.machine = src
 				if (href_list["wires"])
 					var/t1 = text2num(href_list["wires"])
-					if (!( istype(usr.equipped(), /obj/item/weapon/wirecutters) ))
+					if (!( istype(usr.equipped(), /obj/item/wirecutters) ))
 						alert(usr.client_mob(), "You need wirecutters!")
 						return
 					if (!( src.p_open ))
@@ -544,7 +544,7 @@ About the new airlock wires panel:
 						src.cut(t1)
 				else if (href_list["pulse"])
 					var/t1 = text2num(href_list["pulse"])
-					if (!( istype(usr.equipped(), /obj/item/weapon/multitool) ))
+					if (!( istype(usr.equipped(), /obj/item/multitool) ))
 						alert(usr.client_mob(), "You need a multitool!")
 						return
 					if ((stat & NOPOWER))
@@ -708,7 +708,7 @@ About the new airlock wires panel:
 	// If crowbar, and door is closed, not welded, test light off and not locked, open the door
 	// Otherwise, do standard door attackby()
 
-	attackby(obj/item/weapon/C, mob/user)
+	attackby(obj/item/C, mob/user)
 		//world << text("airlock attackby src [] obj [] mob []", src, C, user)
 		if (!istype(usr, /mob/ai))
 			if (src.isElectrified())
@@ -716,8 +716,8 @@ About the new airlock wires panel:
 					return
 
 		src.add_fingerprint(user)
-		if ((istype(C, /obj/item/weapon/weldingtool) && !( src.operating ) && src.density))
-			var/obj/item/weapon/weldingtool/W = C
+		if ((istype(C, /obj/item/weldingtool) && !( src.operating ) && src.density))
+			var/obj/item/weldingtool/W = C
 			if(W.welding)
 				if (W.weldfuel > 2)
 					W.weldfuel -= 2
@@ -730,7 +730,7 @@ About the new airlock wires panel:
 					src.blocked = null
 				src.updateIconState()
 				return
-		else if (istype(C, /obj/item/weapon/wrench))
+		else if (istype(C, /obj/item/wrench))
 			if (src.p_open)
 				if (src.arePowerSystemsOn())
 					if (src.canBoltsBeRaisedManually() || istype(user, /mob/drone))
@@ -740,14 +740,14 @@ About the new airlock wires panel:
 				else
 					user.client_mob() << alert("You need power assist!", null, null, null, null, null)
 			src.updateIconState()
-		else if (istype(C, /obj/item/weapon/screwdriver))
+		else if (istype(C, /obj/item/screwdriver))
 			src.p_open = !( src.p_open )
 			src.updateIconState()
-		else if (istype(C, /obj/item/weapon/wirecutters))
+		else if (istype(C, /obj/item/wirecutters))
 			return src.attack_hand(user)
-		else if (istype(C, /obj/item/weapon/multitool))
+		else if (istype(C, /obj/item/multitool))
 			return src.attack_hand(user)
-		else if (istype(C, /obj/item/weapon/crowbar))
+		else if (istype(C, /obj/item/crowbar))
 			if ((src.density) && (!( src.blocked ) && !( src.operating ) && ((!src.arePowerSystemsOn()) || (stat & NOPOWER)) && !( src.locked )))
 				spawn( 0 )
 					src.operating = 1

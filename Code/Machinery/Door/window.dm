@@ -87,14 +87,14 @@ obj/machinery/door/window
 		if(bumped)										// if called from Bump(), return now - you can't bump open a secure door
 			return
 
-		var/obj/item/weapon/card/id/card				// check if user is human and wearing ID
+		var/obj/item/card/id/card				// check if user is human and wearing ID
 		if (istype(user, /mob/drone))
 			if (user:controlledBy != null)
 				user = user:controlledBy
 		if (istype(user, /mob/human))
 			var/mob/human/H = user
 			card = H.wear_id
-			if (!( istype(card, /obj/item/weapon/card/id) ))
+			if (!( istype(card, /obj/item/card/id) ))
 				return
 		else
 			if (istype(user, /mob/ai))

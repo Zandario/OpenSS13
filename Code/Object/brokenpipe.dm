@@ -102,10 +102,10 @@
 	 *
 	 * @public
 	 */
-	attackby(obj/item/weapon/W, mob/user) {
+	attackby(obj/item/W, mob/user) {
 
-		if (istype(W, /obj/item/weapon/weldingtool))
-			var/obj/item/weapon/weldingtool/WT = W
+		if (istype(W, /obj/item/weldingtool))
+			var/obj/item/weldingtool/WT = W
 			if(WT.welding)
 
 				if(WT.weldfuel > 2)

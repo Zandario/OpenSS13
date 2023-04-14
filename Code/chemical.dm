@@ -1,15 +1,15 @@
 #define REGULATE_RATE 5
 
 
-/obj/item/weapon/organ/proc/process()
+/obj/item/organ/proc/process()
 
 	return
 
-/obj/item/weapon/organ/proc/receive_chem(chemical as obj)
+/obj/item/organ/proc/receive_chem(chemical as obj)
 
 	return
 
-/obj/item/weapon/organ/external/proc/take_damage(brute, burn)
+/obj/item/organ/external/proc/take_damage(brute, burn)
 
 	if ((brute <= 0 && burn <= 0))
 		return 0
@@ -32,7 +32,7 @@
 			return 0
 	return src.update_icon()
 
-/obj/item/weapon/organ/external/proc/heal_damage(brute, burn)
+/obj/item/organ/external/proc/heal_damage(brute, burn)
 
 	src.brute_dam = max(0, src.brute_dam - brute)
 	src.burn_dam = max(0, src.brute_dam - burn)
@@ -41,7 +41,7 @@
 // new damage icon system
 // returns just the brute/burn damage code
 
-/obj/item/weapon/organ/external/proc/d_i_text()
+/obj/item/organ/external/proc/d_i_text()
 
 	var/tburn = 0
 	var/tbrute = 0
@@ -69,7 +69,7 @@
 // new damage icon system
 // adjusted to set d_i_state to brute/burn code only (without r_name0 as before)
 
-/obj/item/weapon/organ/external/proc/update_icon()
+/obj/item/organ/external/proc/update_icon()
 	var/n_is = "[d_i_text()]"
 	if (n_is != src.d_i_state)
 		src.d_i_state = n_is
@@ -831,7 +831,7 @@ heat is conserved between exchanges
 					M.sdisabilities |= 1
 		else
 			M.plasma += volume * 6
-			for(var/obj/item/weapon/implant/tracking/T in M)
+			for(var/obj/item/implant/tracking/T in M)
 				M.plasma += 1
 				//T = null
 				del(T)

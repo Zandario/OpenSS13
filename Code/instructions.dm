@@ -10,16 +10,16 @@
 	src.get_dna_ready(M)
 	if ((!( M.w_uniform ) && !( ticker )))
 		if (M.gender == "female")
-			M.w_uniform = new /obj/item/weapon/clothing/under/pink( M )
+			M.w_uniform = new /obj/item/clothing/under/pink( M )
 		else
-			M.w_uniform = new /obj/item/weapon/clothing/under/blue( M )
+			M.w_uniform = new /obj/item/clothing/under/blue( M )
 		M.w_uniform.layer = 20
-		M.shoes = new /obj/item/weapon/clothing/shoes/brown( M )
+		M.shoes = new /obj/item/clothing/shoes/brown( M )
 		M.shoes.layer = 20
 	else
 		M << "You will have to find clothes from the station."
 	if ((ticker && !( M.l_hand )))
-		var/obj/item/weapon/card/id/I = new /obj/item/weapon/card/id( M )
+		var/obj/item/card/id/I = new /obj/item/card/id( M )
 		var/list/L = list( "Technical Assistant", "Research Assistant", "Staff Assistant", "Medical Assistant" )
 		var/choose
 		if (L.Find(M.occupation1))

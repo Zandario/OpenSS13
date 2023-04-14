@@ -270,9 +270,9 @@ obj/machinery/pipes
 
 	// Routines to allow cutting and damage of pipes
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
-		if (istype(W, /obj/item/weapon/wrench))
+		if (istype(W, /obj/item/wrench))
 			if(stat & MAINT)
 				stat &= ~MAINT
 				user.client_mob() << "\blue You fasten the pipe flanges."
@@ -280,8 +280,8 @@ obj/machinery/pipes
 				stat |= MAINT
 				user.client_mob() << "\blue You unfasten the pipe flanges. The pipe can now be cut."
 
-		else if (istype(W, /obj/item/weapon/weldingtool))
-			var/obj/item/weapon/weldingtool/WT = W
+		else if (istype(W, /obj/item/weldingtool))
+			var/obj/item/weldingtool/WT = W
 			if(WT.welding)
 
 				if(stat & MAINT)
@@ -295,7 +295,7 @@ obj/machinery/pipes
 						if ((user.loc == T && user.equipped() == W))
 							// make pipe fitting
 
-							var/obj/item/weapon/pipe/P = new(src.loc)
+							var/obj/item/pipe/P = new(src.loc)
 							P.settype(src)
 
 							del(src)

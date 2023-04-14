@@ -25,7 +25,7 @@ obj/machinery/nuclearbomb
 		code = ""										// The code typed in
 		yes_code = 0									// True if typed code matches
 		safety = 1										// False to enable bomb to explode
-		obj/item/weapon/disk/nuclear/auth = null		// The authenication disk of the nuke, or null if none inserted
+		obj/item/disk/nuclear/auth = null		// The authenication disk of the nuke, or null if none inserted
 
 
 	// Create a nuclear bomb.
@@ -168,7 +168,7 @@ Anchor: [(src.anchored ? "Engaged" : "Off")] Toggle<BR>
 					src.auth = null
 				else					// if not inserted, check that it's in the player's hand
 					var/obj/item/I = usr.equipped()
-					if (istype(I, /obj/item/weapon/disk/nuclear))
+					if (istype(I, /obj/item/disk/nuclear))
 						usr.drop_item()
 						I.loc = src
 						src.auth = I

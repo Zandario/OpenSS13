@@ -114,9 +114,9 @@ obj/machinery/junction
 	// Attack by item
 	// If welder, make a fitting and delete self
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
-		if(istype(W, /obj/item/weapon/weldingtool))
+		if(istype(W, /obj/item/weldingtool))
 			if(attack_welder(W, user))
 				del(src)
 		else

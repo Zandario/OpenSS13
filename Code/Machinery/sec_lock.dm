@@ -14,7 +14,7 @@ obj/machinery/sec_lock
 	layer = 3.1
 
 	var
-		obj/item/weapon/card/id/scan = null			// the inserted ID card
+		obj/item/card/id/scan = null			// the inserted ID card
 		a_type = 0									// position of the controlled doors
 													//0 = doors S/SE, 1 = SW/(SW+W), 2 = NW/(NW+W)
 		obj/machinery/door/d1 = null				// the 1st door to control
@@ -106,8 +106,8 @@ Keycard: [src.scan ? "<A href='?src=\ref[src];card=1'>[src.scan.name]</A>" : "<A
 					src.scan = null
 				else													// otherwise
 					if (!istype(usr, /mob/ai))
-						var/obj/item/weapon/card/id/I = usr.equipped()		// check to see if an ID card is equipped
-						if (istype(I, /obj/item/weapon/card/id))
+						var/obj/item/card/id/I = usr.equipped()		// check to see if an ID card is equipped
+						if (istype(I, /obj/item/card/id))
 							usr.drop_item()
 							I.loc = src
 							src.scan = I									// and insert the ID card

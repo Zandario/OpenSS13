@@ -21,10 +21,10 @@
 	..()				//*****RM
 	switch(btype)
 		if(0)			// radio
-			var/obj/item/weapon/assembly/r_i_ptank/R = new /obj/item/weapon/assembly/r_i_ptank( src.loc )
-			var/obj/item/weapon/tank/plasmatank/p3 = new /obj/item/weapon/tank/plasmatank( R )
-			var/obj/item/weapon/radio/signaler/p1 = new /obj/item/weapon/radio/signaler( R )
-			var/obj/item/weapon/igniter/p2 = new /obj/item/weapon/igniter( R )
+			var/obj/item/assembly/r_i_ptank/R = new /obj/item/assembly/r_i_ptank( src.loc )
+			var/obj/item/tank/plasmatank/p3 = new /obj/item/tank/plasmatank( R )
+			var/obj/item/radio/signaler/p1 = new /obj/item/radio/signaler( R )
+			var/obj/item/igniter/p2 = new /obj/item/igniter( R )
 			R.part1 = p1
 			R.part2 = p2
 			R.part3 = p3
@@ -37,10 +37,10 @@
 			p3.gas.temperature = btemp + T0C
 
 		if(1)			// prox
-			var/obj/item/weapon/assembly/m_i_ptank/R = new /obj/item/weapon/assembly/m_i_ptank( src.loc )
-			var/obj/item/weapon/tank/plasmatank/p3 = new /obj/item/weapon/tank/plasmatank( R )
-			var/obj/item/weapon/prox_sensor/p1 = new /obj/item/weapon/prox_sensor( R )
-			var/obj/item/weapon/igniter/p2 = new /obj/item/weapon/igniter( R )
+			var/obj/item/assembly/m_i_ptank/R = new /obj/item/assembly/m_i_ptank( src.loc )
+			var/obj/item/tank/plasmatank/p3 = new /obj/item/tank/plasmatank( R )
+			var/obj/item/prox_sensor/p1 = new /obj/item/prox_sensor( R )
+			var/obj/item/igniter/p2 = new /obj/item/igniter( R )
 			R.part1 = p1
 			R.part2 = p2
 			R.part3 = p3
@@ -60,10 +60,10 @@
 
 		if(2)			// time
 
-			var/obj/item/weapon/assembly/t_i_ptank/R = new /obj/item/weapon/assembly/t_i_ptank( src.loc )
-			var/obj/item/weapon/tank/plasmatank/p3 = new /obj/item/weapon/tank/plasmatank( R )
-			var/obj/item/weapon/timer/p1 = new /obj/item/weapon/timer( R )
-			var/obj/item/weapon/igniter/p2 = new /obj/item/weapon/igniter( R )
+			var/obj/item/assembly/t_i_ptank/R = new /obj/item/assembly/t_i_ptank( src.loc )
+			var/obj/item/tank/plasmatank/p3 = new /obj/item/tank/plasmatank( R )
+			var/obj/item/timer/p1 = new /obj/item/timer( R )
+			var/obj/item/igniter/p2 = new /obj/item/igniter( R )
 			R.part1 = p1
 			R.part2 = p2
 			R.part3 = p3

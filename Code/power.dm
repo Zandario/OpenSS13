@@ -3,7 +3,7 @@
 // charge from 0 to 100%
 // fits in PDU to provide backup power
 
-/obj/item/weapon/cell/New()
+/obj/item/cell/New()
 	..()
 
 	charge = charge * maxcharge/100.0		// map obj has charge as percentage, convert to real value here
@@ -12,7 +12,7 @@
 		updateicon()
 
 
-/obj/item/weapon/cell/proc/updateicon()
+/obj/item/cell/proc/updateicon()
 
 	if(maxcharge == 1000)
 		icon_state = "cell"
@@ -28,10 +28,10 @@
 	else
 		overlays += image('icons/power.dmi', "cell-o1")
 
-/obj/item/weapon/cell/proc/percent()		// return % charge of cell
+/obj/item/cell/proc/percent()		// return % charge of cell
 	return 100.0*charge/maxcharge
 
-/obj/item/weapon/cell/examine()
+/obj/item/cell/examine()
 	set src in view(1)
 	if(usr && !usr.stat)
 		if(maxcharge == 1000)
@@ -86,18 +86,18 @@
 		icon_state = "[d1]-[d2]"
 
 
-/obj/cable/attackby(obj/item/weapon/W, mob/user)
+/obj/cable/attackby(obj/item/W, mob/user)
 
 	var/turf/T = src.loc
 	if(T.intact)
 		return
 
-	if(istype(W, /obj/item/weapon/wirecutters))
+	if(istype(W, /obj/item/wirecutters))
 
 		if(src.d1)	// 0-X cables are 1 unit, X-X cables are 2 units long
-			new/obj/item/weapon/cable_coil(T, 2)
+			new/obj/item/cable_coil(T, 2)
 		else
-			new/obj/item/weapon/cable_coil(T, 1)
+			new/obj/item/cable_coil(T, 1)
 
 		for(var/mob/O in viewers(src, null))
 			O.show_message("[user] cuts the cable.", 1)
@@ -110,8 +110,8 @@
 		return	// not needed, but for clarity
 
 
-	else if(istype(W, /obj/item/weapon/cable_coil))
-		var/obj/item/weapon/cable_coil/coil = W
+	else if(istype(W, /obj/item/cable_coil))
+		var/obj/item/cable_coil/coil = W
 
 		coil.cable_join(src, user)
 		//note do shock in cable_join
@@ -148,7 +148,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 		if(istype(user, /mob/human))
 			var/mob/human/H = user
 			if(H.gloves)
-				var/obj/item/weapon/clothing/gloves/G = H.gloves
+				var/obj/item/clothing/gloves/G = H.gloves
 
 				prot = G.elec_protect
 		else if (istype(user, /mob/ai))
@@ -194,12 +194,12 @@ atom/proc/electrocute(mob/user, prb, netnum)
 			del(src)
 		if(2.0)
 			if (prob(50))
-				new/obj/item/weapon/cable_coil(src.loc, src.d1 ? 2 : 1)
+				new/obj/item/cable_coil(src.loc, src.d1 ? 2 : 1)
 				del(src)
 
 		if(3.0)
 			if (prob(25))
-				new/obj/item/weapon/cable_coil(src.loc, src.d1 ? 2 : 1)
+				new/obj/item/cable_coil(src.loc, src.d1 ? 2 : 1)
 				del(src)
 		else
 	return
@@ -218,7 +218,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 
 // the cable coil object, used for laying cable
 
-/obj/item/weapon/cable_coil/New(loc, length = MAXCOIL)
+/obj/item/cable_coil/New(loc, length = MAXCOIL)
 	src.amount = length
 	pixel_x = rand(-2,2)
 	pixel_y = rand(-2,2)
@@ -226,7 +226,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 	..(loc)
 
 
-/obj/item/weapon/cable_coil/proc/updateicon()
+/obj/item/cable_coil/proc/updateicon()
 	if(amount == 1)
 		icon_state = "coil1"
 		name = "cable piece"
@@ -237,7 +237,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 		icon_state = "coil"
 		name = "cable coil"
 
-/obj/item/weapon/cable_coil/examine()
+/obj/item/cable_coil/examine()
 	set src in view(1)
 
 	if(amount == 1)
@@ -249,17 +249,17 @@ atom/proc/electrocute(mob/user, prb, netnum)
 
 
 
-/obj/item/weapon/cable_coil/attackby(obj/item/weapon/W, mob/user)
+/obj/item/cable_coil/attackby(obj/item/W, mob/user)
 
-	if( istype(W, /obj/item/weapon/wirecutters) && src.amount > 1)
+	if( istype(W, /obj/item/wirecutters) && src.amount > 1)
 		src.amount--
-		new/obj/item/weapon/cable_coil(user.loc, 1)
+		new/obj/item/cable_coil(user.loc, 1)
 		user.client_mob() << "You cut a piece off the cable coil."
 		src.updateicon()
 		return
 
-	else if( istype(W, /obj/item/weapon/cable_coil) )
-		var/obj/item/weapon/cable_coil/C = W
+	else if( istype(W, /obj/item/cable_coil) )
+		var/obj/item/cable_coil/C = W
 		if(C.amount == MAXCOIL)
 			user.client_mob() << "The coil is too long, you cannot add any more cable to it."
 			return
@@ -281,7 +281,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 
 
 
-/obj/item/weapon/cable_coil/proc/use(var/used)
+/obj/item/cable_coil/proc/use(var/used)
 	if(src.amount < used)
 		return 0
 	else if (src.amount == used)
@@ -295,7 +295,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 
 // called when cable_coil is clicked on a turf/station/floor
 
-/obj/item/weapon/cable_coil/proc/turf_place(turf/station/floor/F, mob/user)
+/obj/item/cable_coil/proc/turf_place(turf/station/floor/F, mob/user)
 
 	if(!isturf(user.loc))
 		return
@@ -334,7 +334,7 @@ atom/proc/electrocute(mob/user, prb, netnum)
 
 // called when cable_coil is click on an installed obj/cable
 
-/obj/item/weapon/cable_coil/proc/cable_join(obj/cable/C, mob/user)
+/obj/item/cable_coil/proc/cable_join(obj/cable/C, mob/user)
 
 
 	var/turf/U = user.loc

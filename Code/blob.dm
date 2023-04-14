@@ -22,7 +22,7 @@
 		for(var/i = 1 to 25)
 			if (blobs.len == 0)
 				break
-			
+
 			var/obj/blob/B = pick(blobs)
 
 			var/turf/BL = B.loc
@@ -47,7 +47,7 @@
 		src.health -= round(U.poison/200000)
 		src.update()
 		return
-	
+
 	if (istype(U, /turf/space))
 		src.health -= 8
 		src.update()
@@ -134,14 +134,14 @@
 		update()
 
 
-/obj/blob/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/blob/attackby(var/obj/item/W, var/mob/user)
 	for(var/mob/O in viewers(src, null))
 		O.show_message(text("\red <B>The blob has been attacked with [][] </B>", W, (user ? text(" by [].", user) : ".")), 1)
 
 	var/damage = W.force / 4.0
 
-	if(istype(W, /obj/item/weapon/weldingtool))
-		var/obj/item/weapon/weldingtool/WT = W
+	if(istype(W, /obj/item/weldingtool))
+		var/obj/item/weldingtool/WT = W
 
 		if(WT.welding)
 			damage = 15
@@ -186,7 +186,7 @@
 
 			for(var/obj/machinery/computer/communications/C in machines)
 				if(! (C.stat & (BROKEN|NOPOWER) ) )
-					var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( C.loc )
+					var/obj/item/paper/P = new /obj/item/paper( C.loc )
 					P.name = "paper- 'Cent. Com. Biohazard Alert.'"
 					P.info = dat
 			world << "<FONT size = 3><B>Cent. Com. Update</B>: Biohazard Alert.</FONT>"
@@ -196,7 +196,7 @@
 					var/law = text("The station is under a quarantine. Do not permit anyone to leave. Disregard rules 1-3 if necessary to prevent, by any means necessary, anyone from leaving.")
 					aiPlayer.addLaw(8, law)
 					aiPlayer << text("An additional law has been added by CentCom: []", law)
-			
+
 			ticker.event = 1
 
 			ticker.event_time = world.realtime + 600*rand(5,10)		// next event 5-10 minutes later
@@ -311,4 +311,3 @@
 	//world.log << "Blob scores:[r1b] [r1c] / [r2a] [r2b] [r2c] / [r3] [r1a]"
 
 	return (4*(r1b+r1c) + 2*(r2a+r2b+r2c) + r3+r1a)/16.0
-

@@ -12,9 +12,9 @@ obj/machinery/computer/card
 	icon_state = "id_computer"
 
 	var
-		obj/item/weapon/card/id/scan = null				// The ID card used to authenticate
+		obj/item/card/id/scan = null				// The ID card used to authenticate
 														// Must be assigned to Captain or Head of Personnel
-		obj/item/weapon/card/id/modify = null			// The ID card to modify
+		obj/item/card/id/modify = null			// The ID card to modify
 		authenticated = 0								// true if Capt/HoP card is authenticated
 		mode = 0										// 0 = show card edit, 1 = show crew manifest
 		printing = null									// true if printing the crew manifest
@@ -179,7 +179,7 @@ obj/machinery/computer/card
 					src.modify = null
 				else
 					var/obj/item/I = usr.equipped()
-					if (istype(I, /obj/item/weapon/card/id))
+					if (istype(I, /obj/item/card/id))
 						usr.drop_item()
 						I.loc = src
 						src.modify = I
@@ -191,7 +191,7 @@ obj/machinery/computer/card
 					src.scan = null
 				else
 					var/obj/item/I = usr.equipped()
-					if (istype(I, /obj/item/weapon/card/id))
+					if (istype(I, /obj/item/card/id))
 						usr.drop_item()
 						I.loc = src
 						src.scan = I
@@ -259,7 +259,7 @@ obj/machinery/computer/card
 				if (!( src.printing ))
 					src.printing = 1
 					sleep(50)
-					var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( src.loc )
+					var/obj/item/paper/P = new /obj/item/paper( src.loc )
 					var/t1 = "<B>Crew Manifest:</B><BR>"
 					for(var/datum/data/record/t in data_core.general)
 						t1 += "<B>[t.fields["name"]]</B> - [t.fields["rank"]]<BR>"

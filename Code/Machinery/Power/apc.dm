@@ -33,7 +33,7 @@ obj/machinery/power/apc
 
 	var
 		area/area						// the area that this APC controls
-		obj/item/weapon/cell/cell		// the power cell object inserted in this APC (or null if none)
+		obj/item/cell/cell		// the power cell object inserted in this APC (or null if none)
 		start_charge = 90				// initial cell charge %
 		cell_type = 1					// the cell type: 0=no cell, 1=regular, 2=high-cap (x5)
 		opened = 0						// true if the APC is opened (cell exposed)
@@ -81,7 +81,7 @@ obj/machinery/power/apc
 
 		// if starting with a power cell installed, create it and set its charge level
 		if(cell_type)
-			src.cell = new/obj/item/weapon/cell(src)
+			src.cell = new/obj/item/cell(src)
 			cell.maxcharge = cell_type==1 ? 1000 : 5000				// if type=2, make a hp cell
 			cell.charge = start_charge * cell.maxcharge / 100.0 		// (convert percentage to actual value)
 
@@ -145,14 +145,14 @@ obj/machinery/power/apc
 
 	//Attack with an item - open/close cover, insert cell, or (un)lock interface
 
-	attackby(obj/item/weapon/W, mob/user)
+	attackby(obj/item/W, mob/user)
 
 		if(stat & BROKEN) return
 
 		if (istype(user, /mob/ai))
 			return src.attack_hand(user)
 
-		if (istype(W, /obj/item/weapon/screwdriver))	// screwdriver means open or close the cover
+		if (istype(W, /obj/item/screwdriver))	// screwdriver means open or close the cover
 			if(opened)
 				opened = 0
 				updateicon()
@@ -163,7 +163,7 @@ obj/machinery/power/apc
 					opened = 1
 					updateicon()
 
-		else if	(istype(W, /obj/item/weapon/cell) && opened)	// trying to put a cell inside
+		else if	(istype(W, /obj/item/cell) && opened)	// trying to put a cell inside
 			if(cell)
 				user.client_mob() << "There is a power cell already installed."
 			else
@@ -174,12 +174,12 @@ obj/machinery/power/apc
 				chargecount = 0
 
 			updateicon()
-		else if (istype(W, /obj/item/weapon/card/id) )			// trying to unlock the interface with an ID card
+		else if (istype(W, /obj/item/card/id) )			// trying to unlock the interface with an ID card
 
 			if(opened)
 				user.client_mob() << "You must close the cover to swipe an ID card."
 			else
-				var/obj/item/weapon/card/id/I = W
+				var/obj/item/card/id/I = W
 				if (I.check_access(access, allowed))
 					locked = !locked
 					user.client_mob() << "You [ locked ? "lock" : "unlock"] the APC interface."
@@ -187,7 +187,7 @@ obj/machinery/power/apc
 				else
 					user.client_mob() << "\red Access denied."
 
-		else if (istype(W, /obj/item/weapon/card/emag) )		// trying to unlock with an emag card
+		else if (istype(W, /obj/item/card/emag) )		// trying to unlock with an emag card
 
 			if(opened)
 				user.client_mob() << "You must close the cover to swipe an ID card."

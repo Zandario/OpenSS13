@@ -1,4 +1,4 @@
-/obj/item/weapon/t_scanner/attack_self(mob/user)
+/obj/item/t_scanner/attack_self(mob/user)
 
 	on = !on
 	icon_state = "t-scanner[on]"
@@ -7,7 +7,7 @@
 		src.process()
 
 
-/obj/item/weapon/t_scanner/proc/process()
+/obj/item/t_scanner/proc/process()
 
 	while(on)
 		for(var/turf/T in range(1, src.loc) )
@@ -41,14 +41,14 @@
 
 
 // test flashlight object
-/obj/item/weapon/flashlight/attack_self(mob/user)
+/obj/item/flashlight/attack_self(mob/user)
 
 	on = !on
 	icon_state = "flight[on]"
 	if(on)
 		src.process()
 
-/obj/item/weapon/flashlight/proc/process()
+/obj/item/flashlight/proc/process()
 	lastHolder = null
 
 	while(on)
@@ -81,8 +81,8 @@
 
 //Remove & Replace cover
 
-/obj/item/weapon/filter/attackby(obj/item/weapon/W, mob/user)
-	if ( istype(W, /obj/item/weapon/screwdriver))
+/obj/item/filter/attackby(obj/item/W, mob/user)
+	if ( istype(W, /obj/item/screwdriver))
 		if (src.cover == 1)		//If its closed
 			if (src.ftype == src.oftype)		//If the filter is operating normaly.
 				user.show_message("\blue You unscrew the protective cover.")
@@ -111,7 +111,7 @@
 //Cut & Mend wires
 
 	else
-		if ( istype(W, /obj/item/weapon/wirecutters))
+		if ( istype(W, /obj/item/wirecutters))
 			if (src.cover == 1)
 				return
 			else
@@ -137,8 +137,8 @@
 
 //Remove & Replace cover
 
-/obj/item/weapon/filter/filtertype5/attackby(obj/item/weapon/W, mob/user)
-	if ( istype(W, /obj/item/weapon/screwdriver))
+/obj/item/filter/filtertype5/attackby(obj/item/W, mob/user)
+	if ( istype(W, /obj/item/screwdriver))
 		if (src.cover == 1)
 			user.show_message("\blue You unscrew the protective cover.")
 			src.cover = 0
@@ -153,26 +153,25 @@
 //Cut & Mend wires
 
 	else
-		if ( istype(W, /obj/item/weapon/wirecutters))
+		if ( istype(W, /obj/item/wirecutters))
 			if (src.cover == 1)
 				return
 			else
 				if (src.oftype == 1)
-					var/obj/item/weapon/filter/filtertype1/I = new(src.loc)
+					var/obj/item/filter/filtertype1/I = new(src.loc)
 					I.icon_state = "filter1open"
 					I.cover = 0
 				if (src.oftype == 2)
-					var/obj/item/weapon/filter/filtertype2/I = new(src.loc)
+					var/obj/item/filter/filtertype2/I = new(src.loc)
 					I.icon_state = "filter2open"
 					I.cover = 0
 				if (src.oftype == 3)
-					var/obj/item/weapon/filter/filtertype3/I = new(src.loc)
+					var/obj/item/filter/filtertype3/I = new(src.loc)
 					I.icon_state = "filter3open"
 					I.cover = 0
 				if (src.oftype == 4)
-					var/obj/item/weapon/filter/filtertype4/I = new(src.loc)
+					var/obj/item/filter/filtertype4/I = new(src.loc)
 					I.icon_state = "filter4open"
 					I.cover = 0
 				user.show_message("\blue You mend the safety wires.  The filter will now work as it should.")
 				del (src)
-

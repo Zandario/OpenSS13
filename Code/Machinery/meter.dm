@@ -85,9 +85,9 @@ obj/machinery/meter
 	// Attack with weapon
 	// if a wrench, try to find pipe at same location and activate
 
-	attackby(var/obj/item/weapon/W, mob/user)
+	attackby(var/obj/item/W, mob/user)
 
-		if(!target && istype(W, /obj/item/weapon/wrench))
+		if(!target && istype(W, /obj/item/wrench))
 			target = locate(/obj/machinery/pipes, src.loc)
 			average = 0
 			if(target)

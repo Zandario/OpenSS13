@@ -64,7 +64,7 @@ obj/machinery/dispenser
 				if (text2num(href_list["oxygen"]))
 					if (src.o2tanks > 0)
 						use_power(5)
-						new /obj/item/weapon/tank/oxygentank( src.loc )
+						new /obj/item/tank/oxygentank( src.loc )
 						src.o2tanks--
 				if (istype(src.loc, /mob))
 					attack_hand(src.loc)
@@ -73,7 +73,7 @@ obj/machinery/dispenser
 				if (text2num(href_list["plasma"]))
 					if (src.pltanks > 0)
 						use_power(5)
-						new /obj/item/weapon/tank/plasmatank( src.loc )
+						new /obj/item/tank/plasmatank( src.loc )
 						src.pltanks--
 				if (istype(src.loc, /mob))
 					attack_hand(src.loc)
@@ -101,10 +101,10 @@ obj/machinery/dispenser
 			if(3.0)
 				if (prob(25))
 					while(src.o2tanks > 0)
-						new /obj/item/weapon/tank/oxygentank( src.loc )
+						new /obj/item/tank/oxygentank( src.loc )
 						src.o2tanks--
 					while(src.pltanks > 0)
-						new /obj/item/weapon/tank/plasmatank( src.loc )
+						new /obj/item/tank/plasmatank( src.loc )
 						src.pltanks--
 			else
 		return
@@ -113,20 +113,20 @@ obj/machinery/dispenser
 
 		if (prob(25))
 			while(src.o2tanks > 0)
-				new /obj/item/weapon/tank/oxygentank( src.loc )
+				new /obj/item/tank/oxygentank( src.loc )
 				src.o2tanks--
 			while(src.pltanks > 0)
-				new /obj/item/weapon/tank/plasmatank( src.loc )
+				new /obj/item/tank/plasmatank( src.loc )
 				src.pltanks--
 			del(src)
 
 	meteorhit()
 
 		while(src.o2tanks > 0)
-			new /obj/item/weapon/tank/oxygentank( src.loc )
+			new /obj/item/tank/oxygentank( src.loc )
 			src.o2tanks--
 		while(src.pltanks > 0)
-			new /obj/item/weapon/tank/plasmatank( src.loc )
+			new /obj/item/tank/plasmatank( src.loc )
 			src.pltanks--
 		del(src)
 		return

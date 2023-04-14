@@ -47,7 +47,7 @@
 
 	 (Since H9.5)
 
-	Started pipelaying system, /obj/item/weapon/pipe.
+	Started pipelaying system, /obj/item/pipe.
 
 	Added burning icon for labcoat
 	Fixed a minor airsystem bug for /obj/moves

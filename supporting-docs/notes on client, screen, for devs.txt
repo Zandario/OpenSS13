@@ -9,7 +9,7 @@ This makes the << get sent to the mob which owns the client, which makes whateve
 By the way, show_message has already been updated to use client_mob(), so you can just do someMob.show_message(whatever), and the message will get sent to the proper client if the client is in another mob due to drone-controlling stuff.
 
 ====== client.screen ======
-Second, let's say you want to mess with a mob's screen. You'd normally do 'thisMob.client.screen += something' to add something, right? That kind of thing goes on in mob/human/UpdateClothing, for instance. The problem is that we don't really want backpacks and crap on the human to show up on the drone's HUD. So, we have the contents of the client's screen going into a list when they take control of the drone, and the client's screen is then emptied. 
+Second, let's say you want to mess with a mob's screen. You'd normally do 'thisMob.client.screen += something' to add something, right? That kind of thing goes on in mob/human/UpdateClothing, for instance. The problem is that we don't really want backpacks and crap on the human to show up on the drone's HUD. So, we have the contents of the client's screen going into a list when they take control of the drone, and the client's screen is then emptied.
 
 There are several things you can do instead now.
 
@@ -29,13 +29,13 @@ Here are some possible situations, showing what you get from each method, on eac
 
 								#1		#2		#3
 Normal mob w/ client			client	client	client
-Controlled drone:	
+Controlled drone:
 	drone w/ client:			client	null	client
 	controller without client:	null	client	client
 Alternate controlled drone:
 	drone without client:		null	null	client
 	controller with client:		client	client	client
-	
+
 Mob without client				null	null	null
 	(e.g. monkey test subject, or someone logged out)
 
@@ -51,7 +51,7 @@ More detail on the cliented() function on mobs:
 	If called on a normal player which isn't controlling a drone, this returns their client, if they have one (or null if not).
 	If called on a drone, this will return null whether it's controlled by a player or not.
 	If called on the mob which is controlling a drone, it will return the client regardless of which mob 'owns' the client.
-	
+
 	This would be used like so:
 		if(M.cliented())
 			M.client_mob() << browse(null, "window=vote")
@@ -63,4 +63,4 @@ More detail on the cliented() function on mobs:
 			M.client.showvote = 0
 
 ==== Rarer cases ====
-In rarer cases you may wish to use screenOrBackup() directly. See /obj/item/weapon/storage/proc/show_to(mob/user) for an example.
+In rarer cases you may wish to use screenOrBackup() directly. See /obj/item/storage/proc/show_to(mob/user) for an example.
