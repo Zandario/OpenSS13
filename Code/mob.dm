@@ -5165,7 +5165,7 @@
 /mob/proc/show_help(mob/M as mob in world)
 	set category = "Admin"
 
-	M << browse('html/help.htm', "window=help")
+	M << browse('html/help.html', "window=help")
 	return
 
 /mob/proc/changemessage(txt as text)
@@ -5436,7 +5436,7 @@
 
 /mob/verb/help()
 
-	src << browse('html/help.htm', "window=help")
+	src << browse('html/help.htmL', "window=help")
 	return
 
 /mob/verb/abandon_mob()

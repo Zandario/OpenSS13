@@ -1,13 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-tools/deploy.sh ci_test
-mkdir ci_test/config
+# Run the server and the unit tests
+DreamDaemon paradise.dmb -close -trusted -verbose
 
-#test config
-cp tools/ci/ci_config.txt ci_test/config/config.txt
-
-cd ci_test
-DreamDaemon citadel.dmb -close -trusted -verbose -params "log-directory=ci"
-cd ..
-cat ci_test/data/logs/ci/clean_run.lk
+# Check if the unit tests actually suceeded
+cat data/clean_run.lk
