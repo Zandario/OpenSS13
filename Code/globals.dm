@@ -133,87 +133,110 @@
 */
 
 
-var
 
-	world_message = "Welcome to OpenSS13!"
-	savefile_ver = "4"
-	SS13_version = "1.1.3 - 10/14/2020"
-	changes = {"<FONT color='blue'><H3>Version: [SS13_version]</H3><B>Changes from base version 1</B></FONT><BR>
+
+var/global/world_message = "Welcome to OpenSS13!"
+var/global/savefile_ver = "4"
+var/global/SS13_version = "1.1.3 - 10/14/2020"
+var/global/changes = {"<FONT color='blue'><H3>Version: [SS13_version]</H3><B>Changes from base version 1</B></FONT><BR>
 <HR>
 <p><B>Doubled frames per second. Updated procs that were being phased out with their successors. Made 513 compatible by fixing reserved var/proc name errors. Made mobs capable of sight.
 </B></p>
 "}
+var/global/datum/air_tunnel/air_tunnel1/SS13_airtunnel
+var/global/datum/control/cellular/cellcontrol
+var/global/datum/control/gameticker/ticker
+var/global/obj/datacore/data_core
+var/global/obj/overlay/plmaster
+var/global/obj/overlay/liquidplmaster
+var/global/obj/overlay/slmaster
+var/global/going = 1.0
+var/global/master_mode = "random"//"extended"
 
-	datum/air_tunnel/air_tunnel1/SS13_airtunnel = null
-	datum/control/cellular/cellcontrol = null
-	datum/control/gameticker/ticker = null
-	obj/datacore/data_core = null
-	obj/overlay/plmaster = null
-	obj/overlay/liquidplmaster = null
-	obj/overlay/slmaster = null
-	going = 1.0
-	master_mode = "random"//"extended"
+var/global/persistent_file = "mode.txt"
 
-	persistent_file = "mode.txt"
+var/global/nuke_code
+var/global/poll_controller
+var/global/datum/engine_eject/engine_eject_control
+var/global/host
+var/global/obj/hud/main_hud
+var/global/obj/hud/hud2/main_hud2
+var/global/ooc_allowed = 1.0
+var/global/dna_ident = 1.0
+var/global/abandon_allowed = 1.0
+var/global/enter_allowed = 1.0
+var/global/shuttle_frozen = 0.0
+var/global/prison_entered
 
-	nuke_code = null
-	poll_controller = null
-	datum/engine_eject/engine_eject_control = null
-	host = null
-	obj/hud/main_hud = null
-	obj/hud/hud2/main_hud2 = null
-	ooc_allowed = 1.0
-	dna_ident = 1.0
-	abandon_allowed = 1.0
-	enter_allowed = 1.0
-	shuttle_frozen = 0.0
-	prison_entered = null
+var/global/list/html_colours = list()
+var/global/list/occupations = list(
+	"Engineer",
+	"Engineer",
+	"Security Officer",
+	"Security Officer",
+	"Forensic Technician",
+	"Medical Researcher",
+	"Research Technician",
+	"Toxin Researcher",
+	"Atmospheric Technician",
+	"Medical Doctor",
+	"Station Technician",
+	"Head of Personnel",
+	"Head of Research",
+	"Prison Security",
+	"Prison Security",
+	"Prison Doctor",
+	"Prison Warden",
+	"AI",
+)
+var/global/list/assistant_occupations = list(
+	"Technical Assistant",
+	"Medical Assistant",
+	"Research Assistant",
+	"Staff Assistant",
+)
+var/global/list/bombers = list()
+var/global/list/admins = list()
+var/global/list/shuttles = list()
+var/global/list/reg_dna = list()
+var/global/list/banned = list()
 
-	list/html_colours = new/list(0)
-	list/occupations = list( "Engineer", "Engineer", "Security Officer", "Security Officer", "Forensic Technician", "Medical Researcher", "Research Technician", "Toxin Researcher", "Atmospheric Technician", "Medical Doctor", "Station Technician", "Head of Personnel", "Head of Research", "Prison Security", "Prison Security", "Prison Doctor", "Prison Warden", "AI" )
-	list/assistant_occupations = list( "Technical Assistant", "Medical Assistant", "Research Assistant", "Staff Assistant" )
-	list/bombers = list(  )
-	list/admins = list(  )
-	list/shuttles = list(  )
-	list/reg_dna = list(  )
-	list/banned = list(  )
+
+var/global/shuttle_z = 10	//default
+var/global/list/monkeystart = list()
+var/global/list/blobstart = list()
+var/global/list/blobs = list()
+var/global/list/cardinal = list( NORTH, EAST, SOUTH, WEST )
 
 
-	shuttle_z = 10	//default
-	list/monkeystart = list()
-	list/blobstart = list()
-	list/blobs = list()
-	list/cardinal = list( NORTH, EAST, SOUTH, WEST )
+var/global/datum/station_state/start_state
+var/global/datum/config/config
+var/global/datum/vote/vote
+var/global/datum/sun/sun
 
+var/global/list/plines = list()
+var/global/list/gasflowlist = list()
+var/global/list/machines = list()
 
-	datum/station_state/start_state = null
-	datum/config/config = null
-	datum/vote/vote = null
-	datum/sun/sun = null
+var/global/list/powernets
 
-	list/plines = list()
-	list/gasflowlist = list()
-	list/machines = list()
+var/global/defer_powernet_rebuild = 0		// true if net rebuild will be called manually after an event
 
-	list/powernets = null
+var/global/Debug = 0	// global debug switch
 
-	defer_powernet_rebuild = 0		// true if net rebuild will be called manually after an event
+var/global/datum/debug/debugobj
 
-	Debug = 0	// global debug switch
+var/global/datum/moduletypes/mods = new()
 
-	datum/debug/debugobj
+var/global/wavesecret = 0
 
-	datum/moduletypes/mods = new()
+//airlockWireColorToIndex takes a number representing the wire color, e.g. the orange wire is always 1, the dark red wire is always 2, etc. It returns the index for whatever that wire does.
+//airlockIndexToWireColor does the opposite thing - it takes the index for what the wire does, for example AIRLOCK_WIRE_IDSCAN is 1, AIRLOCK_WIRE_POWER1 is 2, etc. It returns the wire color number.
+//airlockWireColorToFlag takes the wire color number and returns the flag for it (1, 2, 4, 8, 16, etc)
+var/global/list/airlockWireColorToFlag = RandomAirlockWires()
+var/global/list/airlockIndexToFlag
+var/global/list/airlockIndexToWireColor
+var/global/list/airlockWireColorToIndex
+var/global/list/airlockFeatureNames = list("IdScan", "Main power In", "Main power Out", "Drop door bolts", "Backup power In", "Backup power Out", "Power assist", "AI Control", "Electrify")
 
-	wavesecret = 0
-
-	//airlockWireColorToIndex takes a number representing the wire color, e.g. the orange wire is always 1, the dark red wire is always 2, etc. It returns the index for whatever that wire does.
-	//airlockIndexToWireColor does the opposite thing - it takes the index for what the wire does, for example AIRLOCK_WIRE_IDSCAN is 1, AIRLOCK_WIRE_POWER1 is 2, etc. It returns the wire color number.
-	//airlockWireColorToFlag takes the wire color number and returns the flag for it (1, 2, 4, 8, 16, etc)
-	list/airlockWireColorToFlag = RandomAirlockWires()
-	list/airlockIndexToFlag
-	list/airlockIndexToWireColor
-	list/airlockWireColorToIndex
-	list/airlockFeatureNames = list("IdScan", "Main power In", "Main power Out", "Drop door bolts", "Backup power In", "Backup power Out", "Power assist", "AI Control", "Electrify")
-
-	numDronesInExistance = 0
+var/global/numDronesInExistance = 0
